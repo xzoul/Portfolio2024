@@ -1,27 +1,137 @@
-#container {
-  text-align: center;
+ion-content {
+  --background: var(--primary-bg);
+  position: relative;
+  &:hover {
+    &::before {
+      --size: 75rem;
+      z-index: 1;
+      pointer-events: none;
+    }
+  }
+  &::before {
+    --size: 0rem;
+    content: "";
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    width: var(--size);
+    height: var(--size);
+    background: radial-gradient(
+      circle closest-side,
+      rgba(29, 78, 216, 0.15),
+      transparent 80%
+    );
+    // background: radial-gradient(600px at 1577px 1694px, rgba(29, 78, 216, 0.15), transparent 80%);
+    transform: translate(-50%, -50%);
+    transition: width 0.2s ease, height 0.2s ease;
+  }
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
+  main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: y proximity;
+    position: relative;
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
+    & div,
+    section {
+      display: flex;
+      flex-direction: inherit;
+    }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
+    nav {
+      position: fixed;
+      top: 3rem;
+      left: 3rem;
 
-  color: #8c8c8c;
+      .menu {
+        &__icon {
+        }
 
-  margin: 0;
-}
+        &__span {
+        }
+      }
+    }
 
-#container a {
-  text-decoration: none;
+    section {
+      width: 100%;
+      min-height: 100vh;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      scroll-snap-align: center;
+
+      .item {
+        flex-direction: column;
+        width: 60%;
+        align-items: flex-start;
+        gap: 2rem;
+
+        &__header {
+          font-size: 3.75rem;
+        }
+
+        &__subheader {
+          width: 60%;
+          line-height: 1.65;
+          font-size: 1.125rem;
+        }
+
+        &__button {
+          padding: 1rem 3rem;
+          border: 2px solid;
+          border-radius: 0.5rem;
+          position: relative;
+          cursor: pointer;
+
+          &:hover {
+            .fill {
+              background-color: rgba(45, 212, 191, 0.7);
+            }
+          }
+
+          .label {
+            position: relative;
+            z-index: 2;
+          }
+
+          .fill {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            opacity: 0.6;
+            z-index: 1;
+            border-radius: 0.4rem;
+            color: var(--primary-bg);
+          }
+        }
+      }
+
+      &#hero {
+        .item {
+          flex-direction: column;
+
+          &__header {
+            font-size: 5rem;
+          }
+
+          &__subheader {
+            font-size: 1.5rem;
+          }
+        }
+      }
+
+      &#work {
+        min-height: 60vh;
+      }
+    }
+  }
 }

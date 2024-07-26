@@ -1,0 +1,103 @@
+ion-content {
+  --background: var(--primary-bg);
+  position: relative;
+}
+ion-content:hover::before {
+  --size: 75rem;
+  z-index: 1;
+  pointer-events: none;
+}
+ion-content::before {
+  --size: 0rem;
+  content: "";
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--size);
+  height: var(--size);
+  background: radial-gradient(circle closest-side, rgba(29, 78, 216, 0.15), transparent 80%);
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease, height 0.2s ease;
+}
+ion-content main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
+  position: relative;
+}
+ion-content main div,
+ion-content main section {
+  display: flex;
+  flex-direction: inherit;
+}
+ion-content main nav {
+  position: fixed;
+  top: 3rem;
+  left: 3rem;
+}
+ion-content main section {
+  width: 100%;
+  min-height: 100vh;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: center;
+}
+ion-content main section .item {
+  flex-direction: column;
+  width: 60%;
+  align-items: flex-start;
+  gap: 2rem;
+}
+ion-content main section .item__header {
+  font-size: 3.75rem;
+}
+ion-content main section .item__subheader {
+  width: 60%;
+  line-height: 1.65;
+  font-size: 1.125rem;
+}
+ion-content main section .item__button {
+  padding: 1rem 3rem;
+  border: 2px solid;
+  border-radius: 0.5rem;
+  position: relative;
+  cursor: pointer;
+}
+ion-content main section .item__button:hover .fill {
+  background-color: rgba(45, 212, 191, 0.7);
+}
+ion-content main section .item__button .label {
+  position: relative;
+  z-index: 2;
+}
+ion-content main section .item__button .fill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.6;
+  z-index: 1;
+  border-radius: 0.4rem;
+  color: var(--primary-bg);
+}
+ion-content main section#hero .item {
+  flex-direction: column;
+}
+ion-content main section#hero .item__header {
+  font-size: 5rem;
+}
+ion-content main section#hero .item__subheader {
+  font-size: 1.5rem;
+}
+ion-content main section#work {
+  min-height: 60vh;
+}/*# sourceMappingURL=home.page.css.map */

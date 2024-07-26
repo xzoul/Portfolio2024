@@ -1,2 +1,50 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+
+:root {
+  --primary-bg: rgb(15, 23, 42);
+  --primary-color: rgb(226, 232, 240);
+  --secondary-color: rgb(148, 163, 184);
+  --tertiary-color: rgb(94, 234, 212);
+  --transparent-color: transparent;
+}
+
+[data-color="primary-bg"] {
+  color: var(--primary-bg);
+}
+
+[data-color="primary-color"] {
+  color: var(--primary-color);
+}
+
+[data-color="secondary-color"] {
+  color: var(--secondary-color);
+}
+
+[data-color="tertiary-color"] {
+  color: var(--tertiary-color);
+}
+
+[data-color="transparent-color"] {
+  color: var(--transparent-color);
+}
+
+[data-color-bg="primary-bg"] {
+  background-color: var(--primary-bg);
+}
+
+[data-color-bg="primary-color"] {
+  background-color: var(--primary-color);
+}
+
+[data-color-bg="secondary-color"] {
+  background-color: var(--secondary-color);
+}
+
+[data-color-bg="tertiary-color"] {
+  background-color: var(--tertiary-color);
+}
+
+[data-color-bg="transparent-color"] {
+  background-color: var(--transparent-color);
+}

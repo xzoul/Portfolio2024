@@ -34,4 +34,11 @@
 
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
-@import '@ionic/angular/css/palettes/dark.system.css';
+
+// Dark Mode remove comment
+// @import '@ionic/angular/css/palettes/dark.system.css';
+
+* {
+  //   box-sizing: border-box;
+  font-family: "Bitter", serif;
+}

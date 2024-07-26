@@ -1,20 +1,54 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content #mainElement [fullscreen]="true">
+  <main>
+    <nav>
+      <div class="menu">
+        <div class="menu__icon"></div>
+        <span class="menu__span" data-color="primary-color">MENU</span>
+      </div>
+    </nav>
+    <section id="hero">
+      <div class="item" data-color="primary-color">
+        <div class="item__header">
+          <span>
+            Hi, my <br />
+            name is <strong>Jimz</strong>.
+          </span>
+        </div>
+        <div class="item__subheader">
+          <span>
+            I'm a <strong>junior software developer</strong> from <br />
+            Makati, Philippines.
+          </span>
+        </div>
+      </div>
+    </section>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <section id="work">
+      <div class="item" data-color="primary-color">
+        <div class="item__header">
+          <span><strong> Let's work together. </strong></span>
+        </div>
+        <div class="item__subheader">
+          <span>
+            From interaction design to scaleable design systems, single-page
+            apps to something more experimental with WebGL. I help awesome
+            people to build ambitious yet accessible web projects -
+            <strong> the wilder, the better </strong>.
+          </span>
+        </div>
+        <a
+          class="item__button"
+          data-color="tertiary-color"
+          data-color-bg="transparent-color"
+        >
+          <span class="label"><strong>About my approach</strong></span>
+          <span class="fill"><strong>About my approach</strong></span>
+        </a>
+      </div>
+    </section>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <section>
+      <app-avatar></app-avatar>
+    </section>
+  </main>
 </ion-content>
