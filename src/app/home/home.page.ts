@@ -5,17 +5,24 @@ import {
   IonTitle,
   IonContent,
 } from '@ionic/angular/standalone';
-import { AvatarComponent } from '../avatar/avatar.component';
+import { CommonModule } from '@angular/common';
+import { AvatarComponent } from 'src/app/components/avatar/avatar.component'; // Ensure path is correct
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   standalone: true,
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, AvatarComponent],
+  imports: [
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+    AvatarComponent,
+    CommonModule,
+  ], // Add AvatarComponent here
 })
 export class HomePage {
-  // @ViewChild('mainElement') mainEl!: ElementRef;
   @ViewChild(IonContent, { static: true, read: ElementRef })
   ionContent!: ElementRef;
 
@@ -24,7 +31,6 @@ export class HomePage {
   @HostListener('mousemove', ['$event'])
   onMouseMove(event: MouseEvent) {
     const contentElement: HTMLElement = this.ionContent.nativeElement;
-
     // Get the bounding client rect
     const rect = contentElement.getBoundingClientRect();
     const x = event.clientX - rect.left;
@@ -33,16 +39,5 @@ export class HomePage {
       contentElement.style.setProperty('--x', `${x}px`);
       contentElement.style.setProperty('--y', `${y}px`);
     }, 100);
-
-    // const rect = this.mainEl.nativeElement.getBoundingClientRect();
-    // const sections = this.el.nativeElement.querySelectorAll('section');
-    // sections.forEach((element: any) => {
-    //   setTimeout(() => {
-    //     element.nativeElement.style.setProperty('--x', `${x}px`);
-    //     element.nativeElement.style.setProperty('--y', `${y}px`);
-    //   }, 100);
-    // });
-
-    // console.log(contentElement.style);
   }
 }

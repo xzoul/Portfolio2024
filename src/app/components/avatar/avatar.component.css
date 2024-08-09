@@ -1,0 +1,8 @@
+:host {
+  width: 100%;
+}
+
+canvas {
+  outline: none;
+  z-index: 3;
+}/*# sourceMappingURL=avatar.component.css.map */
