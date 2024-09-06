@@ -7,6 +7,13 @@
   --secondary-color: rgb(148, 163, 184);
   --tertiary-color: rgb(94, 234, 212);
   --transparent-color: transparent;
+
+  --linear-gradient-animate: linear-gradient(
+    -225deg,
+    #fff 0%,
+    #34ffe0 48%,
+    #5eead4 100%
+  );
 }
 
 [data-color="primary-bg"] {

@@ -29,6 +29,14 @@ ion-content {
     pointer-events: none;
   }
 
+  &:has(nav .menu__sidebar .meteor__toggle.active) .meteors {
+    display: block;
+  }
+
+  .meteors {
+    display: none;
+  }
+
   main {
     display: flex;
     flex-direction: column;
@@ -48,18 +56,57 @@ ion-content {
     }
 
     nav {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
       position: fixed;
-      top: 3rem;
-      left: 3rem;
+      padding: 3rem;
+      // top: 3rem;
+      // left: 3rem;
       z-index: 2;
 
       .menu {
-        &__icon {
-        }
+        // &__icon {
+        // }
 
         &__span {
           font-weight: bold;
           cursor: pointer;
+        }
+
+        &__sidebar {
+          button {
+            &.meteor__toggle {
+              background: transparent;
+
+              i {
+                color: var(--primary-color);
+              }
+
+              &.active {
+                i {
+                  color: var(--tertiary-color);
+                }
+              }
+
+              &:not(.active) {
+                &:hover {
+                  i {
+                    color: var(--tertiary-color);
+                  }
+                }
+              }
+            }
+          }
+
+          i {
+            font-size: 1.25rem;
+            color: var(--primary-color);
+            transition: 0.3s;
+          }
         }
       }
     }
@@ -133,6 +180,11 @@ ion-content {
 
           &__header {
             font-size: 5rem;
+
+            // span {
+            //   strong {
+            //   }
+            // }
           }
 
           &__subheader {
@@ -155,3 +207,148 @@ ion-content {
     }
   }
 }
+
+// .textflip-animate {
+//   perspective: 1000px;
+
+//   span {
+//     position: relative;
+//     display: inline-block;
+//     padding: 0;
+//     transition: transform 0.3s;
+//     transform-origin: 50% 0;
+//     transform-style: preserve-3d;
+//   }
+
+//   span:before {
+//     position: absolute;
+//     top: 100%;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     content: attr(data-hover);
+//     transition: color 0.3s;
+//     transform: rotateX(-90deg);
+//     transform-origin: 50% 0;
+//     text-align: center;
+//   }
+
+//   &:hover span,
+//   &:focus span {
+//     transform: rotateX(90deg) translateY(-22px);
+//   }
+
+//   &:hover span:before,
+//   &:focus span:before {
+//     color: rgb(210, 73, 54);
+//   }
+// }
+
+.textflip-animate {
+  perspective: 1000px;
+  cursor: default;
+
+  span {
+    position: relative;
+    display: inline-block;
+    padding: 0;
+    transform-origin: 50% 0;
+    transform-style: preserve-3d;
+    animation: flip 10s infinite, textclip 5s linear infinite;
+    transition: color 0.3s;
+    background-size: 200% auto;
+    color: var(--primary-color);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    // animation: textclip 1s linear infinite;
+    background-image: linear-gradient(
+      -225deg,
+      #fff 0%,
+      #34ffe0 48%,
+      #5eead4 100%
+    );
+
+    &:before {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      content: attr(data-flip);
+      transform: rotateX(-90deg);
+      transform-origin: 50% 0;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    &:before {
+      // color: var(--tertiary-color);
+      // color: linear-gradient(-225deg, #fff 0%, #34ffe0 48%, #5eead4 100%);
+      // background-size: auto auto;
+      // background-clip: border-box;
+      transition: color 0.3s;
+      background-size: 200% auto;
+      color: var(--primary-color);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: textclip 4.95s linear infinite;
+      background-image: linear-gradient(
+        -225deg,
+        #fff 0%,
+        #34ffe0 48%,
+        #5eead4 100%
+      );
+    }
+
+    // &:hover {
+    //   background-size: auto auto;
+    //   background-clip: border-box;
+    //   background-size: 200% auto;
+    //   color: var(--primary-color);
+    //   background-clip: text;
+    //   -webkit-background-clip: text;
+    //   -webkit-text-fill-color: transparent;
+    //   animation: textclip 1s linear infinite;
+    //   background-image: linear-gradient(
+    //     -225deg,
+    //     #fff 0%,
+    //     #34ffe0 48%,
+    //     #5eead4 100%
+    //   );
+    // }
+  }
+
+  &.flipped::before {
+    color: rgb(210, 73, 54);
+  }
+}
+
+@keyframes flip {
+  0%,
+  20% {
+    transform: rotateX(0deg);
+  }
+  40%,
+  60% {
+    transform: rotateX(90deg) translateY(-22px);
+  }
+  80%,
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+// @keyframes flip {
+//   0%,
+//   80% {
+//     transform: rotateX(0deg);
+//   }
+//   85%,
+//   95% {
+//     transform: rotateX(90deg) translateY(-22px);
+//   }
+//   100% {
+//     transform: rotateX(0deg);
+//   }
+// }

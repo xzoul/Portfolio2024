@@ -4,6 +4,7 @@ import {
   IonToolbar,
   IonTitle,
   IonContent,
+  IonRippleEffect,
 } from '@ionic/angular/standalone';
 import { CommonModule } from '@angular/common';
 import { AvatarComponent } from 'src/app/components/avatar/avatar.component'; // Ensure path is correct
@@ -14,6 +15,7 @@ import { AvatarComponent } from 'src/app/components/avatar/avatar.component'; //
   styleUrls: ['home.page.scss'],
   standalone: true,
   imports: [
+    IonRippleEffect,
     IonHeader,
     IonToolbar,
     IonTitle,
@@ -39,5 +41,11 @@ export class HomePage {
       contentElement.style.setProperty('--x', `${x}px`);
       contentElement.style.setProperty('--y', `${y}px`);
     }, 100);
+  }
+
+  isActive: boolean = true; // Property to track button state
+
+  toggleClass(event: Event): void {
+    this.isActive = !this.isActive; // Toggle the state between true and false
   }
 }

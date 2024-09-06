@@ -21,6 +21,12 @@ ion-content::before {
   z-index: 1;
   pointer-events: none;
 }
+ion-content:has(nav .menu__sidebar .meteor__toggle.active) .meteors {
+  display: block;
+}
+ion-content .meteors {
+  display: none;
+}
 ion-content main {
   display: flex;
   flex-direction: column;
@@ -39,14 +45,36 @@ ion-content main section {
   flex-direction: inherit;
 }
 ion-content main nav {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
   position: fixed;
-  top: 3rem;
-  left: 3rem;
+  padding: 3rem;
   z-index: 2;
 }
 ion-content main nav .menu__span {
   font-weight: bold;
   cursor: pointer;
+}
+ion-content main nav .menu__sidebar button.meteor__toggle {
+  background: transparent;
+}
+ion-content main nav .menu__sidebar button.meteor__toggle i {
+  color: var(--primary-color);
+}
+ion-content main nav .menu__sidebar button.meteor__toggle.active i {
+  color: var(--tertiary-color);
+}
+ion-content main nav .menu__sidebar button.meteor__toggle:not(.active):hover i {
+  color: var(--tertiary-color);
+}
+ion-content main nav .menu__sidebar i {
+  font-size: 1.25rem;
+  color: var(--primary-color);
+  transition: 0.3s;
 }
 ion-content main section {
   width: 100%;
@@ -117,4 +145,61 @@ ion-content main section#hero .avatar {
 }
 ion-content main section#work {
   min-height: 60vh;
+}
+
+.textflip-animate {
+  perspective: 1000px;
+  cursor: default;
+}
+.textflip-animate span {
+  position: relative;
+  display: inline-block;
+  padding: 0;
+  transform-origin: 50% 0;
+  transform-style: preserve-3d;
+  animation: flip 10s infinite, textclip 5s linear infinite;
+  transition: color 0.3s;
+  background-size: 200% auto;
+  color: var(--primary-color);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(-225deg, #fff 0%, #34ffe0 48%, #5eead4 100%);
+}
+.textflip-animate span:before {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: attr(data-flip);
+  transform: rotateX(-90deg);
+  transform-origin: 50% 0;
+  text-align: left;
+  white-space: nowrap;
+}
+.textflip-animate span:before {
+  transition: color 0.3s;
+  background-size: 200% auto;
+  color: var(--primary-color);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 4.95s linear infinite;
+  background-image: linear-gradient(-225deg, #fff 0%, #34ffe0 48%, #5eead4 100%);
+}
+.textflip-animate.flipped::before {
+  color: rgb(210, 73, 54);
+}
+
+@keyframes flip {
+  0%, 20% {
+    transform: rotateX(0deg);
+  }
+  40%, 60% {
+    transform: rotateX(90deg) translateY(-22px);
+  }
+  80%, 100% {
+    transform: rotateX(0deg);
+  }
 }/*# sourceMappingURL=home.page.css.map */
