@@ -286,6 +286,10 @@ ion-content main section#work .work__list .work .body .links a.link {
   color: var(--primary-color);
   cursor: pointer;
 }
+ion-content main section#work .work__list .work .body .links a.link:hover i,
+ion-content main section#work .work__list .work .body .links a.link:hover span {
+  color: var(--tertiary-color);
+}
 ion-content main section#work .work__list .work .body .links a.link i {
   font-size: 0.675rem;
   margin-top: 0.25rem;

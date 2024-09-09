@@ -390,6 +390,13 @@ ion-content {
                   color: var(--primary-color);
                   cursor: pointer;
 
+                  &:hover {
+                    i,
+                    span {
+                      color: var(--tertiary-color);
+                    }
+                  }
+
                   i {
                     font-size: 0.675rem;
                     margin-top: 0.25rem;
