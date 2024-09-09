@@ -38,6 +38,7 @@ ion-content main {
   position: relative;
   z-index: 2;
   pointer-events: all;
+  gap: 1rem;
 }
 ion-content main div,
 ion-content main section {
@@ -53,7 +54,9 @@ ion-content main nav {
   gap: 1rem;
   position: fixed;
   padding: 3rem;
-  z-index: 2;
+  z-index: 3;
+  -webkit-backdrop-filter: blur(0.25rem);
+          backdrop-filter: blur(0.25rem);
 }
 ion-content main nav .menu__span {
   font-weight: bold;
@@ -86,17 +89,21 @@ ion-content main section {
 }
 ion-content main section .item {
   flex-direction: column;
-  width: 60%;
   align-items: flex-start;
   gap: 2rem;
 }
 ion-content main section .item__header {
   font-size: 3.75rem;
 }
+ion-content main section .item__header span strong {
+  cursor: default;
+}
 ion-content main section .item__subheader {
-  width: 60%;
   line-height: 1.65;
   font-size: 1.125rem;
+}
+ion-content main section .item__subheader span {
+  color: var(--secondary-color);
 }
 ion-content main section .item__button {
   padding: 1rem 3rem;
@@ -128,15 +135,18 @@ ion-content main section .item__button .fill {
 }
 ion-content main section#hero {
   position: relative;
+  scroll-snap-align: start;
 }
 ion-content main section#hero .item {
   flex-direction: column;
+  width: 60%;
 }
 ion-content main section#hero .item__header {
   font-size: 5rem;
 }
 ion-content main section#hero .item__subheader {
   font-size: 1.5rem;
+  width: 60%;
 }
 ion-content main section#hero .avatar {
   position: absolute;
@@ -144,7 +154,160 @@ ion-content main section#hero .avatar {
   right: 3rem;
 }
 ion-content main section#work {
+  display: grid;
+  grid-template-columns: calc(40% - 2rem) calc(60% - 2rem);
+  width: 100%;
+  padding-inline: 5rem;
   min-height: 60vh;
+  gap: 4rem;
+  align-items: start;
+  justify-items: center;
+}
+ion-content main section#work span {
+  --font-inter: "__inter_20b187", "__inter_Fallback_20b187";
+  font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 600;
+}
+ion-content main section#work .item {
+  gap: 3rem;
+}
+ion-content main section#work .item .body {
+  gap: 1rem;
+}
+ion-content main section#work .work__list {
+  flex-direction: column;
+  gap: 1.5rem;
+}
+ion-content main section#work .work__list .header {
+  flex-direction: row;
+  width: auto;
+  padding-inline: 1rem;
+}
+ion-content main section#work .work__list .header div {
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+ion-content main section#work .work__list .header div:hover span strong {
+  color: var(--tertiary-color);
+}
+ion-content main section#work .work__list .header div:hover i {
+  transform: translate(0, -0.5rem);
+  color: var(--tertiary-color);
+}
+ion-content main section#work .work__list .header div i {
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  rotate: 45deg;
+  transition: 0.3s;
+}
+ion-content main section#work .work__list:has(.work:hover) .work:not(:hover) {
+  opacity: 0.5;
+}
+ion-content main section#work .work__list .work {
+  flex-direction: row;
+  align-items: center;
+  padding: 1rem;
+  gap: 2rem;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  -webkit-backdrop-filter: blur(0.25rem);
+          backdrop-filter: blur(0.25rem);
+  transition: 0.3s;
+  cursor: pointer;
+}
+ion-content main section#work .work__list .work:hover {
+  background-color: rgba(30, 41, 59, 0.5);
+}
+ion-content main section#work .work__list .work:hover .body .details .title a {
+  background-size: 200% auto;
+  color: var(--primary-color);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 1s linear infinite;
+  background-image: var(--linear-gradient-animate);
+}
+ion-content main section#work .work__list .work:hover .body .details .title i {
+  transform: translate(0, -0.5rem);
+  color: var(--tertiary-color);
+}
+ion-content main section#work .work__list .work .date {
+  width: 100%;
+  height: 100%;
+  align-self: flex-start;
+  max-width: 8rem;
+  margin-block: 0.25rem;
+}
+ion-content main section#work .work__list .work .date span {
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: var(--accent-color);
+}
+ion-content main section#work .work__list .work .body {
+  flex-direction: column;
+  gap: 1rem;
+}
+ion-content main section#work .work__list .work .body .details {
+  gap: 0.5rem;
+}
+ion-content main section#work .work__list .work .body .details .title {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: var(--primary-color);
+}
+ion-content main section#work .work__list .work .body .details .title a {
+  text-decoration: none;
+}
+ion-content main section#work .work__list .work .body .details .title i {
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  rotate: 45deg;
+  transition: 0.3s;
+}
+ion-content main section#work .work__list .work .body .details .description span {
+  line-height: 1.5;
+  font-size: 0.875rem;
+  color: var(--secondary-color);
+}
+ion-content main section#work .work__list .work .body .links {
+  flex-direction: row;
+  gap: 1rem;
+}
+ion-content main section#work .work__list .work .body .links a.link {
+  display: flex;
+  flex-direction: row;
+  gap: 0.375rem;
+  align-items: center;
+  text-decoration: none;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+ion-content main section#work .work__list .work .body .links a.link i {
+  font-size: 0.675rem;
+  margin-top: 0.25rem;
+}
+ion-content main section#work .work__list .work .body .links a.link span {
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+ion-content main section#work .work__list .work .body .skills {
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+}
+ion-content main section#work .work__list .work .body .skills .skill {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  padding: 0.25rem 0.75rem;
+  color: rgb(94, 234, 212);
+  background-color: rgba(45, 212, 191, 0.1);
+  border-radius: 0.75rem;
 }
 
 .textflip-animate {

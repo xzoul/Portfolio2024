@@ -43,10 +43,13 @@
 * {
   //   box-sizing: border-box;
   font-family: "Bitter", serif;
+  color: var(--primary-color);
+  box-sizing: border-box;
 }
 
 .text-highlight {
-  cursor: default;
+  cursor: pointer;
+
   &.hover {
     &:hover {
       background-size: auto auto;

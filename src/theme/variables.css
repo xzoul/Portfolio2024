@@ -4,6 +4,7 @@
   --secondary-color: rgb(148, 163, 184);
   --tertiary-color: rgb(94, 234, 212);
   --transparent-color: transparent;
+  --accent-color: rgb(100 116 139 / 1);
   --linear-gradient-animate: linear-gradient(
     -225deg,
     #fff 0%,
@@ -13,41 +14,41 @@
 }
 
 [data-color=primary-bg] {
-  color: var(--primary-bg);
+  color: var(--primary-bg) !important;
 }
 
 [data-color=primary-color] {
-  color: var(--primary-color);
+  color: var(--primary-color) !important;
 }
 
 [data-color=secondary-color] {
-  color: var(--secondary-color);
+  color: var(--secondary-color) !important;
 }
 
 [data-color=tertiary-color] {
-  color: var(--tertiary-color);
+  color: var(--tertiary-color) !important;
 }
 
 [data-color=transparent-color] {
-  color: var(--transparent-color);
+  color: var(--transparent-color) !important;
 }
 
 [data-color-bg=primary-bg] {
-  background-color: var(--primary-bg);
+  background-color: var(--primary-bg) !important;
 }
 
 [data-color-bg=primary-color] {
-  background-color: var(--primary-color);
+  background-color: var(--primary-color) !important;
 }
 
 [data-color-bg=secondary-color] {
-  background-color: var(--secondary-color);
+  background-color: var(--secondary-color) !important;
 }
 
 [data-color-bg=tertiary-color] {
-  background-color: var(--tertiary-color);
+  background-color: var(--tertiary-color) !important;
 }
 
 [data-color-bg=transparent-color] {
-  background-color: var(--transparent-color);
+  background-color: var(--transparent-color) !important;
 }/*# sourceMappingURL=variables.css.map */

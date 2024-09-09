@@ -28,9 +28,15 @@
           class="meteor__toggle"
           (click)="toggleClass($event)"
           [ngClass]="{'active': isActive}"
+          id="meteor"
         >
           <i class="fa-solid fa-meteor"></i>
         </button>
+        <!-- <ion-popover trigger="meteor" triggerAction="hover">
+          <ng-template>
+            <ion-content class="ion-padding">Hello World!</ion-content>
+          </ng-template>
+        </ion-popover> -->
       </div>
     </nav>
     <section id="hero">
@@ -49,7 +55,7 @@
                 junior software developer</span
               > </strong
             ><br />
-            from Makati, Philippines.
+            from <span data-color="primary-color">Makati, Philippines</span>.
           </span>
         </div>
       </div>
@@ -60,29 +66,103 @@
 
     <section id="work">
       <div class="item" data-color="primary-color">
-        <div class="item__header">
-          <span
-            ><strong class="text-highlight hover">
-              Let's work together.
-            </strong></span
-          >
-        </div>
-        <div class="item__subheader">
-          <span>
-            From interaction design to scaleable design systems, single-page
-            apps to something more experimental with WebGL. I help awesome
-            people to build ambitious yet accessible web projects -
-            <strong> the wilder, the better </strong>.
-          </span>
+        <div class="body">
+          <div class="item__header">
+            <span
+              ><strong class="text-highlight hover"> About Me. </strong></span
+            >
+          </div>
+          <div class="item__subheader">
+            <span>
+              From interaction design to scaleable design systems, single-page
+              apps to something more experimental with WebGL. I help awesome
+              people to build ambitious yet accessible web projects -
+              <strong> the wilder, the better </strong>.
+            </span>
+          </div>
         </div>
         <a
           class="item__button"
           data-color="tertiary-color"
           data-color-bg="transparent-color"
         >
-          <span class="label"><strong>About my approach</strong></span>
-          <span class="fill"><strong>About my approach</strong></span>
+          <span class="label"><strong>Let's work together</strong></span>
+          <span class="fill"><strong>Let's work together</strong></span>
         </a>
+      </div>
+      <div class="work__list">
+        <div class="header">
+          <div>
+            <span><strong>Work Experience</strong></span>
+            <i class="fa-solid fa-arrow-up"></i>
+          </div>
+        </div>
+        <div class="work">
+          <div class="date"><span>SEP 2023 — PRESENT</span></div>
+          <div class="body">
+            <div class="details">
+              <div class="title">
+                <a href="" target="_blank" class="">
+                  <strong>Junior Software Developer · Bastion, Inc.</strong>
+                </a>
+                <i class="fa-solid fa-arrow-up"></i>
+              </div>
+              <div class="description">
+                <span>
+                  Developed, maintained, and shipped production code for client
+                  websites.
+                </span>
+              </div>
+            </div>
+            <div class="links">
+              <a href="#" class="link text-highlight hover" target="_blank">
+                <i class="fa-solid fa-paperclip"></i>
+                <span>OmniPay</span></a
+              >
+              <a href="#" class="link text-highlight hover" target="_blank">
+                <i class="fa-solid fa-paperclip"></i>
+                <span>Binpo</span></a
+              >
+            </div>
+            <div class="skills">
+              <span class="skill">HTML5</span>
+              <span class="skill">CSS3</span>
+            </div>
+          </div>
+        </div>
+        <div class="work">
+          <div class="date"><span>SEP 2023 — PRESENT</span></div>
+          <div class="body">
+            <div class="details">
+              <div class="title">
+                <a href="" target="_blank" class="">
+                  <strong>Junior Software Developer · Bastion, Inc.</strong>
+                </a>
+                <i class="fa-solid fa-arrow-up"></i>
+              </div>
+              <div class="description">
+                <span>
+                  Developed, maintained, and shipped production code for client
+                  websites.
+                </span>
+              </div>
+            </div>
+            <div class="links">
+              <a href="#" class="link text-highlight hover" target="_blank">
+                <i class="fa-solid fa-paperclip"></i>
+                <span>OmniPay</span></a
+              >
+              <a href="#" class="link text-highlight hover" target="_blank">
+                <i class="fa-solid fa-paperclip"></i>
+                <span>Binpo</span></a
+              >
+            </div>
+            <div class="skills">
+              <span class="skill">HTML5</span>
+              <span class="skill">CSS3</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 

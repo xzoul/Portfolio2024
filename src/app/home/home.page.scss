@@ -44,10 +44,12 @@ ion-content {
     height: 100vh;
     overflow-y: scroll;
     scroll-behavior: smooth;
+    // scroll-snap-type: y mandatory;
     scroll-snap-type: y proximity;
     position: relative;
     z-index: 2;
     pointer-events: all;
+    gap: 1rem;
 
     & div,
     section {
@@ -66,7 +68,8 @@ ion-content {
       padding: 3rem;
       // top: 3rem;
       // left: 3rem;
-      z-index: 2;
+      z-index: 3;
+      backdrop-filter: blur(0.25rem);
 
       .menu {
         // &__icon {
@@ -121,7 +124,6 @@ ion-content {
 
       .item {
         flex-direction: column;
-        width: 60%;
         align-items: flex-start;
         gap: 2rem;
         // z-index: 3;
@@ -129,12 +131,21 @@ ion-content {
 
         &__header {
           font-size: 3.75rem;
+
+          span {
+            strong {
+              cursor: default;
+            }
+          }
         }
 
         &__subheader {
-          width: 60%;
           line-height: 1.65;
           font-size: 1.125rem;
+
+          span {
+            color: var(--secondary-color);
+          }
         }
 
         &__button {
@@ -174,21 +185,19 @@ ion-content {
 
       &#hero {
         position: relative;
+        scroll-snap-align: start;
 
         .item {
           flex-direction: column;
+          width: 60%;
 
           &__header {
             font-size: 5rem;
-
-            // span {
-            //   strong {
-            //   }
-            // }
           }
 
           &__subheader {
             font-size: 1.5rem;
+            width: 60%;
           }
         }
 
@@ -202,7 +211,216 @@ ion-content {
       }
 
       &#work {
+        display: grid;
+        // grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: calc(40% - 2rem) calc(60% - 2rem);
+        width: 100%;
+        padding-inline: 5rem;
         min-height: 60vh;
+        gap: 4rem;
+        align-items: start;
+        justify-items: center;
+
+        & span {
+          --font-inter: "__inter_20b187", "__inter_Fallback_20b187";
+          font-family: var(--font-inter), ui-sans-serif, system-ui,
+            -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+            "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+            "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+            "Noto Color Emoji";
+          font-weight: 600;
+        }
+
+        .item {
+          gap: 3rem;
+
+          .body {
+            gap: 1rem;
+          }
+        }
+
+        .work__list {
+          flex-direction: column;
+          gap: 1.5rem;
+
+          .header {
+            flex-direction: row;
+            width: auto;
+            padding-inline: 1rem;
+
+            & div {
+              align-items: center;
+              gap: 0.5rem;
+              cursor: pointer;
+
+              &:hover {
+                span {
+                  strong {
+                    color: var(--tertiary-color);
+                  }
+                }
+
+                i {
+                  transform: translate(0, -0.5rem);
+                  color: var(--tertiary-color);
+                }
+              }
+
+              i {
+                font-size: 0.75rem;
+                margin-top: 0.25rem;
+                rotate: 45deg;
+                transition: 0.3s;
+              }
+            }
+          }
+
+          &:has(.work:hover) {
+            .work {
+              &:not(:hover) {
+                opacity: 0.5;
+              }
+            }
+          }
+
+          .work {
+            flex-direction: row;
+            align-items: center;
+            // justify-content: space-between;
+            padding: 1rem;
+            gap: 2rem;
+            border-radius: 0.25rem;
+            overflow: hidden;
+            backdrop-filter: blur(0.25rem);
+            transition: 0.3s;
+            cursor: pointer;
+
+            &:hover {
+              background-color: rgba(30, 41, 59, 0.5);
+
+              .body {
+                .details {
+                  .title {
+                    a {
+                      background-size: 200% auto;
+                      color: var(--primary-color);
+                      background-clip: text;
+                      -webkit-background-clip: text;
+                      -webkit-text-fill-color: transparent;
+                      animation: textclip 1s linear infinite;
+                      background-image: var(--linear-gradient-animate);
+                    }
+
+                    i {
+                      transform: translate(0, -0.5rem);
+                      color: var(--tertiary-color);
+                    }
+                  }
+                }
+              }
+            }
+
+            .date {
+              width: 100%;
+              height: 100%;
+              align-self: flex-start;
+              max-width: 8rem;
+              margin-block: 0.25rem;
+
+              span {
+                font-weight: 600;
+                font-size: 0.75rem;
+                line-height: 1rem;
+                color: var(--accent-color);
+              }
+            }
+
+            .body {
+              flex-direction: column;
+              gap: 1rem;
+
+              .details {
+                gap: 0.5rem;
+
+                .title {
+                  flex-direction: row;
+                  align-items: center;
+                  gap: 0.5rem;
+                  font-size: 1rem;
+                  color: var(--primary-color);
+
+                  // &:has(a:hover) {
+                  //   i {
+                  //     transform: translate(0, -0.5rem);
+                  //     color: var(--tertiary-color);
+                  //   }
+                  // }
+
+                  a {
+                    text-decoration: none;
+                  }
+
+                  i {
+                    font-size: 0.75rem;
+                    margin-top: 0.25rem;
+                    rotate: 45deg;
+                    transition: 0.3s;
+                  }
+                }
+
+                .description {
+                  span {
+                    line-height: 1.5;
+                    font-size: 0.875rem;
+                    color: var(--secondary-color);
+                  }
+                }
+              }
+
+              .links {
+                flex-direction: row;
+                gap: 1rem;
+
+                a.link {
+                  display: flex;
+                  flex-direction: row;
+                  gap: 0.375rem;
+                  align-items: center;
+                  text-decoration: none;
+                  color: var(--primary-color);
+                  cursor: pointer;
+
+                  i {
+                    font-size: 0.675rem;
+                    margin-top: 0.25rem;
+                  }
+
+                  span {
+                    font-weight: 600;
+                    font-size: 0.875rem;
+                    line-height: 1.25rem;
+                  }
+                }
+              }
+
+              .skills {
+                flex-direction: row;
+                gap: 1rem;
+                align-items: center;
+
+                .skill {
+                  font-size: 0.75rem;
+                  line-height: 1.25rem;
+                  font-weight: 500;
+                  padding: 0.25rem 0.75rem;
+                  color: rgb(94 234 212);
+                  background-color: rgba(45, 212, 191, 0.1);
+                  border-radius: 0.75rem;
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
