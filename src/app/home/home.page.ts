@@ -5,6 +5,8 @@ import {
   IonTitle,
   IonContent,
   IonRippleEffect,
+  IonPopover,
+  IonButton,
 } from '@ionic/angular/standalone';
 import { CommonModule } from '@angular/common';
 import { AvatarComponent } from 'src/app/components/avatar/avatar.component'; // Ensure path is correct
@@ -15,6 +17,8 @@ import { AvatarComponent } from 'src/app/components/avatar/avatar.component'; //
   styleUrls: ['home.page.scss'],
   standalone: true,
   imports: [
+    IonButton,
+    IonPopover,
     IonRippleEffect,
     IonHeader,
     IonToolbar,
