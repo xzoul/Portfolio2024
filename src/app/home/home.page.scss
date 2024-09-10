@@ -185,7 +185,7 @@ ion-content {
 
       &#hero {
         position: relative;
-        scroll-snap-align: start;
+        scroll-snap-align: center;
 
         .item {
           flex-direction: column;
@@ -215,11 +215,14 @@ ion-content {
         // grid-template-columns: repeat(2, 1fr);
         grid-template-columns: calc(40% - 2rem) calc(60% - 2rem);
         width: 100%;
+        height: 100%;
+        min-height: calc(100vh - 7.25rem);
+        // min-height: 60vh;
         padding-inline: 5rem;
-        min-height: 60vh;
         gap: 4rem;
         align-items: start;
         justify-items: center;
+        scroll-snap-align: end;
 
         & span {
           --font-inter: "__inter_20b187", "__inter_Fallback_20b187";
@@ -248,7 +251,7 @@ ion-content {
             width: auto;
             padding-inline: 1rem;
 
-            & div {
+            .div {
               align-items: center;
               gap: 0.5rem;
               cursor: pointer;
@@ -369,10 +372,16 @@ ion-content {
                 }
 
                 .description {
+                  flex-direction: row;
+
                   span {
                     line-height: 1.5;
                     font-size: 0.875rem;
                     color: var(--secondary-color);
+
+                    i {
+                      color: var(--secondary-color);
+                    }
                   }
                 }
               }
@@ -414,6 +423,7 @@ ion-content {
                 flex-direction: row;
                 gap: 1rem;
                 align-items: center;
+                flex-wrap: wrap;
 
                 .skill {
                   font-size: 0.75rem;
@@ -423,6 +433,16 @@ ion-content {
                   color: rgb(94 234 212);
                   background-color: rgba(45, 212, 191, 0.1);
                   border-radius: 0.75rem;
+                }
+              }
+            }
+
+            &.education {
+              .body {
+                .details {
+                  .description {
+                    flex-direction: column;
+                  }
                 }
               }
             }
