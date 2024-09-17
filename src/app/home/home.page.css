@@ -116,31 +116,17 @@ ion-content main section .item__subheader span {
   color: var(--secondary-color);
 }
 ion-content main section .item__button {
+  width: auto;
   padding: 1rem 3rem;
   border: 2px solid;
   border-radius: 0.5rem;
   position: relative;
   cursor: pointer;
 }
-ion-content main section .item__button:hover .fill {
-  background-color: rgba(45, 212, 191, 0.7);
+ion-content main section .item__button:hover {
+  background-color: rgba(45, 212, 191, 0.7) !important;
 }
 ion-content main section .item__button .label {
-  position: relative;
-  z-index: 2;
-}
-ion-content main section .item__button .fill {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  opacity: 0.6;
-  z-index: 1;
-  border-radius: 0.4rem;
   color: var(--primary-bg);
 }
 ion-content main section#hero {
@@ -164,14 +150,32 @@ ion-content main section#hero .avatar {
   right: 3rem;
 }
 ion-content main section#work {
+  display: grid;
+  grid-template-columns: calc(40% - 2rem) calc(60% - 2rem);
+  width: 100%;
+  height: 100%;
   padding-block: 7.25rem 1rem;
   padding-inline: 5rem 3rem;
   align-items: flex-start;
+  gap: 4rem;
+  align-items: start;
+  justify-items: center;
   scroll-snap-align: end;
 }
+ion-content main section#work .about__us {
+  flex-direction: column;
+  position: sticky;
+  top: 7.25rem;
+  gap: 3rem;
+  align-items: flex-start;
+}
+ion-content main section#work .about__us .item__header span {
+  font-size: 3rem;
+}
+ion-content main section#work .about__us .body {
+  gap: 1rem;
+}
 ion-content main section#work .work__container {
-  display: grid;
-  grid-template-columns: calc(40% - 2rem) calc(60% - 2rem);
   width: 100%;
   height: 100%;
   gap: 4rem;
@@ -179,7 +183,6 @@ ion-content main section#work .work__container {
   justify-items: center;
   overflow-y: scroll;
   padding-right: 2rem;
-  padding-bottom: 1rem;
 }
 ion-content main section#work .work__container::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.6);
@@ -201,8 +204,9 @@ ion-content main section#work .work__container span {
 }
 ion-content main section#work .work__container .item {
   position: sticky;
-  top: 0;
+  bottom: 0;
   gap: 3rem;
+  align-self: flex-end;
 }
 ion-content main section#work .work__container .item .item__header span {
   font-size: 3rem;
