@@ -31,7 +31,8 @@ ion-content main {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   overflow-y: scroll;
   scroll-behavior: smooth;
   scroll-snap-type: y proximity;
@@ -39,6 +40,14 @@ ion-content main {
   z-index: 2;
   pointer-events: all;
   gap: 1rem;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  scrollbar-width: none; /* Firefox */
+}
+ion-content main :-webkit-scrollbar {
+  display: none;
 }
 ion-content main div,
 ion-content main section {
@@ -86,6 +95,7 @@ ion-content main section {
   align-items: center;
   justify-content: center;
   scroll-snap-align: center;
+  position: relative;
 }
 ion-content main section .item {
   flex-direction: column;
@@ -154,62 +164,83 @@ ion-content main section#hero .avatar {
   right: 3rem;
 }
 ion-content main section#work {
+  padding-block: 7.25rem 1rem;
+  padding-inline: 5rem 3rem;
+  align-items: flex-start;
+  scroll-snap-align: end;
+}
+ion-content main section#work .work__container {
   display: grid;
   grid-template-columns: calc(40% - 2rem) calc(60% - 2rem);
   width: 100%;
   height: 100%;
-  min-height: calc(100vh - 7.25rem);
-  padding-inline: 5rem;
   gap: 4rem;
   align-items: start;
   justify-items: center;
-  scroll-snap-align: end;
+  overflow-y: scroll;
+  padding-right: 2rem;
+  padding-bottom: 1rem;
 }
-ion-content main section#work span {
+ion-content main section#work .work__container::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.6);
+  border-radius: 1rem;
+}
+ion-content main section#work .work__container::-webkit-scrollbar {
+  width: 0.5rem;
+  background-color: transparent;
+  border-radius: 1rem;
+}
+ion-content main section#work .work__container::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+}
+ion-content main section#work .work__container span {
   --font-inter: "__inter_20b187", "__inter_Fallback_20b187";
   font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 600;
 }
-ion-content main section#work .item {
+ion-content main section#work .work__container .item {
+  position: sticky;
+  top: 0;
   gap: 3rem;
 }
-ion-content main section#work .item .item__header span {
+ion-content main section#work .work__container .item .item__header span {
   font-size: 3rem;
 }
-ion-content main section#work .item .body {
+ion-content main section#work .work__container .item .body {
   gap: 1rem;
 }
-ion-content main section#work .work__list {
+ion-content main section#work .work__container .work__list {
   flex-direction: column;
   gap: 1.5rem;
 }
-ion-content main section#work .work__list .header {
+ion-content main section#work .work__container .work__list .header {
   flex-direction: row;
   width: auto;
   padding-inline: 1rem;
 }
-ion-content main section#work .work__list .header .div {
+ion-content main section#work .work__container .work__list .header .div {
   align-items: center;
   gap: 0.5rem;
   cursor: pointer;
 }
-ion-content main section#work .work__list .header .div:hover span strong {
+ion-content main section#work .work__container .work__list .header .div:hover span strong {
   color: var(--tertiary-color);
 }
-ion-content main section#work .work__list .header .div:hover i {
+ion-content main section#work .work__container .work__list .header .div:hover i {
   transform: translate(0, -0.5rem);
   color: var(--tertiary-color);
 }
-ion-content main section#work .work__list .header .div i {
+ion-content main section#work .work__container .work__list .header .div i {
   font-size: 0.75rem;
   margin-top: 0.25rem;
   rotate: 45deg;
   transition: 0.3s;
 }
-ion-content main section#work .work__list:has(.work:hover) .work:not(:hover) {
+ion-content main section#work .work__container .work__list:has(.work:hover) .work:not(:hover) {
   opacity: 0.5;
 }
-ion-content main section#work .work__list .work {
+ion-content main section#work .work__container .work__list .work {
   flex-direction: row;
   align-items: center;
   padding: 1rem;
@@ -221,10 +252,10 @@ ion-content main section#work .work__list .work {
   transition: 0.3s;
   cursor: pointer;
 }
-ion-content main section#work .work__list .work:not(a.link:hover):hover {
+ion-content main section#work .work__container .work__list .work:not(:has(.links .link:hover)):hover {
   background-color: rgba(30, 41, 59, 0.5);
 }
-ion-content main section#work .work__list .work:not(a.link:hover):hover .body .details .title a {
+ion-content main section#work .work__container .work__list .work:not(:has(.links .link:hover)):hover .body .details .title a {
   background-size: 200% auto;
   color: var(--primary-color);
   background-clip: text;
@@ -233,62 +264,62 @@ ion-content main section#work .work__list .work:not(a.link:hover):hover .body .d
   animation: textclip 1s linear infinite;
   background-image: var(--linear-gradient-animate);
 }
-ion-content main section#work .work__list .work:not(a.link:hover):hover .body .details .title i {
+ion-content main section#work .work__container .work__list .work:not(:has(.links .link:hover)):hover .body .details .title i {
   transform: translate(0, -0.5rem);
   color: var(--tertiary-color);
 }
-ion-content main section#work .work__list .work .date {
+ion-content main section#work .work__container .work__list .work .date {
   width: 100%;
   height: 100%;
   align-self: flex-start;
   max-width: 8rem;
   margin-block: 0.25rem;
 }
-ion-content main section#work .work__list .work .date span {
+ion-content main section#work .work__container .work__list .work .date span {
   font-weight: 600;
   font-size: 0.75rem;
   line-height: 1rem;
   color: var(--accent-color);
 }
-ion-content main section#work .work__list .work .body {
+ion-content main section#work .work__container .work__list .work .body {
   flex-direction: column;
   gap: 1rem;
 }
-ion-content main section#work .work__list .work .body .details {
+ion-content main section#work .work__container .work__list .work .body .details {
   gap: 0.5rem;
 }
-ion-content main section#work .work__list .work .body .details .title {
+ion-content main section#work .work__container .work__list .work .body .details .title {
   flex-direction: row;
   align-items: center;
   gap: 0.5rem;
   font-size: 1rem;
   color: var(--primary-color);
 }
-ion-content main section#work .work__list .work .body .details .title a {
+ion-content main section#work .work__container .work__list .work .body .details .title a {
   text-decoration: none;
 }
-ion-content main section#work .work__list .work .body .details .title i {
+ion-content main section#work .work__container .work__list .work .body .details .title i {
   font-size: 0.75rem;
   margin-top: 0.25rem;
   rotate: 45deg;
   transition: 0.3s;
 }
-ion-content main section#work .work__list .work .body .details .description {
+ion-content main section#work .work__container .work__list .work .body .details .description {
   flex-direction: row;
 }
-ion-content main section#work .work__list .work .body .details .description span {
+ion-content main section#work .work__container .work__list .work .body .details .description span {
   line-height: 1.5;
   font-size: 0.875rem;
   color: var(--secondary-color);
 }
-ion-content main section#work .work__list .work .body .details .description span i {
+ion-content main section#work .work__container .work__list .work .body .details .description span i {
   color: var(--secondary-color);
 }
-ion-content main section#work .work__list .work .body .links {
+ion-content main section#work .work__container .work__list .work .body .links {
   flex-direction: row;
   gap: 1rem;
 }
-ion-content main section#work .work__list .work .body .links a.link {
+ion-content main section#work .work__container .work__list .work .body .links a.link {
   display: flex;
   flex-direction: row;
   gap: 0.375rem;
@@ -297,26 +328,26 @@ ion-content main section#work .work__list .work .body .links a.link {
   color: var(--primary-color);
   cursor: pointer;
 }
-ion-content main section#work .work__list .work .body .links a.link:hover i,
-ion-content main section#work .work__list .work .body .links a.link:hover span {
+ion-content main section#work .work__container .work__list .work .body .links a.link:hover i,
+ion-content main section#work .work__container .work__list .work .body .links a.link:hover span {
   color: var(--tertiary-color);
 }
-ion-content main section#work .work__list .work .body .links a.link i {
+ion-content main section#work .work__container .work__list .work .body .links a.link i {
   font-size: 0.675rem;
   margin-top: 0.25rem;
 }
-ion-content main section#work .work__list .work .body .links a.link span {
+ion-content main section#work .work__container .work__list .work .body .links a.link span {
   font-weight: 600;
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
-ion-content main section#work .work__list .work .body .skills {
+ion-content main section#work .work__container .work__list .work .body .skills {
   flex-direction: row;
   gap: 1rem;
   align-items: center;
   flex-wrap: wrap;
 }
-ion-content main section#work .work__list .work .body .skills .skill {
+ion-content main section#work .work__container .work__list .work .body .skills .skill {
   font-size: 0.75rem;
   line-height: 1.25rem;
   font-weight: 500;
@@ -325,7 +356,7 @@ ion-content main section#work .work__list .work .body .skills .skill {
   background-color: rgba(45, 212, 191, 0.1);
   border-radius: 0.75rem;
 }
-ion-content main section#work .work__list .work.education .body .details .description {
+ion-content main section#work .work__container .work__list .work.education .body .details .description {
   flex-direction: column;
 }
 
