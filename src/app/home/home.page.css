@@ -173,6 +173,9 @@ ion-content main section#work span {
 ion-content main section#work .item {
   gap: 3rem;
 }
+ion-content main section#work .item .item__header span {
+  font-size: 3rem;
+}
 ion-content main section#work .item .body {
   gap: 1rem;
 }
@@ -218,10 +221,10 @@ ion-content main section#work .work__list .work {
   transition: 0.3s;
   cursor: pointer;
 }
-ion-content main section#work .work__list .work:hover {
+ion-content main section#work .work__list .work:not(a.link:hover):hover {
   background-color: rgba(30, 41, 59, 0.5);
 }
-ion-content main section#work .work__list .work:hover .body .details .title a {
+ion-content main section#work .work__list .work:not(a.link:hover):hover .body .details .title a {
   background-size: 200% auto;
   color: var(--primary-color);
   background-clip: text;
@@ -230,7 +233,7 @@ ion-content main section#work .work__list .work:hover .body .details .title a {
   animation: textclip 1s linear infinite;
   background-image: var(--linear-gradient-animate);
 }
-ion-content main section#work .work__list .work:hover .body .details .title i {
+ion-content main section#work .work__list .work:not(a.link:hover):hover .body .details .title i {
   transform: translate(0, -0.5rem);
   color: var(--tertiary-color);
 }
