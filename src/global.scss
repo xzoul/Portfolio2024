@@ -97,7 +97,6 @@ $color_meteor: #fff;
   height: 100%;
   position: absolute;
   overflow: hidden;
-  // position: relative;
 
   // Loop to create multiple meteors with variations
   @for $i from 1 through 12 {
@@ -140,62 +139,77 @@ $color_meteor: #fff;
   }
 }
 
-// .meteors {
-//   z-index: -10;
-//   width: 100%;
-//   height: 100%;
+.textflip-animate {
+  perspective: 1000px;
+  cursor: default;
 
-//   .meteor {
-//     width: 0;
-//     height: 0;
-//     border-top: 1px solid transparent;
-//     border-bottom: 1px solid transparent;
-//     border-right: 90px solid $color_meteor;
-//     border-image: linear-gradient(to left, $color_meteor, transparent) 1 100%;
-//     border-radius: 0 2px 2px 0;
-//     transform: rotate(30deg);
-//     position: absolute;
-//     top: 23%;
-//     left: 70%;
-//     opacity: 0;
-//     animation: shooting 4s linear infinite;
-//     animation-delay: 1s;
+  span {
+    position: relative;
+    display: inline-block;
+    padding: 0;
+    transform-origin: 50% 0;
+    transform-style: preserve-3d;
+    animation: flip 10s infinite, textclip 5s linear infinite;
+    transition: color 0.3s;
+    background-size: 200% auto;
+    color: var(--primary-color);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    // animation: textclip 1s linear infinite;
+    background-image: linear-gradient(
+      -225deg,
+      #fff 0%,
+      #34ffe0 48%,
+      #5eead4 100%
+    );
 
-//     &:nth-child(2) {
-//       top: 13%;
-//       left: 64%;
-//       border-right-width: 80px;
-//       animation-delay: 2s;
-//     }
+    &:before {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      content: attr(data-flip);
+      transform: rotateX(-90deg);
+      transform-origin: 50% 0;
+      text-align: left;
+      white-space: nowrap;
+    }
 
-//     &:nth-child(3) {
-//       top: 23%;
-//       left: 62%;
-//       border-right-width: 50px;
-//       animation-delay: 2.5s;
-//     }
+    &:before {
+      transition: color 0.3s;
+      background-size: 200% auto;
+      color: var(--primary-color);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: textclip 4.95s linear infinite;
+      background-image: linear-gradient(
+        -225deg,
+        #fff 0%,
+        #34ffe0 48%,
+        #5eead4 100%
+      );
+    }
+  }
 
-//     &:nth-child(4) {
-//       top: 64%;
-//       left: 72%;
-//       border-right-width: 50px;
-//       animation-delay: 1.3s;
-//     }
-//   }
-// }
+  &.flipped::before {
+    color: rgb(210, 73, 54);
+  }
+}
 
-// @keyframes shooting {
-//   0% {
-//     transform: rotate(30deg) translate(-100%, -100%);
-//     opacity: 1;
-//   }
-
-//   20% {
-//     transform: rotate(30deg) translate(100%, 100%);
-//     opacity: 0;
-//   }
-//   100% {
-//     transform: rotate(30deg) translate(100%, 100%);
-//     opacity: 0;
-//   }
-// }
+@keyframes flip {
+  0%,
+  20% {
+    transform: rotateX(0deg);
+  }
+  40%,
+  60% {
+    transform: rotateX(90deg) translateY(-22px);
+  }
+  80%,
+  100% {
+    transform: rotateX(0deg);
+  }
+}

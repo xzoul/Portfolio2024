@@ -168,6 +168,7 @@ ion-content main section#work .about__us {
   top: 7.25rem;
   gap: 3rem;
   align-items: flex-start;
+  padding-bottom: 1rem;
 }
 ion-content main section#work .about__us .item__header span {
   font-size: 3rem;
@@ -201,18 +202,6 @@ ion-content main section#work .work__container span {
   --font-inter: "__inter_20b187", "__inter_Fallback_20b187";
   font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 600;
-}
-ion-content main section#work .work__container .item {
-  position: sticky;
-  bottom: 0;
-  gap: 3rem;
-  align-self: flex-end;
-}
-ion-content main section#work .work__container .item .item__header span {
-  font-size: 3rem;
-}
-ion-content main section#work .work__container .item .body {
-  gap: 1rem;
 }
 ion-content main section#work .work__container .work__list {
   flex-direction: column;
@@ -363,60 +352,170 @@ ion-content main section#work .work__container .work__list .work .body .skills .
 ion-content main section#work .work__container .work__list .work.education .body .details .description {
   flex-direction: column;
 }
-
-.textflip-animate {
-  perspective: 1000px;
-  cursor: default;
-}
-.textflip-animate span {
-  position: relative;
-  display: inline-block;
-  padding: 0;
-  transform-origin: 50% 0;
-  transform-style: preserve-3d;
-  animation: flip 10s infinite, textclip 5s linear infinite;
-  transition: color 0.3s;
-  background-size: 200% auto;
-  color: var(--primary-color);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(-225deg, #fff 0%, #34ffe0 48%, #5eead4 100%);
-}
-.textflip-animate span:before {
-  position: absolute;
-  top: 100%;
-  left: 0;
+ion-content main section#projects {
+  flex-direction: column;
   width: 100%;
   height: 100%;
-  content: attr(data-flip);
-  transform: rotateX(-90deg);
-  transform-origin: 50% 0;
-  text-align: left;
-  white-space: nowrap;
+  padding-block: 7.25rem 1rem;
+  padding-inline: 5rem 3rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+  scroll-snap-align: end;
+  gap: 2rem;
 }
-.textflip-animate span:before {
-  transition: color 0.3s;
+ion-content main section#projects .section__header {
+  width: 100%;
+  align-items: flex-end;
+}
+ion-content main section#projects .section__header .title {
+  cursor: default;
+}
+ion-content main section#projects .section__header .title span {
+  font-size: 3rem;
+}
+ion-content main section#projects .section__header .subtitle {
+  width: 50%;
+}
+ion-content main section#projects .section__header .subtitle span {
+  text-align: right;
+  font-size: 1rem;
+}
+ion-content main section#projects .section__body {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+ion-content main section#projects .section__body .project__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 1fr;
+  width: 60%;
+  gap: 2rem;
+}
+ion-content main section#projects .section__body .project__list .project {
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  -webkit-backdrop-filter: blur(0.25rem);
+          backdrop-filter: blur(0.25rem);
+  transition: 0.3s;
+  cursor: pointer;
+}
+ion-content main section#projects .section__body .project__list .project:has(.project:hover) .project:not(:hover) {
+  opacity: 0.5;
+}
+ion-content main section#projects .section__body .project__list .project:not(:has(.links .link:hover)):hover {
+  background-color: rgba(30, 41, 59, 0.5);
+}
+ion-content main section#projects .section__body .project__list .project:not(:has(.links .link:hover)):hover .preview img {
+  display: none;
+}
+ion-content main section#projects .section__body .project__list .project:not(:has(.links .link:hover)):hover .preview iframe {
+  display: flex;
+}
+ion-content main section#projects .section__body .project__list .project:not(:has(.links .link:hover)):hover .body .details .title a {
   background-size: 200% auto;
   color: var(--primary-color);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: textclip 4.95s linear infinite;
-  background-image: linear-gradient(-225deg, #fff 0%, #34ffe0 48%, #5eead4 100%);
+  animation: textclip 1s linear infinite;
+  background-image: var(--linear-gradient-animate);
 }
-.textflip-animate.flipped::before {
-  color: rgb(210, 73, 54);
+ion-content main section#projects .section__body .project__list .project:not(:has(.links .link:hover)):hover .body .details .title i {
+  transform: translate(0, -0.5rem);
+  color: var(--tertiary-color);
 }
-
-@keyframes flip {
-  0%, 20% {
-    transform: rotateX(0deg);
-  }
-  40%, 60% {
-    transform: rotateX(90deg) translateY(-22px);
-  }
-  80%, 100% {
-    transform: rotateX(0deg);
-  }
+ion-content main section#projects .section__body .project__list .project .preview {
+  height: 240px;
+  aspect-ratio: 2/1;
+}
+ion-content main section#projects .section__body .project__list .project .preview img,
+ion-content main section#projects .section__body .project__list .project .preview iframe {
+  width: 100%;
+  height: 100%;
+}
+ion-content main section#projects .section__body .project__list .project .preview img {
+  display: flex;
+}
+ion-content main section#projects .section__body .project__list .project .preview iframe {
+  display: none;
+  zoom: 0.25;
+}
+ion-content main section#projects .section__body .project__list .project .body {
+  flex-direction: column;
+  gap: 1rem;
+}
+ion-content main section#projects .section__body .project__list .project .body .details {
+  gap: 0.5rem;
+}
+ion-content main section#projects .section__body .project__list .project .body .details .title {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: var(--primary-color);
+}
+ion-content main section#projects .section__body .project__list .project .body .details .title a {
+  text-decoration: none;
+}
+ion-content main section#projects .section__body .project__list .project .body .details .title i {
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  rotate: 45deg;
+  transition: 0.3s;
+}
+ion-content main section#projects .section__body .project__list .project .body .details .description {
+  flex-direction: row;
+}
+ion-content main section#projects .section__body .project__list .project .body .details .description span {
+  line-height: 1.5;
+  font-size: 0.875rem;
+  color: var(--secondary-color);
+}
+ion-content main section#projects .section__body .project__list .project .body .details .description span i {
+  color: var(--secondary-color);
+}
+ion-content main section#projects .section__body .project__list .project .body .links {
+  flex-direction: row;
+  gap: 1rem;
+}
+ion-content main section#projects .section__body .project__list .project .body .links a.link {
+  display: flex;
+  flex-direction: row;
+  gap: 0.375rem;
+  align-items: center;
+  text-decoration: none;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+ion-content main section#projects .section__body .project__list .project .body .links a.link:hover i,
+ion-content main section#projects .section__body .project__list .project .body .links a.link:hover span {
+  color: var(--tertiary-color);
+}
+ion-content main section#projects .section__body .project__list .project .body .links a.link i {
+  font-size: 0.675rem;
+  margin-top: 0.25rem;
+}
+ion-content main section#projects .section__body .project__list .project .body .links a.link span {
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+ion-content main section#projects .section__body .project__list .project .body .skills {
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+ion-content main section#projects .section__body .project__list .project .body .skills .skill {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  padding: 0.25rem 0.75rem;
+  color: rgb(94, 234, 212);
+  background-color: rgba(45, 212, 191, 0.1);
+  border-radius: 0.75rem;
 }/*# sourceMappingURL=home.page.css.map */
