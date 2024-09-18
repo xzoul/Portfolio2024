@@ -163,6 +163,7 @@ ion-content main section#work {
 }
 ion-content main section#work .about__us {
   flex-direction: column;
+  width: 60%;
   position: sticky;
   top: 4.25rem;
   gap: 3rem;
@@ -389,17 +390,22 @@ ion-content main section#projects .section__body {
   height: 100%;
   gap: 4rem;
   align-items: center;
-  justify-items: center;
-  overflow-y: scroll;
-  scrollbar-width: none;
+  justify-content: center;
+  padding-inline: 5rem 0;
 }
 ion-content main section#projects .section__body .project__list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: 1fr;
+  grid-template-columns: repeat(5, minmax(24rem, 1fr));
+  overflow-x: auto;
+  align-items: center;
   width: 100%;
-  max-width: 50rem;
   gap: 2rem;
+  padding-block: 2.5rem;
+  scrollbar-width: none;
+  cursor: grab;
+}
+ion-content main section#projects .section__body .project__list:active {
+  cursor: grabbing;
 }
 ion-content main section#projects .section__body .project__list .project {
   flex-direction: column;
@@ -411,6 +417,7 @@ ion-content main section#projects .section__body .project__list .project {
           backdrop-filter: blur(0.25rem);
   transition: 0.1s;
   cursor: pointer;
+  height: 100%;
 }
 ion-content main section#projects .section__body .project__list .project:has(.project:hover) .project:not(:hover) {
   opacity: 0.5;
