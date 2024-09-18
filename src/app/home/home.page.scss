@@ -513,10 +513,13 @@ ion-content {
 
         .section__header {
           width: 100%;
-          align-items: flex-end;
+          align-items: center;
+
+
 
           .title {
             cursor: default;
+
             span {
               font-size: 3rem;
             }
@@ -534,8 +537,12 @@ ion-content {
 
         .section__body {
           width: 100%;
-          align-items: center;
-          justify-content: center;
+          height: 100%;
+          gap: 4rem;
+          align-items: start;
+          justify-items: center;
+          overflow-y: scroll;
+          padding-right: 2rem;
 
           .project__list {
             display: grid;
