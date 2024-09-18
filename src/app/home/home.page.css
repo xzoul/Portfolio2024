@@ -62,7 +62,7 @@ ion-content main nav {
   justify-content: space-between;
   gap: 1rem;
   position: fixed;
-  padding: 3rem;
+  padding: 1.5rem 3rem;
   z-index: 3;
   -webkit-backdrop-filter: blur(0.25rem);
           backdrop-filter: blur(0.25rem);
@@ -154,7 +154,7 @@ ion-content main section#work {
   grid-template-columns: calc(40% - 2rem) calc(60% - 2rem);
   width: 100%;
   height: 100%;
-  padding-block: 7.25rem 1rem;
+  padding-block: 4.25rem 1rem;
   padding-inline: 5rem 3rem;
   align-items: flex-start;
   gap: 4rem;
@@ -165,7 +165,7 @@ ion-content main section#work {
 ion-content main section#work .about__us {
   flex-direction: column;
   position: sticky;
-  top: 7.25rem;
+  top: 4.25rem;
   gap: 3rem;
   align-items: flex-start;
   padding-bottom: 1rem;
@@ -356,7 +356,7 @@ ion-content main section#projects {
   flex-direction: column;
   width: 100%;
   height: 100%;
-  padding-block: 7.25rem 1rem;
+  padding-block: 4.25rem 1rem;
   padding-inline: 5rem 3rem;
   justify-content: flex-start;
   align-items: flex-start;
