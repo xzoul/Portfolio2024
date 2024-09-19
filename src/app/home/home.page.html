@@ -17,7 +17,9 @@
     <nav>
       <div class="menu">
         <div class="menu__icon"></div>
-        <span class="menu__span" data-color="primary-color">MENU</span>
+        <span class="menu__span" data-color="primary-color"
+          >&#64;delacruzjimmy</span
+        >
       </div>
       <div class="menu__sidebar">
         <!-- <button type="button" class="meteor__toggle">
@@ -26,8 +28,8 @@
         <button
           type="button"
           class="meteor__toggle"
-          (click)="toggleClass($event)"
-          [ngClass]="{'active': isActive}"
+          (click)="toggleMeteors($event)"
+          [ngClass]="{'active': isMeteorsActive}"
           id="meteor"
           aria-label="meteor"
         >
@@ -45,7 +47,18 @@
         <div class="item__header">
           <span>
             Hi, my <br />
-            name is<strong class="text-highlight hover"> Jimz</strong>.
+            name is
+            <span
+              (click)="toggleSocialMedia($event)"
+              [ngClass]="{'active': isSocialMediaActive}"
+            >
+              <strong class="text-highlight hover">&nbsp;Jimz</strong>
+              <div class="soc__med">
+                <div class="soc"><i class="fa-brands fa-linkedin"></i></div>
+                <div class="soc"><i class="fa-brands fa-github"></i></div>
+                <div class="soc"><i class="fa-brands fa-instagram"></i></div>
+              </div> </span
+            >.
           </span>
         </div>
         <div class="item__subheader">

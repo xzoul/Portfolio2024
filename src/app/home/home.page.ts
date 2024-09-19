@@ -142,9 +142,14 @@ export class HomePage implements AfterViewInit {
     this.tempDivs = [];
   }
 
-  isActive: boolean = true;
+  isMeteorsActive: boolean = true;
+  isSocialMediaActive: boolean = true;
 
-  toggleClass(event: Event): void {
-    this.isActive = !this.isActive;
+  toggleMeteors(event: Event): void {
+    this.isMeteorsActive = !this.isMeteorsActive;
+  }
+
+  toggleSocialMedia(event: Event): void {
+    this.isSocialMediaActive = !this.isSocialMediaActive;
   }
 }

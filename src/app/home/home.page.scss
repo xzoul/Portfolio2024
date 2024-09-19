@@ -189,6 +189,77 @@ ion-content {
 
           &__header {
             font-size: 5rem;
+
+            span {
+              span {
+                position: relative;
+
+                &.active {
+                  .soc__med {
+                    .soc {
+                      opacity: 1;
+                      pointer-events: all;
+
+                      i {
+                        color: var(--primary-color);
+                        font-size: 3rem;
+                      }
+
+                      &:first-child {
+                        bottom: 5rem;
+                        left: 6rem;
+                        transform: translate(50%, 50%);
+                      }
+
+                      &:nth-child(2) {
+                        bottom: 0rem;
+                        left: 8rem;
+                        transform: translate(50%, 50%);
+                      }
+
+                      &:nth-child(3) {
+                        bottom: -5rem;
+                        left: 6rem;
+                        transform: translate(50%, 50%);
+                      }
+                    }
+                  }
+                }
+
+                .soc__med {
+                  // width: 20rem;
+                  // border: 2px solid;
+                  // border-radius: 50%;
+                  // aspect-ratio: 1;
+
+                  position: absolute;
+                  right: 50%;
+                  top: 55%;
+                  transform: translate(55%, -50%);
+
+                  .soc {
+                    opacity: 0;
+                    animation: fade-out-display 0.5s linear;
+                    position: absolute;
+                    aspect-ratio: 1;
+                    padding: 0.25rem;
+                    transition: 0.4s;
+                    align-items: center;
+                    justify-content: center;
+                    bottom: 0;
+                    left: 0;
+                    transform: translate(-40%, 60%);
+                    pointer-events: none;
+
+                    i {
+                      transition: color 0.1s, font-size 0.3s;
+                      color: var(--tertiary-color);
+                      font-size: 0rem;
+                    }
+                  }
+                }
+              }
+            }
           }
 
           &__subheader {
