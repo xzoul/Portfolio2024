@@ -48,17 +48,19 @@
           <span>
             Hi, my <br />
             name is
-            <span
-              (click)="toggleSocialMedia($event)"
-              [ngClass]="{'active': isSocialMediaActive}"
-            >
-              <strong class="text-highlight hover">&nbsp;Jimz</strong>
+            <span>
+              <strong
+                class="text-highlight hover"
+                (click)="toggleSocialMedia($event)"
+                [ngClass]="{'active': isSocialMediaActive}"
+                >&nbsp;Jimz.</strong
+              >
               <div class="soc__med">
                 <div class="soc"><i class="fa-brands fa-linkedin"></i></div>
                 <div class="soc"><i class="fa-brands fa-github"></i></div>
                 <div class="soc"><i class="fa-brands fa-instagram"></i></div>
-              </div> </span
-            >.
+              </div>
+            </span>
           </span>
         </div>
         <div class="item__subheader">

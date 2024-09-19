@@ -140,54 +140,80 @@ ion-content main section#hero .item {
 ion-content main section#hero .item__header {
   font-size: 5rem;
 }
+ion-content main section#hero .item__header span {
+  position: relative;
+}
 ion-content main section#hero .item__header span span {
   position: relative;
 }
-ion-content main section#hero .item__header span span.active .soc__med .soc {
+ion-content main section#hero .item__header span span strong {
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+ion-content main section#hero .item__header span span:has(strong.active) .soc__med {
+  transform: translate(55%, -50%) rotate(-90deg);
+  backdrop-filter: blur(1rem);
+  -webkit-backdrop-filter: blur(1rem);
+}
+ion-content main section#hero .item__header span span:has(strong.active) .soc__med .soc {
   opacity: 1;
   pointer-events: all;
+  transition: opacity 0.4s;
+  backdrop-filter: blur(50%);
+  -webkit-backdrop-filter: blur(50%);
+  border-radius: 50%;
+  background-color: rgba(30, 41, 59, 0.5);
 }
-ion-content main section#hero .item__header span span.active .soc__med .soc i {
+ion-content main section#hero .item__header span span:has(strong.active) .soc__med .soc i {
+  transition: color 0.5s, font-size 1s;
   color: var(--primary-color);
   font-size: 3rem;
 }
-ion-content main section#hero .item__header span span.active .soc__med .soc:first-child {
-  bottom: 5rem;
-  left: 6rem;
-  transform: translate(50%, 50%);
-}
-ion-content main section#hero .item__header span span.active .soc__med .soc:nth-child(2) {
-  bottom: 0rem;
-  left: 8rem;
-  transform: translate(50%, 50%);
-}
-ion-content main section#hero .item__header span span.active .soc__med .soc:nth-child(3) {
-  bottom: -5rem;
-  left: 6rem;
-  transform: translate(50%, 50%);
-}
 ion-content main section#hero .item__header span span .soc__med {
+  width: 14rem;
+  border: 2px solid transparent;
+  border-left: 2px solid rgba(255, 255, 255, 0.1019607843);
+  border-right: 2px solid rgba(255, 255, 255, 0.1019607843);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1019607843);
+  border-radius: 50%;
+  aspect-ratio: 1;
   position: absolute;
-  right: 50%;
+  right: 0%;
   top: 55%;
-  transform: translate(55%, -50%);
+  transform: translate(55%, -50%) rotate(120deg);
+  transition: transform 1s;
+  pointer-events: none;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.6);
 }
 ion-content main section#hero .item__header span span .soc__med .soc {
   opacity: 0;
-  animation: fade-out-display 0.5s linear;
   position: absolute;
   aspect-ratio: 1;
+  width: 4.25rem;
   padding: 0.25rem;
-  transition: 0.4s;
+  transition: opacity 0.75s;
   align-items: center;
   justify-content: center;
   bottom: 0;
   left: 0;
-  transform: translate(-40%, 60%);
   pointer-events: none;
+  transform: rotate(-270deg);
+  z-index: 1;
+}
+ion-content main section#hero .item__header span span .soc__med .soc:first-child {
+  left: 0%;
+}
+ion-content main section#hero .item__header span span .soc__med .soc:nth-child(2) {
+  left: 50%;
+  bottom: -15%;
+}
+ion-content main section#hero .item__header span span .soc__med .soc:nth-child(3) {
+  left: 85%;
+  bottom: 20%;
 }
 ion-content main section#hero .item__header span span .soc__med .soc i {
-  transition: color 0.1s, font-size 0.3s;
+  transition: color 0.5s, font-size 1s;
   color: var(--tertiary-color);
   font-size: 0rem;
 }
