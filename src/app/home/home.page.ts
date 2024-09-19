@@ -15,6 +15,7 @@ import {
   IonPopover,
   IonButton,
   IonIcon,
+  IonToggle,
 } from '@ionic/angular/standalone';
 import { CommonModule } from '@angular/common';
 import { AvatarComponent } from 'src/app/components/avatar/avatar.component';
@@ -25,6 +26,7 @@ import { AvatarComponent } from 'src/app/components/avatar/avatar.component';
   styleUrls: ['home.page.scss'],
   standalone: true,
   imports: [
+    IonToggle,
     IonIcon,
     IonButton,
     IonPopover,

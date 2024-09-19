@@ -36,6 +36,30 @@
   box-sizing: border-box;
 }
 
+.icon-text-highlight {
+  cursor: pointer;
+}
+.icon-text-highlight.hover:hover i,
+.icon-text-highlight.hover:hover strong span {
+  background-size: 200% auto;
+  color: var(--primary-color);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 1s linear infinite;
+  background-image: var(--linear-gradient-animate);
+}
+.icon-text-highlight:not(.hover) i,
+.icon-text-highlight:not(.hover) strong span {
+  background-size: 200% auto;
+  color: var(--primary-color);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 1s linear infinite;
+  background-image: var(--linear-gradient-animate);
+}
+
 .text-highlight {
   cursor: pointer;
 }
@@ -79,172 +103,36 @@
   height: 0;
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
-  border-right: 177px solid #fff;
+  border-right: 180px solid #fff;
   -o-border-image: linear-gradient(to left, #fff, transparent) 1 100%;
      border-image: linear-gradient(to left, #fff, transparent) 1 100%;
   border-radius: 0 2px 2px 0;
   transform: rotate(30deg);
   position: absolute;
-  top: 20%;
-  left: 63%;
+  top: 72%;
+  left: 54%;
   opacity: 0;
   animation: shooting 14s linear infinite;
-  animation-delay: 5s;
+  animation-delay: 1s;
 }
 .meteors .meteor:nth-child(2) {
   width: 0;
   height: 0;
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
-  border-right: 101px solid #fff;
+  border-right: 179px solid #fff;
   -o-border-image: linear-gradient(to left, #fff, transparent) 1 100%;
      border-image: linear-gradient(to left, #fff, transparent) 1 100%;
   border-radius: 0 2px 2px 0;
   transform: rotate(30deg);
   position: absolute;
-  top: 60%;
-  left: 69%;
-  opacity: 0;
-  animation: shooting 7s linear infinite;
-  animation-delay: 7s;
-}
-.meteors .meteor:nth-child(3) {
-  width: 0;
-  height: 0;
-  border-top: 1px solid transparent;
-  border-bottom: 1px solid transparent;
-  border-right: 145px solid #fff;
-  -o-border-image: linear-gradient(to left, #fff, transparent) 1 100%;
-     border-image: linear-gradient(to left, #fff, transparent) 1 100%;
-  border-radius: 0 2px 2px 0;
-  transform: rotate(30deg);
-  position: absolute;
-  top: 78%;
-  left: 43%;
-  opacity: 0;
-  animation: shooting 7s linear infinite;
-  animation-delay: 11s;
-}
-.meteors .meteor:nth-child(4) {
-  width: 0;
-  height: 0;
-  border-top: 1px solid transparent;
-  border-bottom: 1px solid transparent;
-  border-right: 153px solid #fff;
-  -o-border-image: linear-gradient(to left, #fff, transparent) 1 100%;
-     border-image: linear-gradient(to left, #fff, transparent) 1 100%;
-  border-radius: 0 2px 2px 0;
-  transform: rotate(30deg);
-  position: absolute;
-  top: 2%;
-  left: 56%;
-  opacity: 0;
-  animation: shooting 9s linear infinite;
-  animation-delay: 2s;
-}
-.meteors .meteor:nth-child(5) {
-  width: 0;
-  height: 0;
-  border-top: 1px solid transparent;
-  border-bottom: 1px solid transparent;
-  border-right: 84px solid #fff;
-  -o-border-image: linear-gradient(to left, #fff, transparent) 1 100%;
-     border-image: linear-gradient(to left, #fff, transparent) 1 100%;
-  border-radius: 0 2px 2px 0;
-  transform: rotate(30deg);
-  position: absolute;
-  top: 9%;
-  left: 47%;
-  opacity: 0;
-  animation: shooting 14s linear infinite;
-  animation-delay: 11s;
-}
-.meteors .meteor:nth-child(6) {
-  width: 0;
-  height: 0;
-  border-top: 1px solid transparent;
-  border-bottom: 1px solid transparent;
-  border-right: 191px solid #fff;
-  -o-border-image: linear-gradient(to left, #fff, transparent) 1 100%;
-     border-image: linear-gradient(to left, #fff, transparent) 1 100%;
-  border-radius: 0 2px 2px 0;
-  transform: rotate(30deg);
-  position: absolute;
-  top: 68%;
-  left: 97%;
-  opacity: 0;
-  animation: shooting 8s linear infinite;
-  animation-delay: 7s;
-}
-.meteors .meteor:nth-child(7) {
-  width: 0;
-  height: 0;
-  border-top: 1px solid transparent;
-  border-bottom: 1px solid transparent;
-  border-right: 193px solid #fff;
-  -o-border-image: linear-gradient(to left, #fff, transparent) 1 100%;
-     border-image: linear-gradient(to left, #fff, transparent) 1 100%;
-  border-radius: 0 2px 2px 0;
-  transform: rotate(30deg);
-  position: absolute;
-  top: 65%;
-  left: 45%;
-  opacity: 0;
-  animation: shooting 7s linear infinite;
-  animation-delay: 2s;
-}
-.meteors .meteor:nth-child(8) {
-  width: 0;
-  height: 0;
-  border-top: 1px solid transparent;
-  border-bottom: 1px solid transparent;
-  border-right: 106px solid #fff;
-  -o-border-image: linear-gradient(to left, #fff, transparent) 1 100%;
-     border-image: linear-gradient(to left, #fff, transparent) 1 100%;
-  border-radius: 0 2px 2px 0;
-  transform: rotate(30deg);
-  position: absolute;
-  top: 8%;
-  left: 70%;
-  opacity: 0;
-  animation: shooting 12s linear infinite;
-  animation-delay: 9s;
-}
-.meteors .meteor:nth-child(9) {
-  width: 0;
-  height: 0;
-  border-top: 1px solid transparent;
-  border-bottom: 1px solid transparent;
-  border-right: 161px solid #fff;
-  -o-border-image: linear-gradient(to left, #fff, transparent) 1 100%;
-     border-image: linear-gradient(to left, #fff, transparent) 1 100%;
-  border-radius: 0 2px 2px 0;
-  transform: rotate(30deg);
-  position: absolute;
-  top: 37%;
-  left: 99%;
+  top: 39%;
+  left: 93%;
   opacity: 0;
   animation: shooting 10s linear infinite;
-  animation-delay: 1s;
+  animation-delay: 9s;
 }
-.meteors .meteor:nth-child(10) {
-  width: 0;
-  height: 0;
-  border-top: 1px solid transparent;
-  border-bottom: 1px solid transparent;
-  border-right: 137px solid #fff;
-  -o-border-image: linear-gradient(to left, #fff, transparent) 1 100%;
-     border-image: linear-gradient(to left, #fff, transparent) 1 100%;
-  border-radius: 0 2px 2px 0;
-  transform: rotate(30deg);
-  position: absolute;
-  top: 78%;
-  left: 80%;
-  opacity: 0;
-  animation: shooting 12s linear infinite;
-  animation-delay: 12s;
-}
-.meteors .meteor:nth-child(11) {
+.meteors .meteor:nth-child(3) {
   width: 0;
   height: 0;
   border-top: 1px solid transparent;
@@ -255,28 +143,164 @@
   border-radius: 0 2px 2px 0;
   transform: rotate(30deg);
   position: absolute;
-  top: 58%;
-  left: 44%;
+  top: 1%;
+  left: 55%;
   opacity: 0;
   animation: shooting 9s linear infinite;
   animation-delay: 10s;
+}
+.meteors .meteor:nth-child(4) {
+  width: 0;
+  height: 0;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-right: 181px solid #fff;
+  -o-border-image: linear-gradient(to left, #fff, transparent) 1 100%;
+     border-image: linear-gradient(to left, #fff, transparent) 1 100%;
+  border-radius: 0 2px 2px 0;
+  transform: rotate(30deg);
+  position: absolute;
+  top: 61%;
+  left: 88%;
+  opacity: 0;
+  animation: shooting 8s linear infinite;
+  animation-delay: 1s;
+}
+.meteors .meteor:nth-child(5) {
+  width: 0;
+  height: 0;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-right: 145px solid #fff;
+  -o-border-image: linear-gradient(to left, #fff, transparent) 1 100%;
+     border-image: linear-gradient(to left, #fff, transparent) 1 100%;
+  border-radius: 0 2px 2px 0;
+  transform: rotate(30deg);
+  position: absolute;
+  top: 14%;
+  left: 49%;
+  opacity: 0;
+  animation: shooting 9s linear infinite;
+  animation-delay: 10s;
+}
+.meteors .meteor:nth-child(6) {
+  width: 0;
+  height: 0;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-right: 145px solid #fff;
+  -o-border-image: linear-gradient(to left, #fff, transparent) 1 100%;
+     border-image: linear-gradient(to left, #fff, transparent) 1 100%;
+  border-radius: 0 2px 2px 0;
+  transform: rotate(30deg);
+  position: absolute;
+  top: 66%;
+  left: 83%;
+  opacity: 0;
+  animation: shooting 10s linear infinite;
+  animation-delay: 1s;
+}
+.meteors .meteor:nth-child(7) {
+  width: 0;
+  height: 0;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-right: 144px solid #fff;
+  -o-border-image: linear-gradient(to left, #fff, transparent) 1 100%;
+     border-image: linear-gradient(to left, #fff, transparent) 1 100%;
+  border-radius: 0 2px 2px 0;
+  transform: rotate(30deg);
+  position: absolute;
+  top: 31%;
+  left: 44%;
+  opacity: 0;
+  animation: shooting 13s linear infinite;
+  animation-delay: 10s;
+}
+.meteors .meteor:nth-child(8) {
+  width: 0;
+  height: 0;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-right: 159px solid #fff;
+  -o-border-image: linear-gradient(to left, #fff, transparent) 1 100%;
+     border-image: linear-gradient(to left, #fff, transparent) 1 100%;
+  border-radius: 0 2px 2px 0;
+  transform: rotate(30deg);
+  position: absolute;
+  top: 48%;
+  left: 48%;
+  opacity: 0;
+  animation: shooting 8s linear infinite;
+  animation-delay: 7s;
+}
+.meteors .meteor:nth-child(9) {
+  width: 0;
+  height: 0;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-right: 133px solid #fff;
+  -o-border-image: linear-gradient(to left, #fff, transparent) 1 100%;
+     border-image: linear-gradient(to left, #fff, transparent) 1 100%;
+  border-radius: 0 2px 2px 0;
+  transform: rotate(30deg);
+  position: absolute;
+  top: 31%;
+  left: 43%;
+  opacity: 0;
+  animation: shooting 13s linear infinite;
+  animation-delay: 12s;
+}
+.meteors .meteor:nth-child(10) {
+  width: 0;
+  height: 0;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-right: 100px solid #fff;
+  -o-border-image: linear-gradient(to left, #fff, transparent) 1 100%;
+     border-image: linear-gradient(to left, #fff, transparent) 1 100%;
+  border-radius: 0 2px 2px 0;
+  transform: rotate(30deg);
+  position: absolute;
+  top: 42%;
+  left: 57%;
+  opacity: 0;
+  animation: shooting 12s linear infinite;
+  animation-delay: 3s;
+}
+.meteors .meteor:nth-child(11) {
+  width: 0;
+  height: 0;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-right: 96px solid #fff;
+  -o-border-image: linear-gradient(to left, #fff, transparent) 1 100%;
+     border-image: linear-gradient(to left, #fff, transparent) 1 100%;
+  border-radius: 0 2px 2px 0;
+  transform: rotate(30deg);
+  position: absolute;
+  top: 53%;
+  left: 85%;
+  opacity: 0;
+  animation: shooting 7s linear infinite;
+  animation-delay: 1s;
 }
 .meteors .meteor:nth-child(12) {
   width: 0;
   height: 0;
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
-  border-right: 87px solid #fff;
+  border-right: 108px solid #fff;
   -o-border-image: linear-gradient(to left, #fff, transparent) 1 100%;
      border-image: linear-gradient(to left, #fff, transparent) 1 100%;
   border-radius: 0 2px 2px 0;
   transform: rotate(30deg);
   position: absolute;
-  top: 5%;
-  left: 83%;
+  top: 30%;
+  left: 98%;
   opacity: 0;
   animation: shooting 8s linear infinite;
-  animation-delay: 4s;
+  animation-delay: 2s;
 }
 
 @keyframes shooting {
@@ -296,6 +320,32 @@
   perspective: 1000px;
   cursor: default;
 }
+.textflip-animate.color__effect i {
+  background-size: 200% auto;
+  color: var(--primary-color);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(-225deg, #fff 0%, #34ffe0 48%, #5eead4 100%);
+}
+.textflip-animate.color__effect span {
+  background-size: 200% auto;
+  color: var(--primary-color);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(-225deg, #fff 0%, #34ffe0 48%, #5eead4 100%);
+}
+.textflip-animate.color__effect span:before {
+  transition: color 0.3s;
+  background-size: 200% auto;
+  color: var(--primary-color);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 4.95s linear infinite;
+  background-image: linear-gradient(-225deg, #fff 0%, #34ffe0 48%, #5eead4 100%);
+}
 .textflip-animate span {
   position: relative;
   display: inline-block;
@@ -304,12 +354,6 @@
   transform-style: preserve-3d;
   animation: flip 10s infinite, textclip 5s linear infinite;
   transition: color 0.3s;
-  background-size: 200% auto;
-  color: var(--primary-color);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(-225deg, #fff 0%, #34ffe0 48%, #5eead4 100%);
 }
 .textflip-animate span:before {
   position: absolute;
@@ -323,7 +367,32 @@
   text-align: left;
   white-space: nowrap;
 }
-.textflip-animate span:before {
+.textflip-animate.flipped::before {
+  color: rgb(210, 73, 54);
+}
+
+.icontextflip-animate {
+  perspective: 1000px;
+  cursor: default;
+}
+.icontextflip-animate.color__effect__hover:hover i {
+  background-size: 200% auto;
+  color: var(--primary-color);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 1s linear infinite;
+  background-image: linear-gradient(-225deg, #fff 0%, #34ffe0 48%, #5eead4 100%);
+}
+.icontextflip-animate.color__effect__hover:hover strong span {
+  background-size: 200% auto;
+  color: var(--primary-color);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(-225deg, #fff 0%, #34ffe0 48%, #5eead4 100%);
+}
+.icontextflip-animate.color__effect__hover:hover strong span:before {
   transition: color 0.3s;
   background-size: 200% auto;
   color: var(--primary-color);
@@ -333,7 +402,55 @@
   animation: textclip 4.95s linear infinite;
   background-image: linear-gradient(-225deg, #fff 0%, #34ffe0 48%, #5eead4 100%);
 }
-.textflip-animate.flipped::before {
+.icontextflip-animate.color__effect i {
+  background-size: 200% auto;
+  color: var(--primary-color);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 1s linear infinite;
+  background-image: linear-gradient(-225deg, #fff 0%, #34ffe0 48%, #5eead4 100%);
+}
+.icontextflip-animate.color__effect strong span {
+  background-size: 200% auto;
+  color: var(--primary-color);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(-225deg, #fff 0%, #34ffe0 48%, #5eead4 100%);
+}
+.icontextflip-animate.color__effect strong span:before {
+  transition: color 0.3s;
+  background-size: 200% auto;
+  color: var(--primary-color);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 4.95s linear infinite;
+  background-image: linear-gradient(-225deg, #fff 0%, #34ffe0 48%, #5eead4 100%);
+}
+.icontextflip-animate strong span {
+  position: relative;
+  display: inline-block;
+  padding: 0;
+  transform-origin: 50% 0;
+  transform-style: preserve-3d;
+  animation: flip 10s infinite, textclip 5s linear infinite;
+  transition: color 0.3s;
+}
+.icontextflip-animate strong span:before {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: attr(data-flip);
+  transform: rotateX(-90deg);
+  transform-origin: 50% 0;
+  text-align: left;
+  white-space: nowrap;
+}
+.icontextflip-animate.flipped::before {
   color: rgb(210, 73, 54);
 }
 

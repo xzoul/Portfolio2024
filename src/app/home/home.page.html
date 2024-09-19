@@ -29,6 +29,7 @@
           (click)="toggleClass($event)"
           [ngClass]="{'active': isActive}"
           id="meteor"
+          aria-label="meteor"
         >
           <i class="fa-solid fa-meteor"></i>
         </button>
@@ -39,7 +40,7 @@
         </ion-popover> -->
       </div>
     </nav>
-    <section id="hero" style="display: none">
+    <section id="hero" style="display: flex">
       <div class="item" data-color="primary-color">
         <div class="item__header">
           <span>
@@ -50,7 +51,7 @@
         <div class="item__subheader">
           <span>
             I'm a
-            <strong class="textflip-animate">
+            <strong class="textflip-animate color__effect">
               <span data-flip="frontend developer">
                 junior software developer</span
               > </strong
@@ -73,7 +74,7 @@
       </div>
     </section>
 
-    <section id="work" style="display: none">
+    <section id="work" style="display: flex">
       <div class="about__us" data-color="primary-color">
         <div class="body">
           <div class="item__header">
@@ -286,6 +287,48 @@
       </div>
       <div class="section__body">
         <div class="project__list">
+          <div></div>
+          <div class="project">
+            <div class="preview">
+              <img src="" alt="" />
+              <iframe src="" frameborder="0"></iframe>
+            </div>
+            <div class="body">
+              <div class="details">
+                <div class="title">
+                  <a href="" target="_blank" class="">
+                    <strong>TrackMinder &nbsp; · &nbsp; Mobile App</strong>
+                  </a>
+                  <i class="fa-solid fa-arrow-up"></i>
+                </div>
+                <div class="description">
+                  <span
+                    >Trackminder is an all-in-one reminder, planner, scheduler,
+                    and tracker app designed to help users organize their tasks,
+                    appointments, health, and goals efficiently.</span
+                  >
+                </div>
+              </div>
+              <div class="links">
+                <div class="link">
+                  <i class="fa-solid fa-mobile-screen-button"></i>
+                  <strong>
+                    <span data-flip="StartUp Project"> Mobile Development</span>
+                  </strong>
+                </div>
+              </div>
+              <div class="skills">
+                <div class="skill">Angular</div>
+                <div class="skill">Ionic Framework</div>
+                <div class="skill">Typescript</div>
+                <div class="skill">SCSS</div>
+                <div class="skill">GitHub</div>
+              </div>
+            </div>
+            <!-- <div class="preview__toggle">
+              <ion-toggle>Preview</ion-toggle>
+            </div> -->
+          </div>
           <div class="project">
             <div class="preview">
               <img src="" alt="" />
@@ -301,6 +344,7 @@
                     href="https://atg-db.netlify.app/"
                     target="_blank"
                     class=""
+                    rel="noopener"
                   >
                     <strong
                       >Against the Gods Database &nbsp; · &nbsp; Web App</strong
@@ -315,7 +359,28 @@
                   >
                 </div>
               </div>
+              <div class="links">
+                <div class="link">
+                  <i class="fa-solid fa-laptop-code"></i>
+                  <strong>
+                    <span data-flip="Personal Project"> Web Development</span>
+                  </strong>
+                  <!-- <span
+                    ><strong>Web Development</strong> (Personal Project)</span
+                  > -->
+                </div>
+              </div>
+              <div class="skills">
+                <span class="skill">Bootstrap 5</span>
+                <span class="skill">HTML:5</span>
+                <div class="skill">SCSS</div>
+                <span class="skill">Parse Platform</span>
+                <span class="skill">Back4App</span>
+              </div>
             </div>
+            <!-- <div class="preview__toggle">
+              <ion-toggle>Preview</ion-toggle>
+            </div> -->
           </div>
           <div class="project">
             <div class="preview">
@@ -325,7 +390,12 @@
             <div class="body">
               <div class="details">
                 <div class="title">
-                  <a href="https://albuy.netlify.app/" target="_blank" class="">
+                  <a
+                    href="https://albuy.netlify.app/"
+                    target="_blank"
+                    class=""
+                    rel="noopener"
+                  >
                     <strong>AlBuy &nbsp; · &nbsp; E-commerce Web App</strong>
                   </a>
                   <i class="fa-solid fa-arrow-up"></i>
@@ -337,7 +407,26 @@
                   >
                 </div>
               </div>
+              <div class="links">
+                <div class="link">
+                  <i class="fa-solid fa-laptop-code"></i>
+                  <strong>
+                    <span data-flip="Capstone Project"> Web Development</span>
+                  </strong>
+                </div>
+              </div>
+              <div class="skills">
+                <div class="skill">Vue JS</div>
+                <div class="skill">Node JS</div>
+                <div class="skill">Parse Platform</div>
+                <div class="skill">TeleportHQ</div>
+                <div class="skill">Figma</div>
+                <div class="skill">Back4App</div>
+              </div>
             </div>
+            <!-- <div class="preview__toggle">
+              <ion-toggle>Preview</ion-toggle>
+            </div> -->
           </div>
           <div class="project">
             <div class="preview">
@@ -353,10 +442,29 @@
                   <i class="fa-solid fa-arrow-up"></i>
                 </div>
                 <div class="description">
-                  <span>Pre-Disaster Preparedness in Albay, Bicol.</span>
+                  <span
+                    >An Analysis of Pre-Disaster Preparedness in Albay, Bicol
+                    Region.</span
+                  >
                 </div>
               </div>
+              <div class="links">
+                <div class="link">
+                  <i class="fa-solid fa-flask"></i>
+                  <strong>
+                    <span data-flip="Case Study"> Data Analytics</span>
+                  </strong>
+                </div>
+              </div>
+              <div class="skills">
+                <div class="skill">Tableau</div>
+                <div class="skill">Microsoft Excel</div>
+                <div class="skill">Data Visualization</div>
+              </div>
             </div>
+            <!-- <div class="preview__toggle">
+              <ion-toggle>Preview</ion-toggle>
+            </div> -->
           </div>
           <div class="project">
             <div class="preview">
@@ -367,7 +475,7 @@
               <div class="details">
                 <div class="title">
                   <a href="" target="_blank" class="">
-                    <strong>Data Analytics &nbsp; · &nbsp; R-Studio</strong>
+                    <strong>Data Analysis &nbsp; · &nbsp; R-Studio</strong>
                   </a>
                   <i class="fa-solid fa-arrow-up"></i>
                 </div>
@@ -379,7 +487,23 @@
                   >
                 </div>
               </div>
+              <div class="links">
+                <div class="link">
+                  <i class="fa-solid fa-flask"></i>
+                  <strong>
+                    <span data-flip="Case Study"> Data Analytics</span>
+                  </strong>
+                </div>
+              </div>
+              <div class="skills">
+                <div class="skill">R-Studio</div>
+                <div class="skill">R</div>
+                <div class="skill">Data Visualization</div>
+              </div>
             </div>
+            <!-- <div class="preview__toggle">
+              <ion-toggle>Preview</ion-toggle>
+            </div> -->
           </div>
         </div>
       </div>

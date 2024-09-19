@@ -47,6 +47,38 @@
   box-sizing: border-box;
 }
 
+.icon-text-highlight {
+  cursor: pointer;
+
+  &.hover {
+    &:hover {
+      i,
+      strong span {
+        background-size: 200% auto;
+        color: var(--primary-color);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: textclip 1s linear infinite;
+        background-image: var(--linear-gradient-animate);
+      }
+    }
+  }
+
+  &:not(.hover) {
+    i,
+    strong span {
+      background-size: 200% auto;
+      color: var(--primary-color);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: textclip 1s linear infinite;
+      background-image: var(--linear-gradient-animate);
+    }
+  }
+}
+
 .text-highlight {
   cursor: pointer;
 
@@ -143,6 +175,54 @@ $color_meteor: #fff;
   perspective: 1000px;
   cursor: default;
 
+  &.color__effect {
+    i {
+      background-size: 200% auto;
+      color: var(--primary-color);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      // animation: textclip 1s linear infinite;
+      background-image: linear-gradient(
+        -225deg,
+        #fff 0%,
+        #34ffe0 48%,
+        #5eead4 100%
+      );
+    }
+
+    span {
+      background-size: 200% auto;
+      color: var(--primary-color);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      // animation: textclip 1s linear infinite;
+      background-image: linear-gradient(
+        -225deg,
+        #fff 0%,
+        #34ffe0 48%,
+        #5eead4 100%
+      );
+
+      &:before {
+        transition: color 0.3s;
+        background-size: 200% auto;
+        color: var(--primary-color);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: textclip 4.95s linear infinite;
+        background-image: linear-gradient(
+          -225deg,
+          #fff 0%,
+          #34ffe0 48%,
+          #5eead4 100%
+        );
+      }
+    }
+  }
+
   span {
     position: relative;
     display: inline-block;
@@ -151,18 +231,6 @@ $color_meteor: #fff;
     transform-style: preserve-3d;
     animation: flip 10s infinite, textclip 5s linear infinite;
     transition: color 0.3s;
-    background-size: 200% auto;
-    color: var(--primary-color);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    // animation: textclip 1s linear infinite;
-    background-image: linear-gradient(
-      -225deg,
-      #fff 0%,
-      #34ffe0 48%,
-      #5eead4 100%
-    );
 
     &:before {
       position: absolute;
@@ -176,21 +244,140 @@ $color_meteor: #fff;
       text-align: left;
       white-space: nowrap;
     }
+  }
 
-    &:before {
-      transition: color 0.3s;
+  &.flipped::before {
+    color: rgb(210, 73, 54);
+  }
+}
+
+.icontextflip-animate {
+  perspective: 1000px;
+  cursor: default;
+
+  &.color__effect__hover {
+    &:hover {
+      i {
+        background-size: 200% auto;
+        color: var(--primary-color);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: textclip 1s linear infinite;
+        background-image: linear-gradient(
+          -225deg,
+          #fff 0%,
+          #34ffe0 48%,
+          #5eead4 100%
+        );
+      }
+
+      strong {
+        span {
+          background-size: 200% auto;
+          color: var(--primary-color);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          // animation: textclip 1s linear infinite;
+          background-image: linear-gradient(
+            -225deg,
+            #fff 0%,
+            #34ffe0 48%,
+            #5eead4 100%
+          );
+
+          &:before {
+            transition: color 0.3s;
+            background-size: 200% auto;
+            color: var(--primary-color);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textclip 4.95s linear infinite;
+            background-image: linear-gradient(
+              -225deg,
+              #fff 0%,
+              #34ffe0 48%,
+              #5eead4 100%
+            );
+          }
+        }
+      }
+    }
+  }
+  &.color__effect {
+    i {
       background-size: 200% auto;
       color: var(--primary-color);
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      animation: textclip 4.95s linear infinite;
+      animation: textclip 1s linear infinite;
       background-image: linear-gradient(
         -225deg,
         #fff 0%,
         #34ffe0 48%,
         #5eead4 100%
       );
+    }
+
+    strong {
+      span {
+        background-size: 200% auto;
+        color: var(--primary-color);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        // animation: textclip 1s linear infinite;
+        background-image: linear-gradient(
+          -225deg,
+          #fff 0%,
+          #34ffe0 48%,
+          #5eead4 100%
+        );
+
+        &:before {
+          transition: color 0.3s;
+          background-size: 200% auto;
+          color: var(--primary-color);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          animation: textclip 4.95s linear infinite;
+          background-image: linear-gradient(
+            -225deg,
+            #fff 0%,
+            #34ffe0 48%,
+            #5eead4 100%
+          );
+        }
+      }
+    }
+  }
+
+  strong {
+    span {
+      position: relative;
+      display: inline-block;
+      padding: 0;
+      transform-origin: 50% 0;
+      transform-style: preserve-3d;
+      animation: flip 10s infinite, textclip 5s linear infinite;
+      transition: color 0.3s;
+
+      &:before {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: attr(data-flip);
+        transform: rotateX(-90deg);
+        transform-origin: 50% 0;
+        text-align: left;
+        white-space: nowrap;
+      }
     }
   }
 

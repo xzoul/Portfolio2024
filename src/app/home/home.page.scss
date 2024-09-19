@@ -81,6 +81,7 @@ ion-content {
       // left: 3rem;
       z-index: 3;
       backdrop-filter: blur(0.25rem);
+      -webkit-backdrop-filter: blur(0.25rem);
 
       .menu {
         // &__icon {
@@ -345,6 +346,8 @@ ion-content {
               border-radius: 0.25rem;
               overflow: hidden;
               backdrop-filter: blur(0.25rem);
+              -webkit-backdrop-filter: blur(0.25rem);
+
               transition: 0.1s;
               cursor: pointer;
 
@@ -560,20 +563,27 @@ ion-content {
 
           .project__list {
             display: grid;
-            grid-template-columns: repeat(5, minmax(24rem, 1fr));
+            grid-template-columns: repeat(7, minmax(24rem, 1fr));
             // grid-auto-rows: 1fr;
             overflow-x: auto;
             align-items: center;
             width: 100%;
             // height: 100%;
             // max-width: 50rem;
-            gap: 2rem;
+            gap: 3rem;
             padding-block: 2.5rem;
             scrollbar-width: none;
             cursor: grab;
 
             &:active {
               cursor: grabbing;
+            }
+            &:has(.project:hover) {
+              .project {
+                &:not(:hover) {
+                  opacity: 0.5;
+                }
+              }
             }
 
             .project {
@@ -583,17 +593,9 @@ ion-content {
               border-radius: 0.25rem;
               overflow: hidden;
               backdrop-filter: blur(0.25rem);
+              -webkit-backdrop-filter: blur(0.25rem);
               transition: 0.1s;
-              cursor: pointer;
               height: 100%;
-
-              &:has(.project:hover) {
-                .project {
-                  &:not(:hover) {
-                    opacity: 0.5;
-                  }
-                }
-              }
 
               &:hover {
                 background-color: rgba(30, 41, 59, 0.5);
@@ -604,9 +606,95 @@ ion-content {
                 --tw-shadow: inset 0 1px 0 0 rgba(148, 163, 184, 0.1);
                 box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
                   var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+
+                .body {
+                  .links {
+                    .link {
+                      strong {
+                        span {
+                          position: relative;
+                          display: inline-block;
+                          padding: 0;
+                          transform-origin: 50% 0;
+                          transform-style: preserve-3d;
+                          animation: flip 5s infinite,
+                            textclip 5s linear infinite;
+                          transition: color 0.3s;
+
+                          &:before {
+                            position: absolute;
+                            top: 100%;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            content: attr(data-flip);
+                            transform: rotateX(-90deg);
+                            transform-origin: 50% 0;
+                            text-align: left;
+                            white-space: nowrap;
+                          }
+                        }
+                      }
+                      // &:hover {
+
+                      // }
+                    }
+                  }
+                }
               }
 
-              &:not(:has(.links .link:hover)) {
+              &:has(.skills .skill:hover) {
+                .body {
+                  i {
+                    background-size: 200% auto;
+                    color: var(--primary-color);
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    animation: textclip 1s linear infinite;
+                    background-image: linear-gradient(
+                      -225deg,
+                      #fff 0%,
+                      #34ffe0 48%,
+                      #5eead4 100%
+                    );
+                  }
+
+                  strong {
+                    span {
+                      background-size: 200% auto;
+                      color: var(--primary-color);
+                      background-clip: text;
+                      -webkit-background-clip: text;
+                      -webkit-text-fill-color: transparent;
+                      // animation: textclip 1s linear infinite;
+                      background-image: linear-gradient(
+                        -225deg,
+                        #fff 0%,
+                        #34ffe0 48%,
+                        #5eead4 100%
+                      );
+
+                      &:before {
+                        transition: color 0.3s;
+                        background-size: 200% auto;
+                        color: var(--primary-color);
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        animation: textclip 4.95s linear infinite;
+                        background-image: linear-gradient(
+                          -225deg,
+                          #fff 0%,
+                          #34ffe0 48%,
+                          #5eead4 100%
+                        );
+                      }
+                    }
+                  }
+                }
+              }
+              &:not(:has(.skills .skill:hover)) {
                 &:hover {
                   .preview {
                     img {
@@ -642,7 +730,7 @@ ion-content {
               }
 
               .preview {
-                height: 240px;
+                min-height: 15rem;
                 aspect-ratio: 2 / 1;
 
                 img,
@@ -664,6 +752,8 @@ ion-content {
               .body {
                 flex-direction: column;
                 gap: 1rem;
+                // height: 100%;
+                justify-content: space-between;
 
                 .details {
                   gap: 0.5rem;
@@ -674,6 +764,7 @@ ion-content {
                     gap: 0.5rem;
                     font-size: 1rem;
                     color: var(--primary-color);
+                    cursor: pointer;
 
                     a {
                       text-decoration: none;
@@ -691,6 +782,7 @@ ion-content {
                     flex-direction: row;
 
                     span {
+                      min-height: 4lh;
                       line-height: 1.5;
                       font-size: 0.875rem;
                       color: var(--secondary-color);
@@ -706,7 +798,7 @@ ion-content {
                   flex-direction: row;
                   gap: 1rem;
 
-                  a.link {
+                  .link {
                     display: flex;
                     flex-direction: row;
                     gap: 0.375rem;
@@ -715,22 +807,24 @@ ion-content {
                     color: var(--primary-color);
                     cursor: pointer;
 
-                    &:hover {
-                      i,
-                      span {
-                        color: var(--tertiary-color);
-                      }
-                    }
+                    // &:hover {
+                    //   i,
+                    //   span strong {
+                    //     color: var(--tertiary-color);
+                    //   }
+                    // }
 
                     i {
+                      padding-top: 0.125rem;
                       font-size: 0.675rem;
-                      margin-top: 0.25rem;
+                      color: var(--primary-color);
                     }
 
                     span {
-                      font-weight: 600;
+                      // font-weight: 600;
                       font-size: 0.875rem;
                       line-height: 1.25rem;
+                      color: var(--primary-color);
                     }
                   }
                 }
@@ -749,8 +843,20 @@ ion-content {
                     color: rgb(94 234 212);
                     background-color: rgba(45, 212, 191, 0.1);
                     border-radius: 0.75rem;
+                    cursor: pointer;
                   }
                 }
+              }
+
+              .preview__toggle {
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-end;
+                font-size: 0.75rem;
+
+                // ion-toggle {
+                //   width: auto;
+                // }
               }
             }
           }
