@@ -72,8 +72,6 @@ export class HomePage implements AfterViewInit {
     this.startX = event.pageX - this.projectList.offsetLeft;
     this.scrollLeft = this.projectList.scrollLeft;
     this.projectList.style.cursor = 'grabbing';
-
-    // Don't prevent default here to allow normal interaction with elements
   }
 
   @HostListener('window:mouseup', ['$event'])
@@ -88,31 +86,37 @@ export class HomePage implements AfterViewInit {
 
   @HostListener('mousemove', ['$event'])
   onMouseMove(event: MouseEvent) {
-    if (!this.projectList || !this.isMouseDown) return;
+    if (!this.projectList) return;
 
-    const x = event.pageX - this.projectList.offsetLeft;
-    const walk = (x - this.startX) * 2;
+    if (this.isMouseDown) {
+      const x = event.pageX - this.projectList.offsetLeft;
+      const walk = (x - this.startX) * 2;
 
-    // Only start dragging if the mouse has moved a significant amount
-    if (!this.isDragging && Math.abs(walk) > 5) {
-      this.isDragging = true;
-      this.disableIframes();
+      // Only start dragging if the mouse has moved a significant amount
+      if (!this.isDragging && Math.abs(walk) > 5) {
+        this.isDragging = true;
+        this.disableIframes();
+      }
+
+      if (this.isDragging) {
+        this.projectList.scrollLeft = this.scrollLeft - walk;
+        event.preventDefault(); // Prevent text selection only when actually dragging
+      }
     }
 
-    if (this.isDragging) {
-      this.projectList.scrollLeft = this.scrollLeft - walk;
-      event.preventDefault(); // Prevent text selection only when actually dragging
+    // Only update hover effect if not dragging
+    if (!this.isDragging) {
+      this.updateHoverEffect(event);
     }
+  }
 
-    // Existing mouse move logic for content element
+  private updateHoverEffect(event: MouseEvent) {
     const contentElement: HTMLElement = this.ionContent.nativeElement;
     const rect = contentElement.getBoundingClientRect();
     const contentX = event.clientX - rect.left;
     const contentY = event.clientY - rect.top;
-    setTimeout(() => {
-      contentElement.style.setProperty('--x', `${contentX}px`);
-      contentElement.style.setProperty('--y', `${contentY}px`);
-    }, 100);
+    contentElement.style.setProperty('--x', `${contentX}px`);
+    contentElement.style.setProperty('--y', `${contentY}px`);
   }
 
   private disableIframes() {
