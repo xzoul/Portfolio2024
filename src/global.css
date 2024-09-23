@@ -103,204 +103,204 @@
   height: 0;
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
-  border-right: 90px solid #fff;
-  -o-border-image: linear-gradient(to left, #fff, transparent) 1 100%;
-     border-image: linear-gradient(to left, #fff, transparent) 1 100%;
-  border-radius: 0 2px 2px 0;
-  transform: rotate(30deg);
-  position: absolute;
-  top: 24%;
-  left: 45%;
-  opacity: 0;
-  animation: shooting 11s linear infinite;
-  animation-delay: 10s;
-}
-.meteors .meteor:nth-child(2) {
-  width: 0;
-  height: 0;
-  border-top: 1px solid transparent;
-  border-bottom: 1px solid transparent;
-  border-right: 185px solid #fff;
-  -o-border-image: linear-gradient(to left, #fff, transparent) 1 100%;
-     border-image: linear-gradient(to left, #fff, transparent) 1 100%;
-  border-radius: 0 2px 2px 0;
-  transform: rotate(30deg);
-  position: absolute;
-  top: 10%;
-  left: 56%;
-  opacity: 0;
-  animation: shooting 14s linear infinite;
-  animation-delay: 12s;
-}
-.meteors .meteor:nth-child(3) {
-  width: 0;
-  height: 0;
-  border-top: 1px solid transparent;
-  border-bottom: 1px solid transparent;
-  border-right: 182px solid #fff;
-  -o-border-image: linear-gradient(to left, #fff, transparent) 1 100%;
-     border-image: linear-gradient(to left, #fff, transparent) 1 100%;
-  border-radius: 0 2px 2px 0;
-  transform: rotate(30deg);
-  position: absolute;
-  top: 26%;
-  left: 88%;
-  opacity: 0;
-  animation: shooting 11s linear infinite;
-  animation-delay: 12s;
-}
-.meteors .meteor:nth-child(4) {
-  width: 0;
-  height: 0;
-  border-top: 1px solid transparent;
-  border-bottom: 1px solid transparent;
-  border-right: 83px solid #fff;
-  -o-border-image: linear-gradient(to left, #fff, transparent) 1 100%;
-     border-image: linear-gradient(to left, #fff, transparent) 1 100%;
-  border-radius: 0 2px 2px 0;
-  transform: rotate(30deg);
-  position: absolute;
-  top: 64%;
-  left: 56%;
-  opacity: 0;
-  animation: shooting 14s linear infinite;
-  animation-delay: 8s;
-}
-.meteors .meteor:nth-child(5) {
-  width: 0;
-  height: 0;
-  border-top: 1px solid transparent;
-  border-bottom: 1px solid transparent;
-  border-right: 119px solid #fff;
-  -o-border-image: linear-gradient(to left, #fff, transparent) 1 100%;
-     border-image: linear-gradient(to left, #fff, transparent) 1 100%;
-  border-radius: 0 2px 2px 0;
-  transform: rotate(30deg);
-  position: absolute;
-  top: 68%;
-  left: 100%;
-  opacity: 0;
-  animation: shooting 9s linear infinite;
-  animation-delay: 3s;
-}
-.meteors .meteor:nth-child(6) {
-  width: 0;
-  height: 0;
-  border-top: 1px solid transparent;
-  border-bottom: 1px solid transparent;
-  border-right: 151px solid #fff;
+  border-right: 121px solid #fff;
   -o-border-image: linear-gradient(to left, #fff, transparent) 1 100%;
      border-image: linear-gradient(to left, #fff, transparent) 1 100%;
   border-radius: 0 2px 2px 0;
   transform: rotate(30deg);
   position: absolute;
   top: 61%;
+  left: 89%;
+  opacity: 0;
+  animation: shooting 14s linear infinite;
+  animation-delay: 6s;
+}
+.meteors .meteor:nth-child(2) {
+  width: 0;
+  height: 0;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-right: 154px solid #fff;
+  -o-border-image: linear-gradient(to left, #fff, transparent) 1 100%;
+     border-image: linear-gradient(to left, #fff, transparent) 1 100%;
+  border-radius: 0 2px 2px 0;
+  transform: rotate(30deg);
+  position: absolute;
+  top: 64%;
+  left: 67%;
+  opacity: 0;
+  animation: shooting 12s linear infinite;
+  animation-delay: 3s;
+}
+.meteors .meteor:nth-child(3) {
+  width: 0;
+  height: 0;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-right: 91px solid #fff;
+  -o-border-image: linear-gradient(to left, #fff, transparent) 1 100%;
+     border-image: linear-gradient(to left, #fff, transparent) 1 100%;
+  border-radius: 0 2px 2px 0;
+  transform: rotate(30deg);
+  position: absolute;
+  top: 52%;
+  left: 44%;
+  opacity: 0;
+  animation: shooting 10s linear infinite;
+  animation-delay: 6s;
+}
+.meteors .meteor:nth-child(4) {
+  width: 0;
+  height: 0;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-right: 110px solid #fff;
+  -o-border-image: linear-gradient(to left, #fff, transparent) 1 100%;
+     border-image: linear-gradient(to left, #fff, transparent) 1 100%;
+  border-radius: 0 2px 2px 0;
+  transform: rotate(30deg);
+  position: absolute;
+  top: 54%;
+  left: 74%;
+  opacity: 0;
+  animation: shooting 10s linear infinite;
+  animation-delay: 3s;
+}
+.meteors .meteor:nth-child(5) {
+  width: 0;
+  height: 0;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-right: 130px solid #fff;
+  -o-border-image: linear-gradient(to left, #fff, transparent) 1 100%;
+     border-image: linear-gradient(to left, #fff, transparent) 1 100%;
+  border-radius: 0 2px 2px 0;
+  transform: rotate(30deg);
+  position: absolute;
+  top: 2%;
+  left: 79%;
+  opacity: 0;
+  animation: shooting 14s linear infinite;
+  animation-delay: 5s;
+}
+.meteors .meteor:nth-child(6) {
+  width: 0;
+  height: 0;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-right: 90px solid #fff;
+  -o-border-image: linear-gradient(to left, #fff, transparent) 1 100%;
+     border-image: linear-gradient(to left, #fff, transparent) 1 100%;
+  border-radius: 0 2px 2px 0;
+  transform: rotate(30deg);
+  position: absolute;
+  top: 15%;
   left: 57%;
   opacity: 0;
-  animation: shooting 8s linear infinite;
-  animation-delay: 12s;
+  animation: shooting 14s linear infinite;
+  animation-delay: 2s;
 }
 .meteors .meteor:nth-child(7) {
   width: 0;
   height: 0;
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
-  border-right: 199px solid #fff;
+  border-right: 193px solid #fff;
   -o-border-image: linear-gradient(to left, #fff, transparent) 1 100%;
      border-image: linear-gradient(to left, #fff, transparent) 1 100%;
   border-radius: 0 2px 2px 0;
   transform: rotate(30deg);
   position: absolute;
-  top: 79%;
-  left: 71%;
+  top: 67%;
+  left: 61%;
   opacity: 0;
-  animation: shooting 13s linear infinite;
-  animation-delay: 11s;
+  animation: shooting 10s linear infinite;
+  animation-delay: 6s;
 }
 .meteors .meteor:nth-child(8) {
   width: 0;
   height: 0;
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
-  border-right: 159px solid #fff;
+  border-right: 90px solid #fff;
   -o-border-image: linear-gradient(to left, #fff, transparent) 1 100%;
      border-image: linear-gradient(to left, #fff, transparent) 1 100%;
   border-radius: 0 2px 2px 0;
   transform: rotate(30deg);
   position: absolute;
-  top: 7%;
-  left: 93%;
+  top: 66%;
+  left: 95%;
   opacity: 0;
-  animation: shooting 12s linear infinite;
-  animation-delay: 5s;
+  animation: shooting 14s linear infinite;
+  animation-delay: 3s;
 }
 .meteors .meteor:nth-child(9) {
   width: 0;
   height: 0;
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
-  border-right: 147px solid #fff;
+  border-right: 105px solid #fff;
   -o-border-image: linear-gradient(to left, #fff, transparent) 1 100%;
      border-image: linear-gradient(to left, #fff, transparent) 1 100%;
   border-radius: 0 2px 2px 0;
   transform: rotate(30deg);
   position: absolute;
-  top: 24%;
-  left: 56%;
+  top: 31%;
+  left: 42%;
   opacity: 0;
-  animation: shooting 8s linear infinite;
-  animation-delay: 2s;
+  animation: shooting 14s linear infinite;
+  animation-delay: 10s;
 }
 .meteors .meteor:nth-child(10) {
   width: 0;
   height: 0;
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
-  border-right: 150px solid #fff;
+  border-right: 162px solid #fff;
   -o-border-image: linear-gradient(to left, #fff, transparent) 1 100%;
      border-image: linear-gradient(to left, #fff, transparent) 1 100%;
   border-radius: 0 2px 2px 0;
   transform: rotate(30deg);
   position: absolute;
-  top: 74%;
-  left: 93%;
+  top: 45%;
+  left: 81%;
   opacity: 0;
-  animation: shooting 14s linear infinite;
-  animation-delay: 9s;
+  animation: shooting 9s linear infinite;
+  animation-delay: 10s;
 }
 .meteors .meteor:nth-child(11) {
   width: 0;
   height: 0;
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
-  border-right: 168px solid #fff;
+  border-right: 169px solid #fff;
   -o-border-image: linear-gradient(to left, #fff, transparent) 1 100%;
      border-image: linear-gradient(to left, #fff, transparent) 1 100%;
   border-radius: 0 2px 2px 0;
   transform: rotate(30deg);
   position: absolute;
-  top: 48%;
-  left: 78%;
+  top: 71%;
+  left: 47%;
   opacity: 0;
-  animation: shooting 11s linear infinite;
-  animation-delay: 10s;
+  animation: shooting 14s linear infinite;
+  animation-delay: 4s;
 }
 .meteors .meteor:nth-child(12) {
   width: 0;
   height: 0;
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
-  border-right: 133px solid #fff;
+  border-right: 138px solid #fff;
   -o-border-image: linear-gradient(to left, #fff, transparent) 1 100%;
      border-image: linear-gradient(to left, #fff, transparent) 1 100%;
   border-radius: 0 2px 2px 0;
   transform: rotate(30deg);
   position: absolute;
-  top: 4%;
-  left: 93%;
+  top: 49%;
+  left: 82%;
   opacity: 0;
-  animation: shooting 14s linear infinite;
-  animation-delay: 1s;
+  animation: shooting 12s linear infinite;
+  animation-delay: 3s;
 }
 
 @keyframes shooting {
@@ -563,5 +563,49 @@
   }
   100% {
     opacity: 1;
+  }
+}
+.circle__scroll {
+  width: 3rem;
+  aspect-ratio: 1;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--primary-color);
+  border-radius: 50%;
+  position: relative;
+  animation: down 1.5s infinite;
+  -webkit-animation: down 1.5s infinite;
+  transition: color 0.5s;
+  cursor: pointer;
+}
+.circle__scroll::before {
+  content: "";
+  position: absolute;
+  top: 40%;
+  width: 1.25rem;
+  aspect-ratio: 1;
+  border-left: 2px solid var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+  transform: rotate(-45deg) translate(40%, -40%);
+}
+.circle__scroll:hover {
+  border: 2px solid var(--tertiary-color);
+  animation: none;
+  -webkit-animation: none;
+}
+.circle__scroll:hover::before {
+  border-left: 2px solid var(--tertiary-color);
+  border-bottom: 2px solid var(--tertiary-color);
+}
+
+@keyframes down {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translateY(15px);
+  }
+  40% {
+    transform: translate(0);
   }
 }/*# sourceMappingURL=global.css.map */

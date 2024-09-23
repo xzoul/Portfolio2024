@@ -90,9 +90,17 @@ ion-content {
         &__span {
           font-weight: bold;
           cursor: pointer;
+          transition: 0.5s;
+
+          &:hover {
+            color: var(--tertiary-color) !important;
+          }
         }
 
         &__sidebar {
+          flex-direction: row;
+          gap: 2rem;
+
           button {
             &.meteor__toggle {
               background: transparent;
@@ -104,6 +112,12 @@ ion-content {
               &.active {
                 i {
                   color: var(--tertiary-color);
+                }
+
+                &:hover {
+                  i {
+                    color: var(--primary-color);
+                  }
                 }
               }
 
@@ -218,11 +232,29 @@ ion-content {
                       -webkit-backdrop-filter: blur(50%);
                       border-radius: 50%;
                       background-color: rgba(30, 41, 59, 0.5);
+                      cursor: pointer;
 
-                      i {
-                        transition: color 0.5s, font-size 1s;
-                        color: var(--primary-color);
-                        font-size: 3rem;
+                      a {
+                        display: flex;
+                        // width: 100%;
+                        // height: 100%;
+                        align-items: center;
+                        justify-content: center;
+                        text-decoration: none;
+
+                        i {
+                          transition: color 0.5s, font-size 1s;
+                          color: var(--primary-color);
+                          font-size: 3rem;
+                        }
+                      }
+
+                      &:hover {
+                        a {
+                          i {
+                            color: var(--tertiary-color);
+                          }
+                        }
                       }
 
                       // &:first-child {
@@ -323,6 +355,28 @@ ion-content {
           top: 1rem;
           right: 3rem;
         }
+
+        .section__scroll {
+          flex-direction: column;
+          gap: 0.5rem;
+          align-items: center;
+          position: absolute;
+          left: 50%;
+          bottom: 1rem;
+          transform: translateX(-50%);
+
+          span {
+            opacity: 0;
+            transition: 0.5s;
+            cursor: default;
+          }
+
+          &:has(.circle__scroll:hover) {
+            span {
+              opacity: 1;
+            }
+          }
+        }
       }
 
       &#work {
@@ -368,6 +422,17 @@ ion-content {
           overflow-y: scroll;
           // padding-right: rem;
           padding-inline: 0 5rem;
+          position: relative;
+
+          #workExperience {
+            position: absolute;
+            top: 0;
+          }
+
+          #educationExperience {
+            position: absolute;
+            top: 50%;
+          }
 
           &::-webkit-scrollbar-track {
             -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.6);
@@ -420,6 +485,11 @@ ion-content {
               flex-direction: row;
               width: auto;
               padding-inline: 1rem;
+              position: sticky;
+              top: 0;
+              z-index: 2;
+              backdrop-filter: blur(1px);
+              -webkit-backdrop-filter: blur(1px);
 
               .div {
                 align-items: center;
@@ -630,6 +700,72 @@ ion-content {
                 }
               }
             }
+
+            .scroll {
+              display: flex;
+              align-items: center;
+              width: auto;
+              // height: 8rem;
+              // justify-content: space-between;
+              position: absolute;
+              top: 50%;
+              right: 1rem;
+              gap: 2rem;
+
+              span {
+                color: var(--primary-color);
+                transform: rotate(90deg);
+                text-transform: uppercase;
+                font-size: 0.75rem;
+              }
+
+              .arrow {
+                width: 0;
+                height: 4.5rem;
+                border: 1px solid var(--primary-color);
+                position: relative;
+                animation: scroll 1.5s infinite;
+                -webkit-animation: scroll 1.5s infinite;
+                &::after {
+                  content: "";
+                  display: block;
+                  position: absolute;
+                  top: 100%;
+                  left: -5px;
+                  width: 1px;
+                  height: 10px;
+
+                  // triangle
+                  border-top: 10px solid var(--primary-color);
+                  border-left: 5px solid transparent;
+                  border-right: 5px solid transparent;
+                }
+              }
+
+              @keyframes scroll {
+                0% {
+                  height: 4.5rem;
+                }
+                30% {
+                  height: 3rem;
+                }
+                60% {
+                  height: 4.5rem;
+                }
+              }
+
+              @-webkit-keyframes scroll {
+                0% {
+                  height: 4.5rem;
+                }
+                30% {
+                  height: 3rem;
+                }
+                60% {
+                  height: 4.5rem;
+                }
+              }
+            }
           }
         }
       }
@@ -679,6 +815,72 @@ ion-content {
           // overflow-y: scroll;
           // scrollbar-width: none;
           padding-inline: 5rem 0;
+
+          .scroll {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 11rem;
+            // height: 8rem;
+            // justify-content: space-between;
+            position: absolute;
+            left: 50%;
+            // right: 4rem;
+            bottom: 1rem;
+            gap: 2rem;
+
+            span {
+              color: var(--primary-color);
+              // transform: rotate(90deg);
+              text-transform: uppercase;
+              font-size: 0.75rem;
+            }
+
+            .arrow {
+              width: 4.5rem;
+              height: 0;
+              border: 1px solid var(--primary-color);
+              position: relative;
+              animation: scroll-right 1.5s infinite;
+              -webkit-animation: scroll-right 1.5s infinite;
+              &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                top: -5px;
+                right: -5px;
+                width: 0px;
+                height: 0px;
+                border-left: 10px solid var(--primary-color);
+                border-top: 5px solid transparent;
+                border-bottom: 5px solid transparent;
+              }
+            }
+
+            @keyframes scroll-right {
+              0% {
+                width: 4.5rem;
+              }
+              30% {
+                width: 6rem;
+              }
+              60% {
+                width: 4.5rem;
+              }
+            }
+
+            @-webkit-keyframes scroll-right {
+              0% {
+                width: 4.5rem;
+              }
+              30% {
+                width: 6rem;
+              }
+              60% {
+                width: 4.5rem;
+              }
+            }
+          }
 
           .project__list {
             display: grid;

@@ -25,6 +25,24 @@
         <!-- <button type="button" class="meteor__toggle">
           <i class="fa-solid fa-meteor"></i>
         </button> -->
+        <span
+          class="menu__span"
+          data-color="primary-color"
+          (click)="scrollToSection('hero'); toggleSocialMedia($event);"
+          >home</span
+        >
+        <span
+          class="menu__span"
+          data-color="primary-color"
+          (click)="scrollToSection('work')"
+          >about me</span
+        >
+        <span
+          class="menu__span"
+          data-color="primary-color"
+          (click)="scrollToSection('projects')"
+          >projects</span
+        >
         <button
           type="button"
           class="meteor__toggle"
@@ -56,9 +74,30 @@
                 >&nbsp;Jimz.</strong
               >
               <div class="soc__med">
-                <div class="soc"><i class="fa-brands fa-linkedin"></i></div>
-                <div class="soc"><i class="fa-brands fa-github"></i></div>
-                <div class="soc"><i class="fa-brands fa-instagram"></i></div>
+                <div class="soc">
+                  <a
+                    href="https://www.linkedin.com/in/jollyhakdog/"
+                    target="_blank"
+                    rel="noopener"
+                    ><i class="fa-brands fa-linkedin"></i
+                  ></a>
+                </div>
+                <div class="soc">
+                  <a
+                    href="https://www.github.com/xzoul/"
+                    target="_blank"
+                    rel="noopener"
+                    ><i class="fa-brands fa-github"></i
+                  ></a>
+                </div>
+                <div class="soc">
+                  <a
+                    href="https://www.instagram.com/ji_clc/"
+                    target="_blank"
+                    rel="noopener"
+                    ><i class="fa-brands fa-instagram"></i
+                  ></a>
+                </div>
               </div>
             </span>
           </span>
@@ -79,14 +118,19 @@
         <!-- <app-avatar></app-avatar> -->
       </div>
 
-      <div class="scroll__down">
+      <div class="section__scroll">
+        <span class="text-highlight">Scroll Down</span>
+        <div class="circle__scroll" (click)="scrollToSection('work')"></div>
+      </div>
+
+      <!-- <div class="scroll__down">
         <div class="arrows">
           <div class="arrow"></div>
           <div class="arrow"></div>
           <div class="arrow"></div>
         </div>
         <span class="scroll">Scroll Down</span>
-      </div>
+      </div> -->
     </section>
 
     <section id="work" style="display: flex">
@@ -110,8 +154,9 @@
           class="item__button"
           data-color="tertiary-color"
           data-color-bg="transparent-color"
+          (click)="scrollToSection('projects')"
         >
-          <span class="label"><strong>Let's work together</strong></span>
+          <span class="label"><strong>My Projects</strong></span>
         </a>
       </div>
       <div class="work__container">
@@ -141,8 +186,10 @@
           </a>
         </div> -->
         <div class="work__list">
+          <div id="workExperience"></div>
+          <div id="educationExperience"></div>
           <div class="header">
-            <div class="div">
+            <div class="div" (click)="scrollToSection('workExperience')">
               <span><strong>Work Experience</strong></span>
               <i class="fa-solid fa-arrow-up"></i>
             </div>
@@ -225,13 +272,13 @@
             </div>
           </div>
           <div class="header">
-            <div class="div">
+            <div class="div" (click)="scrollToSection('educationExperience')">
               <span><strong>Education</strong></span>
               <i class="fa-solid fa-arrow-up"></i>
             </div>
           </div>
           <div class="work education">
-            <div class="date"><span>Aug 2019 — July 2023</span></div>
+            <div class="date"><span>2019 — 2023</span></div>
             <div class="body">
               <div class="details">
                 <div class="title">
@@ -280,6 +327,11 @@
               </div>
             </div>
           </div>
+          <div class="div"></div>
+          <div class="scroll">
+            <span>scroll</span>
+            <div class="arrow"></div>
+          </div>
         </div>
       </div>
     </section>
@@ -301,6 +353,10 @@
         </div> -->
       </div>
       <div class="section__body">
+        <div class="scroll">
+          <span>scroll</span>
+          <div class="arrow"></div>
+        </div>
         <div class="project__list">
           <div></div>
           <div class="project">

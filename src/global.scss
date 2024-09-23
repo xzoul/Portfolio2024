@@ -519,3 +519,64 @@ $color_meteor: #fff;
     opacity: 1;
   }
 }
+
+.circle__scroll {
+  width: 3rem;
+  aspect-ratio: 1;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--primary-color);
+  border-radius: 50%;
+  position: relative;
+  // padding: 0.5rem;
+  animation: down 1.5s infinite;
+  -webkit-animation: down 1.5s infinite;
+  transition: color 0.5s;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 40%;
+    width: 1.25rem;
+    aspect-ratio: 1;
+    border-left: 2px solid var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    transform: rotate(-45deg) translate(40%, -40%);
+  }
+
+  &:hover {
+    border: 2px solid var(--tertiary-color);
+    animation: none;
+    -webkit-animation: none;
+
+    &::before {
+      border-left: 2px solid var(--tertiary-color);
+      border-bottom: 2px solid var(--tertiary-color);
+    }
+  }
+}
+
+@keyframes down {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translateY(15px);
+  }
+  40% {
+    transform: translate(0);
+  }
+}
+
+@-webkit-keyframes down {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translateY(15px);
+  }
+  40% {
+    transform: translate(0);
+  }
+}
