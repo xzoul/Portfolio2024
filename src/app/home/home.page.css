@@ -255,6 +255,11 @@ ion-content main section#hero .section__scroll {
   left: 50%;
   bottom: 1rem;
   transform: translateX(-50%);
+  opacity: 0.2;
+  transition: 0.4s;
+}
+ion-content main section#hero .section__scroll:hover {
+  opacity: 1;
 }
 ion-content main section#hero .section__scroll span {
   opacity: 0;
@@ -698,12 +703,6 @@ ion-content main section#projects .section__body .project__list .project:has(.sk
   animation: textclip 4.95s linear infinite;
   background-image: linear-gradient(-225deg, #fff 0%, #34ffe0 48%, #5eead4 100%);
 }
-ion-content main section#projects .section__body .project__list .project:not(:has(.skills .skill:hover)):hover .preview img {
-  display: none;
-}
-ion-content main section#projects .section__body .project__list .project:not(:has(.skills .skill:hover)):hover .preview iframe {
-  display: flex;
-}
 ion-content main section#projects .section__body .project__list .project:not(:has(.skills .skill:hover)):hover .body .details .title a {
   background-size: 200% auto;
   color: var(--primary-color);
@@ -720,11 +719,16 @@ ion-content main section#projects .section__body .project__list .project:not(:ha
 ion-content main section#projects .section__body .project__list .project .preview {
   min-height: 15rem;
   aspect-ratio: 2/1;
+  position: relative;
 }
 ion-content main section#projects .section__body .project__list .project .preview img,
 ion-content main section#projects .section__body .project__list .project .preview iframe {
   width: 100%;
   height: 100%;
+  opacity: 1;
+}
+ion-content main section#projects .section__body .project__list .project .preview:has(iframe.active) img {
+  display: none;
 }
 ion-content main section#projects .section__body .project__list .project .preview img {
   display: flex;
@@ -732,6 +736,38 @@ ion-content main section#projects .section__body .project__list .project .previe
 ion-content main section#projects .section__body .project__list .project .preview iframe {
   display: none;
   zoom: 0.25;
+}
+ion-content main section#projects .section__body .project__list .project .preview iframe.active {
+  display: flex;
+}
+ion-content main section#projects .section__body .project__list .project .preview:has(iframe:not(.active)):hover .preview__toggle {
+  display: flex;
+}
+ion-content main section#projects .section__body .project__list .project .preview .preview__toggle {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+ion-content main section#projects .section__body .project__list .project .preview .preview__toggle span {
+  font-size: 1rem;
+  cursor: pointer;
+}
+ion-content main section#projects .section__body .project__list .project .preview .preview__toggle span:hover strong {
+  color: var(--tertiary-color) !important;
+}
+ion-content main section#projects .section__body .project__list .project .preview:hover span {
+  opacity: 1;
+}
+ion-content main section#projects .section__body .project__list .project .preview:hover img {
+  opacity: 0.4;
 }
 ion-content main section#projects .section__body .project__list .project .body {
   flex-direction: column;

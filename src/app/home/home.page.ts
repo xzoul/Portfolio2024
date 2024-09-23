@@ -151,6 +151,7 @@ export class HomePage implements AfterViewInit {
 
   isMeteorsActive: boolean = true;
   isSocialMediaActive: boolean = true;
+  isProjectActive: boolean = false;
 
   toggleMeteors(event: Event): void {
     this.isMeteorsActive = !this.isMeteorsActive;
@@ -158,5 +159,9 @@ export class HomePage implements AfterViewInit {
 
   toggleSocialMedia(event: Event): void {
     this.isSocialMediaActive = !this.isSocialMediaActive;
+  }
+
+  toggleProject(event: Event): void {
+    this.isProjectActive = !this.isProjectActive;
   }
 }

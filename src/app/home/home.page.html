@@ -361,8 +361,17 @@
           <div></div>
           <div class="project">
             <div class="preview">
-              <img src="" alt="" />
-              <iframe src="" frameborder="0"></iframe>
+              <div class="preview__toggle">
+                <span (click)="toggleProject($event)"
+                  ><strong>Preview</strong></span
+                >
+              </div>
+              <img src="/assets/projects/atg.png" alt="" />
+              <iframe
+                src="https://atg-db.netlify.app/"
+                frameborder="0"
+                [ngClass]="{'active': isProjectActive}"
+              ></iframe>
             </div>
             <div class="body">
               <div class="details">
