@@ -73,87 +73,21 @@ export class HomePage implements AfterViewInit {
     }
   }
 
-  @HostListener('mousedown', ['$event'])
-  onMouseDown(event: MouseEvent) {
-    if (!this.projectList) return;
-
-    this.isMouseDown = true;
-    this.startX = event.pageX - this.projectList.offsetLeft;
-    this.scrollLeft = this.projectList.scrollLeft;
-    this.projectList.style.cursor = 'grabbing';
-  }
-
-  @HostListener('window:mouseup', ['$event'])
-  onMouseUp(event: MouseEvent) {
-    if (!this.projectList) return;
-
-    this.isMouseDown = false;
-    this.isDragging = false;
-    this.projectList.style.cursor = 'grab';
-    this.enableIframes();
-  }
-
   @HostListener('mousemove', ['$event'])
   onMouseMove(event: MouseEvent) {
-    if (!this.projectList) return;
-
-    if (this.isMouseDown) {
-      const x = event.pageX - this.projectList.offsetLeft;
-      const walk = (x - this.startX) * 2;
-
-      // Only start dragging if the mouse has moved a significant amount
-      if (!this.isDragging && Math.abs(walk) > 5) {
-        this.isDragging = true;
-        this.disableIframes();
-      }
-
-      if (this.isDragging) {
-        this.projectList.scrollLeft = this.scrollLeft - walk;
-        event.preventDefault(); // Prevent text selection only when actually dragging
-      }
-    }
-
-    // Only update hover effect if not dragging
-    if (!this.isDragging) {
-      this.updateHoverEffect(event);
-    }
-  }
-
-  private updateHoverEffect(event: MouseEvent) {
     const contentElement: HTMLElement = this.ionContent.nativeElement;
     const rect = contentElement.getBoundingClientRect();
     const contentX = event.clientX - rect.left;
     const contentY = event.clientY - rect.top;
-    contentElement.style.setProperty('--x', `${contentX}px`);
-    contentElement.style.setProperty('--y', `${contentY}px`);
-  }
-
-  private disableIframes() {
-    this.iframes.forEach((iframe) => {
-      const tempDiv = this.renderer.createElement('div');
-      this.renderer.setStyle(tempDiv, 'position', 'absolute');
-      this.renderer.setStyle(tempDiv, 'top', '0');
-      this.renderer.setStyle(tempDiv, 'left', '0');
-      this.renderer.setStyle(tempDiv, 'width', '100%');
-      this.renderer.setStyle(tempDiv, 'height', '100%');
-      this.renderer.setStyle(tempDiv, 'z-index', '10000');
-      this.renderer.appendChild(iframe.parentNode, tempDiv);
-      this.tempDivs.push(tempDiv);
-    });
-  }
-
-  private enableIframes() {
-    this.tempDivs.forEach((div) => {
-      if (div.parentNode) {
-        this.renderer.removeChild(div.parentNode, div);
-      }
-    });
-    this.tempDivs = [];
+    setTimeout(() => {
+      contentElement.style.setProperty('--x', `${contentX}px`);
+      contentElement.style.setProperty('--y', `${contentY}px`);
+    }, 100);
   }
 
   isMeteorsActive: boolean = true;
-  isSocialMediaActive: boolean = true;
-  // isProjectActive: boolean = false;
+  isSocialMediaActive: boolean = false;
+  isProjectActive: boolean = false;
 
   toggleMeteors(event: Event): void {
     this.isMeteorsActive = !this.isMeteorsActive;
@@ -163,13 +97,7 @@ export class HomePage implements AfterViewInit {
     this.isSocialMediaActive = !this.isSocialMediaActive;
   }
 
-  // toggleProject(event: Event): void {
-  //   this.isProjectActive = !this.isProjectActive;
-  // }
-
-  isProjectActive: boolean[] = Array(5).fill(false);
-
-  toggleProject(index: number): void {
-    this.isProjectActive[index] = !this.isProjectActive[index];
+  toggleProject(event: Event): void {
+    this.isProjectActive = !this.isProjectActive;
   }
 }
