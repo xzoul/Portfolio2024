@@ -19,6 +19,7 @@ import {
 } from '@ionic/angular/standalone';
 import { CommonModule } from '@angular/common';
 import { AvatarComponent } from 'src/app/components/avatar/avatar.component';
+import { SwiperProjectsComponent } from '../swiper-projects/swiper-projects.component';
 
 @Component({
   selector: 'app-home',
@@ -37,6 +38,7 @@ import { AvatarComponent } from 'src/app/components/avatar/avatar.component';
     IonContent,
     AvatarComponent,
     CommonModule,
+    SwiperProjectsComponent,
   ],
 })
 export class HomePage implements AfterViewInit {
@@ -151,7 +153,7 @@ export class HomePage implements AfterViewInit {
 
   isMeteorsActive: boolean = true;
   isSocialMediaActive: boolean = true;
-  isProjectActive: boolean = false;
+  // isProjectActive: boolean = false;
 
   toggleMeteors(event: Event): void {
     this.isMeteorsActive = !this.isMeteorsActive;
@@ -161,7 +163,13 @@ export class HomePage implements AfterViewInit {
     this.isSocialMediaActive = !this.isSocialMediaActive;
   }
 
-  toggleProject(event: Event): void {
-    this.isProjectActive = !this.isProjectActive;
+  // toggleProject(event: Event): void {
+  //   this.isProjectActive = !this.isProjectActive;
+  // }
+
+  isProjectActive: boolean[] = Array(5).fill(false);
+
+  toggleProject(index: number): void {
+    this.isProjectActive[index] = !this.isProjectActive[index];
   }
 }

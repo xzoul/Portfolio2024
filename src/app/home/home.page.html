@@ -353,24 +353,25 @@
         </div> -->
       </div>
       <div class="section__body">
-        <div class="scroll">
+        <!-- <div class="scroll">
           <span>scroll</span>
           <div class="arrow"></div>
-        </div>
-        <div class="project__list">
+        </div> -->
+        <app-swiper-projects></app-swiper-projects>
+
+        <!-- <div class="project__list">
           <div></div>
+
           <div class="project">
             <div class="preview">
               <div class="preview__toggle">
-                <span (click)="toggleProject($event)"
-                  ><strong>Preview</strong></span
-                >
+                <span (click)="toggleProject(0)"><strong>Preview</strong></span>
               </div>
-              <img src="/assets/projects/atg.png" alt="" />
+              <img src="" alt="" />
               <iframe
-                src="https://atg-db.netlify.app/"
+                src=""
                 frameborder="0"
-                [ngClass]="{'active': isProjectActive}"
+                [ngClass]="{'active': isProjectActive[0]}"
               ></iframe>
             </div>
             <div class="body">
@@ -405,16 +406,18 @@
                 <div class="skill">GitHub</div>
               </div>
             </div>
-            <!-- <div class="preview__toggle">
-              <ion-toggle>Preview</ion-toggle>
-            </div> -->
           </div>
+
           <div class="project">
             <div class="preview">
-              <img src="" alt="" />
+              <div class="preview__toggle">
+                <span (click)="toggleProject(1)"><strong>Preview</strong></span>
+              </div>
+              <img src="/assets/projects/atg.png" alt="" />
               <iframe
                 src="https://atg-db.netlify.app/"
                 frameborder="0"
+                [ngClass]="{'active': isProjectActive[1]}"
               ></iframe>
             </div>
             <div class="body">
@@ -445,9 +448,6 @@
                   <strong>
                     <span data-flip="Personal Project"> Web Development</span>
                   </strong>
-                  <!-- <span
-                    ><strong>Web Development</strong> (Personal Project)</span
-                  > -->
                 </div>
               </div>
               <div class="skills">
@@ -458,14 +458,19 @@
                 <span class="skill">Back4App</span>
               </div>
             </div>
-            <!-- <div class="preview__toggle">
-              <ion-toggle>Preview</ion-toggle>
-            </div> -->
           </div>
+
           <div class="project">
             <div class="preview">
+              <div class="preview__toggle">
+                <span (click)="toggleProject(2)"><strong>Preview</strong></span>
+              </div>
               <img src="" alt="" />
-              <iframe src="https://albuy.netlify.app/" frameborder="0"></iframe>
+              <iframe
+                [ngClass]="{'active': isProjectActive[2]}"
+                src="https://albuy.netlify.app/"
+                frameborder="0"
+              ></iframe>
             </div>
             <div class="body">
               <div class="details">
@@ -504,14 +509,19 @@
                 <div class="skill">Back4App</div>
               </div>
             </div>
-            <!-- <div class="preview__toggle">
-              <ion-toggle>Preview</ion-toggle>
-            </div> -->
           </div>
+
           <div class="project">
             <div class="preview">
+              <div class="preview__toggle">
+                <span (click)="toggleProject(3)"><strong>Preview</strong></span>
+              </div>
               <img src="" alt="" />
-              <iframe src="" frameborder="0"></iframe>
+              <iframe
+                [ngClass]="{'active': isProjectActive[3]}"
+                src=""
+                frameborder="0"
+              ></iframe>
             </div>
             <div class="body">
               <div class="details">
@@ -542,14 +552,19 @@
                 <div class="skill">Data Visualization</div>
               </div>
             </div>
-            <!-- <div class="preview__toggle">
-              <ion-toggle>Preview</ion-toggle>
-            </div> -->
           </div>
+
           <div class="project">
             <div class="preview">
+              <div class="preview__toggle">
+                <span (click)="toggleProject(4)"><strong>Preview</strong></span>
+              </div>
               <img src="" alt="" />
-              <iframe src="" frameborder="0"></iframe>
+              <iframe
+                [ngClass]="{'active': isProjectActive[4]}"
+                src=""
+                frameborder="0"
+              ></iframe>
             </div>
             <div class="body">
               <div class="details">
@@ -581,11 +596,8 @@
                 <div class="skill">Data Visualization</div>
               </div>
             </div>
-            <!-- <div class="preview__toggle">
-              <ion-toggle>Preview</ion-toggle>
-            </div> -->
           </div>
-        </div>
+        </div> -->
       </div>
     </section>
   </main>
