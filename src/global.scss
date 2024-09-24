@@ -561,6 +561,18 @@ $color_meteor: #fff;
   }
 }
 
+@media screen and (max-width: 768px) {
+  .circle__scroll {
+    width: 1.625rem;
+    animation: down 2s infinite;
+    -webkit-animation: down 2s infinite;
+
+    &::before {
+      width: 0.625rem;
+    }
+  }
+}
+
 @keyframes down {
   0% {
     transform: translate(0);

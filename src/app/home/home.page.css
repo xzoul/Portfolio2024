@@ -67,6 +67,9 @@ ion-content main nav {
   backdrop-filter: blur(0.25rem);
   -webkit-backdrop-filter: blur(0.25rem);
 }
+ion-content main nav .menu__icon {
+  visibility: hidden;
+}
 ion-content main nav .menu__span {
   font-weight: bold;
   cursor: pointer;
@@ -616,5 +619,404 @@ ion-content main section#projects .section__body .scroll .arrow::after {
   }
   60% {
     width: 4.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  ion-content main {
+    scrollbar-width: auto; /* Firefox */
+    min-height: 100vh;
+    scroll-snap-type: none;
+  }
+  ion-content main nav {
+    padding: 1rem;
+  }
+  ion-content main nav .menu__icon {
+    visibility: visible;
+    cursor: pointer;
+  }
+  ion-content main nav .menu__icon i {
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    transition: 0.3s;
+  }
+  ion-content main nav .menu__span {
+    visibility: hidden;
+  }
+  ion-content main nav .menu__sidebar button.meteor__toggle {
+    visibility: hidden;
+  }
+  ion-content main section .item__header {
+    font-size: 1.75rem;
+  }
+  ion-content main section .item__subheader {
+    line-height: 1.5;
+    font-size: 0.825rem;
+  }
+  ion-content main section#hero .item {
+    width: 75%;
+  }
+  ion-content main section#hero .item__header {
+    font-size: 2rem;
+  }
+  ion-content main section#hero .item__header span span:has(strong.active) .soc__med .soc a i {
+    font-size: 1.5rem;
+  }
+  ion-content main section#hero .item__header span span .soc__med {
+    width: 7rem;
+  }
+  ion-content main section#hero .item__header span span .soc__med .soc {
+    width: 2.25rem;
+  }
+  ion-content main section#hero .item__subheader {
+    font-size: 0.875rem;
+    width: 80%;
+  }
+  ion-content main section#hero .section__scroll span {
+    font-size: 0.75rem;
+  }
+  ion-content main section#work {
+    display: flex;
+    flex-direction: column;
+    padding-block: 4.25rem 1rem;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 2rem;
+  }
+  ion-content main section#work .about__us {
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    gap: 1.5rem;
+    align-items: flex-start;
+    padding-inline: 0;
+    padding-bottom: 0;
+  }
+  ion-content main section#work .about__us .item__header span {
+    font-size: 3rem;
+  }
+  ion-content main section#work .about__us .body {
+    gap: 1rem;
+  }
+  ion-content main section#work .work__container {
+    width: 100%;
+    height: 100%;
+    gap: 4rem;
+    align-items: start;
+    justify-items: center;
+    overflow-y: scroll;
+    padding-inline: 0 5rem;
+    position: relative;
+  }
+  ion-content main section#work .work__container #workExperience {
+    position: absolute;
+    top: 0;
+  }
+  ion-content main section#work .work__container #educationExperience {
+    position: absolute;
+    top: 50%;
+  }
+  ion-content main section#work .work__container::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.6);
+    border-radius: 1rem;
+  }
+  ion-content main section#work .work__container::-webkit-scrollbar {
+    width: 0.5rem;
+    background-color: transparent;
+    border-radius: 1rem;
+  }
+  ion-content main section#work .work__container::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+  }
+  ion-content main section#work .work__container span {
+    --font-inter: "__inter_20b187", "__inter_Fallback_20b187";
+    font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-weight: 600;
+  }
+  ion-content main section#work .work__container .work__list {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  ion-content main section#work .work__container .work__list .header {
+    flex-direction: row;
+    width: auto;
+    padding-inline: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+  }
+  ion-content main section#work .work__container .work__list .header .div {
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+  }
+  ion-content main section#work .work__container .work__list .header .div:hover span strong {
+    color: var(--tertiary-color);
+  }
+  ion-content main section#work .work__container .work__list .header .div:hover i {
+    transform: translate(0, -0.5rem);
+    color: var(--tertiary-color);
+  }
+  ion-content main section#work .work__container .work__list .header .div i {
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+    rotate: 45deg;
+    transition: 0.3s;
+  }
+  ion-content main section#work .work__container .work__list:has(.work:hover) .work:not(:hover) {
+    opacity: 0.5;
+  }
+  ion-content main section#work .work__container .work__list .work {
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem;
+    gap: 2rem;
+    border-radius: 0.25rem;
+    overflow: hidden;
+    backdrop-filter: blur(0.25rem);
+    -webkit-backdrop-filter: blur(0.25rem);
+    transition: 0.1s;
+    cursor: pointer;
+  }
+  ion-content main section#work .work__container .work__list .work:hover {
+    background-color: rgba(30, 41, 59, 0.5);
+    filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.04)) drop-shadow(0 4px 3px rgba(0, 0, 0, 0.1));
+    --tw-ring-offset-shadow: 0 0 #0000;
+    --tw-ring-shadow: 0 0 #0000;
+    --tw-shadow: inset 0 1px 0 0 rgba(148, 163, 184, 0.1);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)), var(--tw-ring-shadow, 0 0 rgba(0, 0, 0, 0)), var(--tw-shadow);
+  }
+  ion-content main section#work .work__container .work__list .work:not(:has(.links .link:hover)):hover .body .details .title a {
+    background-size: 200% auto;
+    color: var(--primary-color);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 1s linear infinite;
+    background-image: var(--linear-gradient-animate);
+  }
+  ion-content main section#work .work__container .work__list .work:not(:has(.links .link:hover)):hover .body .details .title i {
+    transform: translate(0, -0.5rem);
+    color: var(--tertiary-color);
+  }
+  ion-content main section#work .work__container .work__list .work .date {
+    width: 100%;
+    height: 100%;
+    align-self: flex-start;
+    max-width: 8rem;
+    margin-block: 0.25rem;
+  }
+  ion-content main section#work .work__container .work__list .work .date span {
+    font-weight: 600;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    color: var(--accent-color);
+  }
+  ion-content main section#work .work__container .work__list .work .body {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  ion-content main section#work .work__container .work__list .work .body .details {
+    gap: 0.5rem;
+  }
+  ion-content main section#work .work__container .work__list .work .body .details .title {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    color: var(--primary-color);
+  }
+  ion-content main section#work .work__container .work__list .work .body .details .title a {
+    text-decoration: none;
+  }
+  ion-content main section#work .work__container .work__list .work .body .details .title i {
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+    rotate: 45deg;
+    transition: 0.3s;
+  }
+  ion-content main section#work .work__container .work__list .work .body .details .description {
+    flex-direction: row;
+  }
+  ion-content main section#work .work__container .work__list .work .body .details .description span {
+    line-height: 1.5;
+    font-size: 0.875rem;
+    color: var(--secondary-color);
+  }
+  ion-content main section#work .work__container .work__list .work .body .details .description span i {
+    color: var(--secondary-color);
+  }
+  ion-content main section#work .work__container .work__list .work .body .links {
+    flex-direction: row;
+    gap: 1rem;
+  }
+  ion-content main section#work .work__container .work__list .work .body .links a.link {
+    display: flex;
+    flex-direction: row;
+    gap: 0.375rem;
+    align-items: center;
+    text-decoration: none;
+    color: var(--primary-color);
+    cursor: pointer;
+  }
+  ion-content main section#work .work__container .work__list .work .body .links a.link:hover i,
+  ion-content main section#work .work__container .work__list .work .body .links a.link:hover span {
+    color: var(--tertiary-color);
+  }
+  ion-content main section#work .work__container .work__list .work .body .links a.link i {
+    font-size: 0.675rem;
+    margin-top: 0.25rem;
+  }
+  ion-content main section#work .work__container .work__list .work .body .links a.link span {
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+  ion-content main section#work .work__container .work__list .work .body .skills {
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  ion-content main section#work .work__container .work__list .work .body .skills .skill {
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    padding: 0.25rem 0.75rem;
+    color: rgb(94, 234, 212);
+    background-color: rgba(45, 212, 191, 0.1);
+    border-radius: 0.75rem;
+  }
+  ion-content main section#work .work__container .work__list .work.education .body .details .description {
+    flex-direction: column;
+  }
+  ion-content main section#work .work__container .work__list .scroll {
+    display: flex;
+    align-items: center;
+    width: auto;
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    gap: 2rem;
+  }
+  ion-content main section#work .work__container .work__list .scroll span {
+    color: var(--primary-color);
+    transform: rotate(90deg);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+  }
+  ion-content main section#work .work__container .work__list .scroll .arrow {
+    width: 0;
+    height: 4.5rem;
+    border: 1px solid var(--primary-color);
+    position: relative;
+    animation: scroll 1.5s infinite;
+    -webkit-animation: scroll 1.5s infinite;
+  }
+  ion-content main section#work .work__container .work__list .scroll .arrow::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: -5px;
+    width: 1px;
+    height: 10px;
+    border-top: 10px solid var(--primary-color);
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+  }
+  @keyframes scroll {
+    0% {
+      height: 4.5rem;
+    }
+    30% {
+      height: 3rem;
+    }
+    60% {
+      height: 4.5rem;
+    }
+  }
+  ion-content main section#projects {
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding-block: 4.25rem 2rem;
+    justify-content: flex-start;
+    align-items: center;
+    scroll-snap-align: end;
+    gap: 2rem;
+  }
+  ion-content main section#projects .section__header {
+    width: 100%;
+    align-items: center;
+  }
+  ion-content main section#projects .section__header .title span {
+    font-size: 3rem;
+  }
+  ion-content main section#projects .section__header .title span strong {
+    cursor: default;
+  }
+  ion-content main section#projects .section__header .subtitle {
+    width: 50%;
+  }
+  ion-content main section#projects .section__header .subtitle span {
+    text-align: right;
+    font-size: 1rem;
+  }
+  ion-content main section#projects .section__body {
+    width: 100%;
+    height: 100%;
+    gap: 4rem;
+    align-items: center;
+    justify-content: center;
+  }
+  ion-content main section#projects .section__body .scroll {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 11rem;
+    position: absolute;
+    left: 50%;
+    bottom: 1rem;
+    gap: 2rem;
+  }
+  ion-content main section#projects .section__body .scroll span {
+    color: var(--primary-color);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+  }
+  ion-content main section#projects .section__body .scroll .arrow {
+    width: 4.5rem;
+    height: 0;
+    border: 1px solid var(--primary-color);
+    position: relative;
+    animation: scroll-right 1.5s infinite;
+    -webkit-animation: scroll-right 1.5s infinite;
+  }
+  ion-content main section#projects .section__body .scroll .arrow::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 0px;
+    height: 0px;
+    border-left: 10px solid var(--primary-color);
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+  }
+  @keyframes scroll-right {
+    0% {
+      width: 4.5rem;
+    }
+    30% {
+      width: 6rem;
+    }
+    60% {
+      width: 4.5rem;
+    }
   }
 }/*# sourceMappingURL=home.page.css.map */
