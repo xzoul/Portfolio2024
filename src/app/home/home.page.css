@@ -1,5 +1,5 @@
 ion-content {
-  --background: var(--primary-bg);
+  --background: rgb(var(--color-bg-primary));
   position: relative;
   z-index: 1;
 }
@@ -15,7 +15,14 @@ ion-content::before {
   top: var(--y);
   width: var(--size);
   height: var(--size);
-  background: radial-gradient(circle closest-side, rgba(29, 78, 216, 0.15), transparent 80%);
+  background: radial-gradient(
+    circle closest-side,
+    rgba(
+      var(--color-hover-radial-gradient),
+      var(--opacity-hover-radial-gradient)
+    ),
+    transparent 80%
+  );
   transform: translate(-50%, -50%);
   transition: width 0.2s ease, height 0.2s ease;
   z-index: 1;
@@ -76,7 +83,7 @@ ion-content main nav .menu__span {
   transition: 0.5s;
 }
 ion-content main nav .menu__span:hover {
-  color: var(--tertiary-color) !important;
+  color: rgb(var(--color-button-primary)) !important;
 }
 ion-content main nav .menu__sidebar {
   flex-direction: row;
@@ -86,20 +93,20 @@ ion-content main nav .menu__sidebar button.meteor__toggle {
   background: transparent;
 }
 ion-content main nav .menu__sidebar button.meteor__toggle i {
-  color: var(--primary-color);
+  color: rgb(var(--color-text-primary));
 }
 ion-content main nav .menu__sidebar button.meteor__toggle.active i {
-  color: var(--tertiary-color);
+  color: rgb(var(--color-button-primary));
 }
 ion-content main nav .menu__sidebar button.meteor__toggle.active:hover i {
-  color: var(--primary-color);
+  color: rgb(var(--color-text-primary));
 }
 ion-content main nav .menu__sidebar button.meteor__toggle:not(.active):hover i {
-  color: var(--tertiary-color);
+  color: rgb(var(--color-button-primary));
 }
 ion-content main nav .menu__sidebar i {
   font-size: 1.25rem;
-  color: var(--primary-color);
+  color: rgb(var(--color-text-primary));
   transition: 0.3s;
 }
 ion-content main section {
@@ -127,7 +134,7 @@ ion-content main section .item__subheader {
   font-size: 1.125rem;
 }
 ion-content main section .item__subheader span {
-  color: var(--secondary-color);
+  color: rgb(var(--color-text-secondary));
 }
 ion-content main section .item__button {
   width: auto;
@@ -138,10 +145,10 @@ ion-content main section .item__button {
   cursor: pointer;
 }
 ion-content main section .item__button:hover {
-  background-color: rgba(45, 212, 191, 0.7) !important;
+  background-color: rgba(var(--color-button-bg-primary), 0.7) !important;
 }
 ion-content main section .item__button .label {
-  color: var(--primary-bg);
+  color: rgb(var(--color-bg-primary));
 }
 ion-content main section#hero {
   position: relative;
@@ -165,41 +172,83 @@ ion-content main section#hero .item__header span span strong {
   position: relative;
   z-index: 2;
 }
-ion-content main section#hero .item__header span span:has(strong.active) .soc__med {
+ion-content
+  main
+  section#hero
+  .item__header
+  span
+  span:has(strong.active)
+  .soc__med {
   transform: translate(55%, -50%) rotate(-90deg);
   backdrop-filter: blur(1rem);
   -webkit-backdrop-filter: blur(1rem);
 }
-ion-content main section#hero .item__header span span:has(strong.active) .soc__med .soc {
+ion-content
+  main
+  section#hero
+  .item__header
+  span
+  span:has(strong.active)
+  .soc__med
+  .soc {
   opacity: 1;
   pointer-events: all;
   transition: opacity 0.4s;
   backdrop-filter: blur(50%);
   -webkit-backdrop-filter: blur(50%);
   border-radius: 50%;
-  background-color: rgba(30, 41, 59, 0.5);
+  background-color: rgba(
+    var(--color-bg-secondary),
+    var(--opacity-bg-secondary)
+  );
   cursor: pointer;
 }
-ion-content main section#hero .item__header span span:has(strong.active) .soc__med .soc a {
+ion-content
+  main
+  section#hero
+  .item__header
+  span
+  span:has(strong.active)
+  .soc__med
+  .soc
+  a {
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
 }
-ion-content main section#hero .item__header span span:has(strong.active) .soc__med .soc a i {
+ion-content
+  main
+  section#hero
+  .item__header
+  span
+  span:has(strong.active)
+  .soc__med
+  .soc
+  a
+  i {
   transition: color 0.5s, font-size 1s;
-  color: var(--primary-color);
+  color: rgb(var(--color-text-primary));
   font-size: 3rem;
 }
-ion-content main section#hero .item__header span span:has(strong.active) .soc__med .soc:hover a i {
-  color: var(--tertiary-color);
+ion-content
+  main
+  section#hero
+  .item__header
+  span
+  span:has(strong.active)
+  .soc__med
+  .soc:hover
+  a
+  i {
+  color: rgb(var(--color-button-primary));
 }
 ion-content main section#hero .item__header span span .soc__med {
   width: 14rem;
   border: 2px solid transparent;
-  border-left: 2px solid rgba(255, 255, 255, 0.1019607843);
-  border-right: 2px solid rgba(255, 255, 255, 0.1019607843);
-  border-bottom: 2px solid rgba(255, 255, 255, 0.1019607843);
+  border-left: 2px solid rgba(var(--color-text-primary), 0.1);
+  border-right: 2px solid rgba(var(--color-text-primary), 0.1);
+  border-bottom: 2px solid rgba(var(--color-text-primary), 0.1);
   border-radius: 50%;
   aspect-ratio: 1;
   position: absolute;
@@ -208,7 +257,7 @@ ion-content main section#hero .item__header span span .soc__med {
   transform: translate(55%, -50%) rotate(120deg);
   transition: transform 1s;
   pointer-events: none;
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: inset 0 0 6px rgba(var(--color-black), 0.6);
 }
 ion-content main section#hero .item__header span span .soc__med .soc {
   opacity: 0;
@@ -225,20 +274,41 @@ ion-content main section#hero .item__header span span .soc__med .soc {
   transform: rotate(-270deg);
   z-index: 1;
 }
-ion-content main section#hero .item__header span span .soc__med .soc:first-child {
+ion-content
+  main
+  section#hero
+  .item__header
+  span
+  span
+  .soc__med
+  .soc:first-child {
   left: 0%;
 }
-ion-content main section#hero .item__header span span .soc__med .soc:nth-child(2) {
+ion-content
+  main
+  section#hero
+  .item__header
+  span
+  span
+  .soc__med
+  .soc:nth-child(2) {
   left: 50%;
   bottom: -15%;
 }
-ion-content main section#hero .item__header span span .soc__med .soc:nth-child(3) {
+ion-content
+  main
+  section#hero
+  .item__header
+  span
+  span
+  .soc__med
+  .soc:nth-child(3) {
   left: 85%;
   bottom: 20%;
 }
 ion-content main section#hero .item__header span span .soc__med .soc i {
   transition: color 0.5s, font-size 1s;
-  color: var(--tertiary-color);
+  color: rgb(var(--color-button-primary));
   font-size: 0rem;
 }
 ion-content main section#hero .item__subheader {
@@ -319,7 +389,7 @@ ion-content main section#work .work__container #educationExperience {
   top: 50%;
 }
 ion-content main section#work .work__container::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: inset 0 0 6px rgba(var(--color-black), 0.6);
   border-radius: 1rem;
 }
 ion-content main section#work .work__container::-webkit-scrollbar {
@@ -328,12 +398,15 @@ ion-content main section#work .work__container::-webkit-scrollbar {
   border-radius: 1rem;
 }
 ion-content main section#work .work__container::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(var(--color-text-primary), 0.1);
   border-radius: 1rem;
 }
 ion-content main section#work .work__container span {
   --font-inter: "__inter_20b187", "__inter_Fallback_20b187";
-  font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
   font-weight: 600;
 }
 ion-content main section#work .work__container .work__list {
@@ -355,12 +428,27 @@ ion-content main section#work .work__container .work__list .header .div {
   gap: 0.5rem;
   cursor: pointer;
 }
-ion-content main section#work .work__container .work__list .header .div:hover span strong {
-  color: var(--tertiary-color);
+ion-content
+  main
+  section#work
+  .work__container
+  .work__list
+  .header
+  .div:hover
+  span
+  strong {
+  color: rgb(var(--color-button-primary));
 }
-ion-content main section#work .work__container .work__list .header .div:hover i {
+ion-content
+  main
+  section#work
+  .work__container
+  .work__list
+  .header
+  .div:hover
+  i {
   transform: translate(0, -0.5rem);
-  color: var(--tertiary-color);
+  color: rgb(var(--color-button-primary));
 }
 ion-content main section#work .work__container .work__list .header .div i {
   font-size: 0.75rem;
@@ -368,7 +456,12 @@ ion-content main section#work .work__container .work__list .header .div i {
   rotate: 45deg;
   transition: 0.3s;
 }
-ion-content main section#work .work__container .work__list:has(.work:hover) .work:not(:hover) {
+ion-content
+  main
+  section#work
+  .work__container
+  .work__list:has(.work:hover)
+  .work:not(:hover) {
   opacity: 0.5;
 }
 ion-content main section#work .work__container .work__list .work {
@@ -384,25 +477,45 @@ ion-content main section#work .work__container .work__list .work {
   cursor: pointer;
 }
 ion-content main section#work .work__container .work__list .work:hover {
-  background-color: rgba(30, 41, 59, 0.5);
-  filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.04)) drop-shadow(0 4px 3px rgba(0, 0, 0, 0.1));
-  --tw-ring-offset-shadow: 0 0 #0000;
-  --tw-ring-shadow: 0 0 #0000;
-  --tw-shadow: inset 0 1px 0 0 rgba(148, 163, 184, 0.1);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)), var(--tw-ring-shadow, 0 0 rgba(0, 0, 0, 0)), var(--tw-shadow);
+  background-color: rgba(var(--color-card-bg-hover), 0.5);
+  filter: drop-shadow(0 10px 8px rgba(var(--color-card-shadow), 0.04))
+    drop-shadow(0 4px 3px rgba(var(--color-card-shadow), 0.1));
+  --tw-ring-offset-shadow: 0 0 rgb(var(--color-black));
+  --tw-ring-shadow: 0 0 rgb(var(--color-black));
+  --tw-shadow: inset 0 1px 0 0 rgba(var(--color-card-inset-shadow), 0.1);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 rgb(var(--color-black))),
+    var(--tw-ring-shadow, 0 0 rgb(var(--color-black))), var(--tw-shadow);
 }
-ion-content main section#work .work__container .work__list .work:not(:has(.links .link:hover)):hover .body .details .title a {
+ion-content
+  main
+  section#work
+  .work__container
+  .work__list
+  .work:not(:has(.links .link:hover)):hover
+  .body
+  .details
+  .title
+  a {
   background-size: 200% auto;
-  color: var(--primary-color);
+  color: rgb(var(--color-text-primary));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: textclip 1s linear infinite;
   background-image: var(--linear-gradient-animate);
 }
-ion-content main section#work .work__container .work__list .work:not(:has(.links .link:hover)):hover .body .details .title i {
+ion-content
+  main
+  section#work
+  .work__container
+  .work__list
+  .work:not(:has(.links .link:hover)):hover
+  .body
+  .details
+  .title
+  i {
   transform: translate(0, -0.5rem);
-  color: var(--tertiary-color);
+  color: rgb(var(--color-button-primary));
 }
 ion-content main section#work .work__container .work__list .work .date {
   width: 100%;
@@ -415,64 +528,168 @@ ion-content main section#work .work__container .work__list .work .date span {
   font-weight: 600;
   font-size: 0.75rem;
   line-height: 1rem;
-  color: var(--accent-color);
+  color: rgb(var(--color-text-secondary));
 }
 ion-content main section#work .work__container .work__list .work .body {
   flex-direction: column;
   gap: 1rem;
 }
-ion-content main section#work .work__container .work__list .work .body .details {
+ion-content
+  main
+  section#work
+  .work__container
+  .work__list
+  .work
+  .body
+  .details {
   gap: 0.5rem;
 }
-ion-content main section#work .work__container .work__list .work .body .details .title {
+ion-content
+  main
+  section#work
+  .work__container
+  .work__list
+  .work
+  .body
+  .details
+  .title {
   flex-direction: row;
   align-items: center;
   gap: 0.5rem;
   font-size: 1rem;
-  color: var(--primary-color);
+  color: rgb(var(--color-text-primary));
 }
-ion-content main section#work .work__container .work__list .work .body .details .title a {
+ion-content
+  main
+  section#work
+  .work__container
+  .work__list
+  .work
+  .body
+  .details
+  .title
+  a {
   text-decoration: none;
 }
-ion-content main section#work .work__container .work__list .work .body .details .title i {
+ion-content
+  main
+  section#work
+  .work__container
+  .work__list
+  .work
+  .body
+  .details
+  .title
+  i {
   font-size: 0.75rem;
   margin-top: 0.25rem;
   rotate: 45deg;
   transition: 0.3s;
 }
-ion-content main section#work .work__container .work__list .work .body .details .description {
+ion-content
+  main
+  section#work
+  .work__container
+  .work__list
+  .work
+  .body
+  .details
+  .description {
   flex-direction: row;
 }
-ion-content main section#work .work__container .work__list .work .body .details .description span {
+ion-content
+  main
+  section#work
+  .work__container
+  .work__list
+  .work
+  .body
+  .details
+  .description
+  span {
   line-height: 1.5;
   font-size: 0.875rem;
-  color: var(--secondary-color);
+  color: rgb(var(--color-text-secondary));
 }
-ion-content main section#work .work__container .work__list .work .body .details .description span i {
-  color: var(--secondary-color);
+ion-content
+  main
+  section#work
+  .work__container
+  .work__list
+  .work
+  .body
+  .details
+  .description
+  span
+  i {
+  color: rgb(var(--color-text-secondary));
 }
 ion-content main section#work .work__container .work__list .work .body .links {
   flex-direction: row;
   gap: 1rem;
 }
-ion-content main section#work .work__container .work__list .work .body .links a.link {
+ion-content
+  main
+  section#work
+  .work__container
+  .work__list
+  .work
+  .body
+  .links
+  a.link {
   display: flex;
   flex-direction: row;
   gap: 0.375rem;
   align-items: center;
   text-decoration: none;
-  color: var(--primary-color);
+  color: rgb(var(--color-text-primary));
   cursor: pointer;
 }
-ion-content main section#work .work__container .work__list .work .body .links a.link:hover i,
-ion-content main section#work .work__container .work__list .work .body .links a.link:hover span {
-  color: var(--tertiary-color);
+ion-content
+  main
+  section#work
+  .work__container
+  .work__list
+  .work
+  .body
+  .links
+  a.link:hover
+  i,
+ion-content
+  main
+  section#work
+  .work__container
+  .work__list
+  .work
+  .body
+  .links
+  a.link:hover
+  span {
+  color: rgb(var(--color-button-primary));
 }
-ion-content main section#work .work__container .work__list .work .body .links a.link i {
+ion-content
+  main
+  section#work
+  .work__container
+  .work__list
+  .work
+  .body
+  .links
+  a.link
+  i {
   font-size: 0.675rem;
   margin-top: 0.25rem;
 }
-ion-content main section#work .work__container .work__list .work .body .links a.link span {
+ion-content
+  main
+  section#work
+  .work__container
+  .work__list
+  .work
+  .body
+  .links
+  a.link
+  span {
   font-weight: 600;
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -483,16 +700,32 @@ ion-content main section#work .work__container .work__list .work .body .skills {
   align-items: center;
   flex-wrap: wrap;
 }
-ion-content main section#work .work__container .work__list .work .body .skills .skill {
+ion-content
+  main
+  section#work
+  .work__container
+  .work__list
+  .work
+  .body
+  .skills
+  .skill {
   font-size: 0.75rem;
   line-height: 1.25rem;
   font-weight: 500;
   padding: 0.25rem 0.75rem;
-  color: rgb(94, 234, 212);
-  background-color: rgba(45, 212, 191, 0.1);
+  color: rgb(var(--color-button-primary));
+  background-color: rgba(var(--color-button-primary), 0.1);
   border-radius: 0.75rem;
 }
-ion-content main section#work .work__container .work__list .work.education .body .details .description {
+ion-content
+  main
+  section#work
+  .work__container
+  .work__list
+  .work.education
+  .body
+  .details
+  .description {
   flex-direction: column;
 }
 ion-content main section#work .work__container .work__list .scroll {
@@ -505,7 +738,7 @@ ion-content main section#work .work__container .work__list .scroll {
   gap: 2rem;
 }
 ion-content main section#work .work__container .work__list .scroll span {
-  color: var(--primary-color);
+  color: rgb(var(--color-text-primary));
   transform: rotate(90deg);
   text-transform: uppercase;
   font-size: 0.75rem;
@@ -513,12 +746,18 @@ ion-content main section#work .work__container .work__list .scroll span {
 ion-content main section#work .work__container .work__list .scroll .arrow {
   width: 0;
   height: 4.5rem;
-  border: 1px solid var(--primary-color);
+  border: 1px solid rgb(var(--color-text-primary));
   position: relative;
   animation: scroll 1.5s infinite;
   -webkit-animation: scroll 1.5s infinite;
 }
-ion-content main section#work .work__container .work__list .scroll .arrow::after {
+ion-content
+  main
+  section#work
+  .work__container
+  .work__list
+  .scroll
+  .arrow::after {
   content: "";
   display: block;
   position: absolute;
@@ -526,7 +765,7 @@ ion-content main section#work .work__container .work__list .scroll .arrow::after
   left: -5px;
   width: 1px;
   height: 10px;
-  border-top: 10px solid var(--primary-color);
+  border-top: 10px solid rgb(var(--color-text-primary));
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
 }
@@ -586,14 +825,14 @@ ion-content main section#projects .section__body .scroll {
   gap: 2rem;
 }
 ion-content main section#projects .section__body .scroll span {
-  color: var(--primary-color);
+  color: rgb(var(--color-text-primary));
   text-transform: uppercase;
   font-size: 0.75rem;
 }
 ion-content main section#projects .section__body .scroll .arrow {
   width: 4.5rem;
   height: 0;
-  border: 1px solid var(--primary-color);
+  border: 1px solid rgb(var(--color-text-primary));
   position: relative;
   animation: scroll-right 1.5s infinite;
   -webkit-animation: scroll-right 1.5s infinite;
@@ -606,7 +845,7 @@ ion-content main section#projects .section__body .scroll .arrow::after {
   right: -5px;
   width: 0px;
   height: 0px;
-  border-left: 10px solid var(--primary-color);
+  border-left: 10px solid rgb(var(--color-text-primary));
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
 }
@@ -637,7 +876,7 @@ ion-content main section#projects .section__body .scroll .arrow::after {
   }
   ion-content main nav .menu__icon i {
     font-size: 1.25rem;
-    color: var(--primary-color);
+    color: rgb(var(--color-text-primary));
     transition: 0.3s;
   }
   ion-content main nav .menu__span {
@@ -659,7 +898,16 @@ ion-content main section#projects .section__body .scroll .arrow::after {
   ion-content main section#hero .item__header {
     font-size: 2rem;
   }
-  ion-content main section#hero .item__header span span:has(strong.active) .soc__med .soc a i {
+  ion-content
+    main
+    section#hero
+    .item__header
+    span
+    span:has(strong.active)
+    .soc__med
+    .soc
+    a
+    i {
     font-size: 1.5rem;
   }
   ion-content main section#hero .item__header span span .soc__med {
@@ -717,7 +965,7 @@ ion-content main section#projects .section__body .scroll .arrow::after {
     top: 50%;
   }
   ion-content main section#work .work__container::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: inset 0 0 6px rgba(var(--color-black), 0.6);
     border-radius: 1rem;
   }
   ion-content main section#work .work__container::-webkit-scrollbar {
@@ -726,12 +974,15 @@ ion-content main section#projects .section__body .scroll .arrow::after {
     border-radius: 1rem;
   }
   ion-content main section#work .work__container::-webkit-scrollbar-thumb {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(var(--color-text-primary), 0.1);
     border-radius: 1rem;
   }
   ion-content main section#work .work__container span {
     --font-inter: "__inter_20b187", "__inter_Fallback_20b187";
-    font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
+      BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+      "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol", "Noto Color Emoji";
     font-weight: 600;
   }
   ion-content main section#work .work__container .work__list {
@@ -753,12 +1004,27 @@ ion-content main section#projects .section__body .scroll .arrow::after {
     gap: 0.5rem;
     cursor: pointer;
   }
-  ion-content main section#work .work__container .work__list .header .div:hover span strong {
-    color: var(--tertiary-color);
+  ion-content
+    main
+    section#work
+    .work__container
+    .work__list
+    .header
+    .div:hover
+    span
+    strong {
+    color: rgb(var(--color-button-primary));
   }
-  ion-content main section#work .work__container .work__list .header .div:hover i {
+  ion-content
+    main
+    section#work
+    .work__container
+    .work__list
+    .header
+    .div:hover
+    i {
     transform: translate(0, -0.5rem);
-    color: var(--tertiary-color);
+    color: rgb(var(--color-button-primary));
   }
   ion-content main section#work .work__container .work__list .header .div i {
     font-size: 0.75rem;
@@ -766,7 +1032,12 @@ ion-content main section#projects .section__body .scroll .arrow::after {
     rotate: 45deg;
     transition: 0.3s;
   }
-  ion-content main section#work .work__container .work__list:has(.work:hover) .work:not(:hover) {
+  ion-content
+    main
+    section#work
+    .work__container
+    .work__list:has(.work:hover)
+    .work:not(:hover) {
     opacity: 0.5;
   }
   ion-content main section#work .work__container .work__list .work {
@@ -782,25 +1053,48 @@ ion-content main section#projects .section__body .scroll .arrow::after {
     cursor: pointer;
   }
   ion-content main section#work .work__container .work__list .work:hover {
-    background-color: rgba(30, 41, 59, 0.5);
-    filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.04)) drop-shadow(0 4px 3px rgba(0, 0, 0, 0.1));
-    --tw-ring-offset-shadow: 0 0 #0000;
-    --tw-ring-shadow: 0 0 #0000;
-    --tw-shadow: inset 0 1px 0 0 rgba(148, 163, 184, 0.1);
-    box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)), var(--tw-ring-shadow, 0 0 rgba(0, 0, 0, 0)), var(--tw-shadow);
+    background-color: rgba(
+      var(--color-bg-secondary),
+      var(--opacity-bg-secondary)
+    );
+    --tw-ring-offset-shadow: 0 0 rgb(var(--color-black));
+    --tw-ring-shadow: 0 0 rgb(var(--color-black));
+    --tw-shadow: inset 0 1px 0 0 rgba(var(--color-card-inset-shadow), 0.1);
+    filter: drop-shadow(0 10px 8px rgba(var(--color-black), 0.04))
+      drop-shadow(0 4px 3px rgba(var(--color-black), 0.1));
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 rgb(var(--color-black))),
+      var(--tw-ring-shadow, 0 0 rgb(var(--color-black))), var(--tw-shadow);
   }
-  ion-content main section#work .work__container .work__list .work:not(:has(.links .link:hover)):hover .body .details .title a {
+  ion-content
+    main
+    section#work
+    .work__container
+    .work__list
+    .work:not(:has(.links .link:hover)):hover
+    .body
+    .details
+    .title
+    a {
     background-size: 200% auto;
-    color: var(--primary-color);
-    background-clip: text;
+    color: rgb(var(--color-text-primary));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: textclip 1s linear infinite;
     background-image: var(--linear-gradient-animate);
   }
-  ion-content main section#work .work__container .work__list .work:not(:has(.links .link:hover)):hover .body .details .title i {
+  ion-content
+    main
+    section#work
+    .work__container
+    .work__list
+    .work:not(:has(.links .link:hover)):hover
+    .body
+    .details
+    .title
+    i {
     transform: translate(0, -0.5rem);
-    color: var(--tertiary-color);
+    color: rgb(var(--color-button-primary));
   }
   ion-content main section#work .work__container .work__list .work .date {
     width: 100%;
@@ -813,84 +1107,218 @@ ion-content main section#projects .section__body .scroll .arrow::after {
     font-weight: 600;
     font-size: 0.75rem;
     line-height: 1rem;
-    color: var(--accent-color);
+    color: rgb(var(--color-text-secondary));
   }
   ion-content main section#work .work__container .work__list .work .body {
     flex-direction: column;
     gap: 1rem;
   }
-  ion-content main section#work .work__container .work__list .work .body .details {
+  ion-content
+    main
+    section#work
+    .work__container
+    .work__list
+    .work
+    .body
+    .details {
     gap: 0.5rem;
   }
-  ion-content main section#work .work__container .work__list .work .body .details .title {
+  ion-content
+    main
+    section#work
+    .work__container
+    .work__list
+    .work
+    .body
+    .details
+    .title {
     flex-direction: row;
     align-items: center;
     gap: 0.5rem;
     font-size: 1rem;
-    color: var(--primary-color);
+    color: rgb(var(--color-text-primary));
   }
-  ion-content main section#work .work__container .work__list .work .body .details .title a {
+  ion-content
+    main
+    section#work
+    .work__container
+    .work__list
+    .work
+    .body
+    .details
+    .title
+    a {
     text-decoration: none;
   }
-  ion-content main section#work .work__container .work__list .work .body .details .title i {
+  ion-content
+    main
+    section#work
+    .work__container
+    .work__list
+    .work
+    .body
+    .details
+    .title
+    i {
     font-size: 0.75rem;
     margin-top: 0.25rem;
     rotate: 45deg;
     transition: 0.3s;
   }
-  ion-content main section#work .work__container .work__list .work .body .details .description {
+  ion-content
+    main
+    section#work
+    .work__container
+    .work__list
+    .work
+    .body
+    .details
+    .description {
     flex-direction: row;
   }
-  ion-content main section#work .work__container .work__list .work .body .details .description span {
+  ion-content
+    main
+    section#work
+    .work__container
+    .work__list
+    .work
+    .body
+    .details
+    .description
+    span {
     line-height: 1.5;
     font-size: 0.875rem;
-    color: var(--secondary-color);
+    color: rgb(var(--color-text-secondary));
   }
-  ion-content main section#work .work__container .work__list .work .body .details .description span i {
-    color: var(--secondary-color);
+  ion-content
+    main
+    section#work
+    .work__container
+    .work__list
+    .work
+    .body
+    .details
+    .description
+    span
+    i {
+    color: rgb(var(--color-text-secondary));
   }
-  ion-content main section#work .work__container .work__list .work .body .links {
+  ion-content
+    main
+    section#work
+    .work__container
+    .work__list
+    .work
+    .body
+    .links {
     flex-direction: row;
     gap: 1rem;
   }
-  ion-content main section#work .work__container .work__list .work .body .links a.link {
+  ion-content
+    main
+    section#work
+    .work__container
+    .work__list
+    .work
+    .body
+    .links
+    a.link {
     display: flex;
     flex-direction: row;
     gap: 0.375rem;
     align-items: center;
     text-decoration: none;
-    color: var(--primary-color);
+    color: rgb(var(--color-text-primary));
     cursor: pointer;
   }
-  ion-content main section#work .work__container .work__list .work .body .links a.link:hover i,
-  ion-content main section#work .work__container .work__list .work .body .links a.link:hover span {
-    color: var(--tertiary-color);
+  ion-content
+    main
+    section#work
+    .work__container
+    .work__list
+    .work
+    .body
+    .links
+    a.link:hover
+    i,
+  ion-content
+    main
+    section#work
+    .work__container
+    .work__list
+    .work
+    .body
+    .links
+    a.link:hover
+    span {
+    color: rgb(var(--color-button-primary));
   }
-  ion-content main section#work .work__container .work__list .work .body .links a.link i {
+  ion-content
+    main
+    section#work
+    .work__container
+    .work__list
+    .work
+    .body
+    .links
+    a.link
+    i {
     font-size: 0.675rem;
     margin-top: 0.25rem;
   }
-  ion-content main section#work .work__container .work__list .work .body .links a.link span {
+  ion-content
+    main
+    section#work
+    .work__container
+    .work__list
+    .work
+    .body
+    .links
+    a.link
+    span {
     font-weight: 600;
     font-size: 0.875rem;
     line-height: 1.25rem;
   }
-  ion-content main section#work .work__container .work__list .work .body .skills {
+  ion-content
+    main
+    section#work
+    .work__container
+    .work__list
+    .work
+    .body
+    .skills {
     flex-direction: row;
     gap: 1rem;
     align-items: center;
     flex-wrap: wrap;
   }
-  ion-content main section#work .work__container .work__list .work .body .skills .skill {
+  ion-content
+    main
+    section#work
+    .work__container
+    .work__list
+    .work
+    .body
+    .skills
+    .skill {
     font-size: 0.75rem;
     line-height: 1.25rem;
     font-weight: 500;
     padding: 0.25rem 0.75rem;
-    color: rgb(94, 234, 212);
-    background-color: rgba(45, 212, 191, 0.1);
+    color: rgb(var(--color-button-primary));
+    background-color: rgba(var(--color-button-bg-primary), 0.1);
     border-radius: 0.75rem;
   }
-  ion-content main section#work .work__container .work__list .work.education .body .details .description {
+  ion-content
+    main
+    section#work
+    .work__container
+    .work__list
+    .work.education
+    .body
+    .details
+    .description {
     flex-direction: column;
   }
   ion-content main section#work .work__container .work__list .scroll {
@@ -903,7 +1331,7 @@ ion-content main section#projects .section__body .scroll .arrow::after {
     gap: 2rem;
   }
   ion-content main section#work .work__container .work__list .scroll span {
-    color: var(--primary-color);
+    color: rgb(var(--color-text-primary));
     transform: rotate(90deg);
     text-transform: uppercase;
     font-size: 0.75rem;
@@ -911,12 +1339,18 @@ ion-content main section#projects .section__body .scroll .arrow::after {
   ion-content main section#work .work__container .work__list .scroll .arrow {
     width: 0;
     height: 4.5rem;
-    border: 1px solid var(--primary-color);
+    border: 1px solid rgb(var(--color-text-primary));
     position: relative;
     animation: scroll 1.5s infinite;
     -webkit-animation: scroll 1.5s infinite;
   }
-  ion-content main section#work .work__container .work__list .scroll .arrow::after {
+  ion-content
+    main
+    section#work
+    .work__container
+    .work__list
+    .scroll
+    .arrow::after {
     content: "";
     display: block;
     position: absolute;
@@ -924,7 +1358,7 @@ ion-content main section#projects .section__body .scroll .arrow::after {
     left: -5px;
     width: 1px;
     height: 10px;
-    border-top: 10px solid var(--primary-color);
+    border-top: 10px solid rgb(var(--color-text-primary));
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
   }
@@ -984,14 +1418,14 @@ ion-content main section#projects .section__body .scroll .arrow::after {
     gap: 2rem;
   }
   ion-content main section#projects .section__body .scroll span {
-    color: var(--primary-color);
+    color: rgb(var(--color-text-primary));
     text-transform: uppercase;
     font-size: 0.75rem;
   }
   ion-content main section#projects .section__body .scroll .arrow {
     width: 4.5rem;
     height: 0;
-    border: 1px solid var(--primary-color);
+    border: 1px solid rgb(var(--color-text-primary));
     position: relative;
     animation: scroll-right 1.5s infinite;
     -webkit-animation: scroll-right 1.5s infinite;
@@ -1004,7 +1438,7 @@ ion-content main section#projects .section__body .scroll .arrow::after {
     right: -5px;
     width: 0px;
     height: 0px;
-    border-left: 10px solid var(--primary-color);
+    border-left: 10px solid rgb(var(--color-text-primary));
     border-top: 5px solid transparent;
     border-bottom: 5px solid transparent;
   }
@@ -1019,4 +1453,4 @@ ion-content main section#projects .section__body .scroll .arrow::after {
       width: 4.5rem;
     }
   }
-}/*# sourceMappingURL=home.page.css.map */
+} /*# sourceMappingURL=home.page.css.map */

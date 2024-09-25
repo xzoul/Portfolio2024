@@ -47,7 +47,7 @@
 * {
   //   box-sizing: border-box;
   font-family: "Bitter", serif;
-  color: var(--primary-color);
+  color: rgb(var(--color-text-primary));
   box-sizing: border-box;
 }
 
@@ -59,9 +59,9 @@
       i,
       strong span {
         background-size: 200% auto;
-        color: var(--primary-color);
-        background-clip: text;
+        color: rgb(var(--color-text-primary));
         -webkit-background-clip: text;
+        background-clip: text;
         -webkit-text-fill-color: transparent;
         animation: textclip 1s linear infinite;
         background-image: var(--linear-gradient-animate);
@@ -73,9 +73,9 @@
     i,
     strong span {
       background-size: 200% auto;
-      color: var(--primary-color);
-      background-clip: text;
+      color: rgb(var(--color-text-primary));
       -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
       animation: textclip 1s linear infinite;
       background-image: var(--linear-gradient-animate);
@@ -91,9 +91,9 @@
       background-size: auto auto;
       background-clip: border-box;
       background-size: 200% auto;
-      color: var(--primary-color);
-      background-clip: text;
+      color: rgb(var(--color-text-primary));
       -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
       animation: textclip 1s linear infinite;
       background-image: var(--linear-gradient-animate);
@@ -104,9 +104,9 @@
     background-size: auto auto;
     background-clip: border-box;
     background-size: 200% auto;
-    color: var(--primary-color);
-    background-clip: text;
+    color: rgb(var(--color-text-primary));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: textclip 1s linear infinite;
     background-image: var(--linear-gradient-animate);
@@ -121,7 +121,7 @@
 }
 
 // Vars
-$color_meteor: #fff;
+$color_meteor: rgb(var(--color-text-secondary));
 
 @function random-range($min, $max) {
   @return random($max - $min) + $min;
@@ -182,47 +182,32 @@ $color_meteor: #fff;
   &.color__effect {
     i {
       background-size: 200% auto;
-      color: var(--primary-color);
-      background-clip: text;
+      color: rgb(var(--color-text-primary));
       -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
       // animation: textclip 1s linear infinite;
-      background-image: linear-gradient(
-        -225deg,
-        #fff 0%,
-        #34ffe0 48%,
-        #5eead4 100%
-      );
+      background-image: var(--linear-gradient-animate);
     }
 
     span {
       background-size: 200% auto;
-      color: var(--primary-color);
-      background-clip: text;
+      color: rgb(var(--color-text-primary));
       -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
       // animation: textclip 1s linear infinite;
-      background-image: linear-gradient(
-        -225deg,
-        #fff 0%,
-        #34ffe0 48%,
-        #5eead4 100%
-      );
+      background-image: var(--linear-gradient-animate);
 
       &:before {
         transition: color 0.3s;
         background-size: 200% auto;
-        color: var(--primary-color);
-        background-clip: text;
+        color: rgb(var(--color-text-primary));
         -webkit-background-clip: text;
+        background-clip: text;
         -webkit-text-fill-color: transparent;
         animation: textclip 4.95s linear infinite;
-        background-image: linear-gradient(
-          -225deg,
-          #fff 0%,
-          #34ffe0 48%,
-          #5eead4 100%
-        );
+        background-image: var(--linear-gradient-animate);
       }
     }
   }
@@ -249,10 +234,6 @@ $color_meteor: #fff;
       white-space: nowrap;
     }
   }
-
-  &.flipped::before {
-    color: rgb(210, 73, 54);
-  }
 }
 
 .icontextflip-animate {
@@ -263,48 +244,33 @@ $color_meteor: #fff;
     &:hover {
       i {
         background-size: 200% auto;
-        color: var(--primary-color);
-        background-clip: text;
+        color: rgb(var(--color-text-primary));
         -webkit-background-clip: text;
+        background-clip: text;
         -webkit-text-fill-color: transparent;
         animation: textclip 1s linear infinite;
-        background-image: linear-gradient(
-          -225deg,
-          #fff 0%,
-          #34ffe0 48%,
-          #5eead4 100%
-        );
+        background-image: var(--linear-gradient-animate);
       }
 
       strong {
         span {
           background-size: 200% auto;
-          color: var(--primary-color);
-          background-clip: text;
+          color: rgb(var(--color-text-primary));
           -webkit-background-clip: text;
+          background-clip: text;
           -webkit-text-fill-color: transparent;
           // animation: textclip 1s linear infinite;
-          background-image: linear-gradient(
-            -225deg,
-            #fff 0%,
-            #34ffe0 48%,
-            #5eead4 100%
-          );
+          background-image: var(--linear-gradient-animate);
 
           &:before {
             transition: color 0.3s;
             background-size: 200% auto;
-            color: var(--primary-color);
-            background-clip: text;
+            color: rgb(var(--color-text-primary));
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: textclip 4.95s linear infinite;
-            background-image: linear-gradient(
-              -225deg,
-              #fff 0%,
-              #34ffe0 48%,
-              #5eead4 100%
-            );
+            background-image: var(--linear-gradient-animate);
           }
         }
       }
@@ -313,48 +279,33 @@ $color_meteor: #fff;
   &.color__effect {
     i {
       background-size: 200% auto;
-      color: var(--primary-color);
-      background-clip: text;
+      color: rgb(var(--color-text-primary));
       -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
       animation: textclip 1s linear infinite;
-      background-image: linear-gradient(
-        -225deg,
-        #fff 0%,
-        #34ffe0 48%,
-        #5eead4 100%
-      );
+      background-image: var(--linear-gradient-animate);
     }
 
     strong {
       span {
         background-size: 200% auto;
-        color: var(--primary-color);
-        background-clip: text;
+        color: rgb(var(--color-text-primary));
         -webkit-background-clip: text;
+        background-clip: text;
         -webkit-text-fill-color: transparent;
         // animation: textclip 1s linear infinite;
-        background-image: linear-gradient(
-          -225deg,
-          #fff 0%,
-          #34ffe0 48%,
-          #5eead4 100%
-        );
+        background-image: var(--linear-gradient-animate);
 
         &:before {
           transition: color 0.3s;
           background-size: 200% auto;
-          color: var(--primary-color);
-          background-clip: text;
+          color: rgb(var(--color-text-primary));
           -webkit-background-clip: text;
+          background-clip: text;
           -webkit-text-fill-color: transparent;
           animation: textclip 4.95s linear infinite;
-          background-image: linear-gradient(
-            -225deg,
-            #fff 0%,
-            #34ffe0 48%,
-            #5eead4 100%
-          );
+          background-image: var(--linear-gradient-animate);
         }
       }
     }
@@ -383,10 +334,6 @@ $color_meteor: #fff;
         white-space: nowrap;
       }
     }
-  }
-
-  &.flipped::before {
-    color: rgb(210, 73, 54);
   }
 }
 
@@ -417,7 +364,7 @@ $color_meteor: #fff;
     .scroll {
       display: block;
       font-size: 0.75rem;
-      color: #fff;
+      color: var(--color-white);
       text-transform: uppercase;
       white-space: nowrap;
       opacity: 0.25;
@@ -454,7 +401,7 @@ $color_meteor: #fff;
         content: " ";
         position: absolute;
         top: 0;
-        background: #fff;
+        background: rgb(var(--color-text-primary));
         height: 100%;
         width: 51%;
       }
@@ -529,12 +476,12 @@ $color_meteor: #fff;
   aspect-ratio: 1;
   align-items: center;
   justify-content: center;
-  border: 2px solid var(--primary-color);
+  border: 2px solid rgb(var(--color-text-primary));
   border-radius: 50%;
   position: relative;
   // padding: 0.5rem;
-  animation: down 1.5s infinite;
   -webkit-animation: down 1.5s infinite;
+  animation: down 1.5s infinite;
   transition: color 0.5s;
   cursor: pointer;
 
@@ -544,19 +491,19 @@ $color_meteor: #fff;
     top: 40%;
     width: 1.25rem;
     aspect-ratio: 1;
-    border-left: 2px solid var(--primary-color);
-    border-bottom: 2px solid var(--primary-color);
+    border-left: 2px solid rgb(var(--color-text-primary));
+    border-bottom: 2px solid rgb(var(--color-text-primary));
     transform: rotate(-45deg) translate(40%, -40%);
   }
 
   &:hover {
-    border: 2px solid var(--tertiary-color);
-    animation: none;
+    border: 2px solid rgb(var(--color-button-primary));
     -webkit-animation: none;
+    animation: none;
 
     &::before {
-      border-left: 2px solid var(--tertiary-color);
-      border-bottom: 2px solid var(--tertiary-color);
+      border-left: 2px solid rgb(var(--color-button-primary));
+      border-bottom: 2px solid rgb(var(--color-button-primary));
     }
   }
 }
@@ -564,8 +511,8 @@ $color_meteor: #fff;
 @media screen and (max-width: 768px) {
   .circle__scroll {
     width: 1.625rem;
-    animation: down 2s infinite;
     -webkit-animation: down 2s infinite;
+    animation: down 2s infinite;
 
     &::before {
       width: 0.625rem;
