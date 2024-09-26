@@ -1,117 +1,242 @@
-:roottt {
-  --color-bg-primary: rgb(15, 23, 42);
-  --color-bg-secondary: rgb(30, 41, 59);
-  --opacity-bg-secondary: 0.5;
-  --color-bg-transparent: transparent;
-  --color-card-bg-hover: var(--color-bg-secondary);
-  --color-card-inset-shadow: rgb(148, 163, 184);
-  --color-card-shadow: var(--color-black);
-  --color-text-primary: rgb(226, 232, 240);
-  --color-text-secondary: rgb(148, 163, 184);
-  --color-text-transparent: transparent;
-  --color-button-primary: rgb(94, 234, 212);
-  --color-button-secondary: rgb(52, 255, 224);
-  --color-button-bg-primary: rgb(45, 212, 191);
-  --color-hover-radial-gradient: rgb(29, 78, 216);
-  --opacity-hover-radial-gradient: 0.15;
+:root {
   --linear-gradient-animate: linear-gradient(
     -225deg,
     rgb(var(--color-white)) 0%,
     rgb(var(--color-button-secondary)) 48%,
     rgb(var(--color-button-primary)) 100%
   );
-  --color-white: rgb(255, 255, 255);
-  --color-black: rgb(0, 0, 0);
 }
-
-:root {
+:root.britanny {
+  --color-bg-primary: 15, 23, 42;
+  --color-bg-secondary: 30, 41, 59;
+  --opacity-bg-secondary: 0.5;
+  --color-bg-transparent: transparent;
+  --color-card-bg-hover: var(--color-bg-secondary);
+  --color-card-inset-shadow: rg(148, 163, 184);
+  --color-card-shadow: var(--color-black);
+  --color-text-primary: 226, 232, 240;
+  --color-text-secondary: 148, 163, 184;
+  --color-text-transparent: transparent;
+  --color-button-primary: 94, 234, 212;
+  --color-button-secondary: 52, 255, 224;
+  --color-button-bg-primary: 45, 212, 191;
+  --color-hover-radial-gradient: 29, 78, 216;
+  --opacity-hover-radial-gradient: 0.15;
+  --color-white: 255, 255, 255;
+  --color-black: 0, 0, 0;
+}
+:root.tron-orange {
   --color-bg-primary: 13, 28, 28;
-  --color-bg-secondary: 26, 56, 56;
+  --color-bg-secondary: 28, 46, 45;
   --opacity-bg-secondary: 0.5;
   --color-bg-transparent: transparent;
   --color-text-primary: 255, 102, 0;
   --color-text-secondary: 226, 232, 240;
   --color-text-transparent: transparent;
   --color-button-primary: 240, 232, 0;
-  --color-button-secondary: 255, 247, 102;
+  --color-button-secondary: 198, 253, 12;
   --color-button-bg-primary: var(--color-button-primary);
   --color-card-bg-hover: 30, 41, 59;
-  --color-card-inset-shadow: 102, 128, 128;
+  --color-card-inset-shadow: 148, 163, 184;
   --color-card-shadow: var(--color-black);
-  --color-hover-radial-gradient: 175, 76, 4;
+  --color-hover-radial-gradient: 255, 74, 0;
   --opacity-hover-radial-gradient: 0.15;
-  --linear-gradient-animate: linear-gradient(
-    -225deg,
-    rgb(var(--color-white)) 0%,
-    rgb(var(--color-button-secondary)) 48%,
-    rgb(var(--color-button-primary)) 100%
-  );
+  --color-white: 255, 255, 255;
+  --color-black: 0, 0, 0;
+}
+:root.joker {
+  --color-bg-primary: 26, 14, 37;
+  --color-bg-secondary: 41, 32, 54;
+  --opacity-bg-secondary: 0.5;
+  --color-bg-transparent: transparent;
+  --color-text-primary: 117, 84, 163;
+  --color-text-secondary: 233, 226, 245;
+  --color-text-transparent: transparent;
+  --color-button-primary: 153, 222, 30;
+  --color-button-secondary: 111, 243, 42;
+  --color-button-bg-primary: var(--color-button-primary);
+  --color-card-bg-hover: var(--color-bg-secondary);
+  --color-card-inset-shadow: 148, 163, 184;
+  --color-card-shadow: var(--color-black);
+  --color-hover-radial-gradient: 234, 64, 0;
+  --opacity-hover-radial-gradient: 0.15;
+  --color-white: 255, 255, 255;
+  --color-black: 0, 0, 0;
+}
+:root.anti-hero {
+  --color-bg-primary: 0, 0, 46;
+  --color-bg-secondary: 15, 18, 63;
+  --opacity-bg-secondary: 0.5;
+  --color-bg-transparent: transparent;
+  --color-text-primary: 255, 61, 139;
+  --color-text-secondary: 241, 222, 239;
+  --color-text-transparent: transparent;
+  --color-button-primary: 255, 173, 173;
+  --color-button-secondary: 213, 194, 185;
+  --color-button-bg-primary: 206, 151, 152;
+  --color-card-bg-hover: var(--color-bg-secondary);
+  --color-card-inset-shadow: 148, 163, 184;
+  --color-card-shadow: var(--color-black);
+  -color-hover-radial-gradient: 255, 15, 0;
+  --opacity-hover-radial-gradient: 0.15;
+  --color-white: 255, 255, 255;
+  --color-black: 0, 0, 0;
+}
+:root.floret {
+  --color-bg-primary: 0, 39, 44;
+  --color-bg-secondary: 15, 57, 61;
+  --opacity-bg-secondary: 0.5;
+  --color-bg-transparent: transparent;
+  --color-text-primary: 119, 144, 151;
+  --color-text-secondary: 229, 229, 229;
+  --color-text-transparent: transparent;
+  --color-button-primary: 255, 221, 109;
+  --color-button-secondary: 213, 242, 121;
+  --color-button-bg-primary: 206, 199, 88;
+  --color-card-bg-hover: var(--color-bg-secondary);
+  --color-card-inset-shadow: 148, 163, 184;
+  --color-card-shadow: var(--color-black);
+  --color-hover-radial-gradient: 255, 63, 0;
+  --opacity-hover-radial-gradient: 0.15;
+  --color-white: 255, 255, 255;
+  --color-black: 0, 0, 0;
+}
+:root.dino {
+  --color-bg-primary: 255, 255, 255;
+  --color-bg-secondary: 240, 237, 238;
+  --opacity-bg-secondary: 0.5;
+  --color-bg-transparent: transparent;
+  --color-text-primary: 213, 213, 213;
+  --color-text-secondary: 29, 34, 31;
+  --color-text-transparent: transparent;
+  --color-button-primary: 64, 214, 114;
+  --color-button-secondary: 22, 235, 126;
+  --color-button-bg-primary: 15, 192, 93;
+  --color-card-bg-hover: var(--color-bg-secondary);
+  --color-card-inset-shadow: 148, 163, 184;
+  --color-card-shadow: var(--color-black);
+  --color-hover-radial-gradient: 145, 56, 0;
+  --opacity-hover-radial-gradient: 0.15;
+  --color-white: 255, 255, 255;
+  --color-black: 0, 0, 0;
+}
+:root.rainbow-trail {
+  --color-bg-primary: 245, 245, 245;
+  --color-bg-secondary: 230, 227, 228;
+  --opacity-bg-secondary: 0.5;
+  --color-bg-transparent: transparent;
+  --color-text-primary: 79, 79, 79;
+  --color-text-secondary: 31, 31, 31;
+  --color-text-transparent: transparent;
+  --color-button-primary: 54, 54, 54;
+  --color-button-secondary: 12, 75, 66;
+  --color-button-bg-primary: 5, 32, 33;
+  --color-card-bg-hover: var(--color-bg-secondary);
+  --color-card-inset-shadow: 148, 163, 184;
+  --color-card-shadow: var(--color-black);
+  --color-hover-radial-gradient: 135, 0, 0;
+  --opacity-hover-radial-gradient: 0.15;
+  --color-white: 255, 255, 255;
+  --color-black: 0, 0, 0;
+}
+:root.husqy {
+  --color-bg-primary: 0, 0, 0;
+  --color-bg-secondary: 15, 18, 17;
+  --opacity-bg-secondary: 0.5;
+  --color-bg-transparent: transparent;
+  --color-text-primary: 151, 47, 255;
+  --color-text-secondary: 235, 215, 255;
+  --color-text-transparent: transparent;
+  --color-button-primary: 197, 138, 255;
+  --color-button-secondary: 155, 159, 255;
+  --color-button-bg-primary: 148, 116, 234;
+  --color-card-bg-hover: var(--color-bg-secondary);
+  --color-card-inset-shadow: 148, 163, 184;
+  --color-card-shadow: var(--color-black);
+  --color-hover-radial-gradient: 255, 0, 47;
+  --opacity-hover-radial-gradient: 0.15;
+  --color-white: 255, 255, 255;
+  --color-black: 0, 0, 0;
+}
+:root.matrix {
+  --color-bg-primary: 0, 0, 0;
+  --color-bg-secondary: 15, 18, 17;
+  --opacity-bg-secondary: 0.5;
+  --color-bg-transparent: transparent;
+  --color-text-primary: 0, 101, 0;
+  --color-text-secondary: 209, 255, 205;
+  --color-text-transparent: transparent;
+  --color-button-primary: 21, 255, 0;
+  --color-button-secondary: 0, 255, 12;
+  --color-button-bg-primary: 0, 233, 0;
+  --color-card-bg-hover: var(--color-bg-secondary);
+  --color-card-inset-shadow: 148, 163, 184;
+  --color-card-shadow: var(--color-black);
+  --color-hover-radial-gradient: 102, 97, 0;
+  --opacity-hover-radial-gradient: 0.15;
+  --color-white: 255, 255, 255;
+  --color-black: 0, 0, 0;
+}
+:root.cyberspace {
+  --color-bg-primary: 24, 28, 24;
+  --color-bg-secondary: 39, 46, 41;
+  --opacity-bg-secondary: 0.5;
+  --color-bg-transparent: transparent;
+  --color-text-primary: 149, 120, 211;
+  --color-text-secondary: 194, 251, 225;
+  --color-text-transparent: transparent;
+  --color-button-primary: 0, 206, 124;
+  --color-button-secondary: 0, 227, 136;
+  --color-button-bg-primary: 0, 184, 103;
+  --color-card-bg-hover: var(--color-bg-secondary);
+  --color-card-inset-shadow: 148, 163, 184;
+  --color-card-shadow: var(--color-black);
+  --color-hover-radial-gradient: 81, 48, 0;
+  --opacity-hover-radial-gradient: 0.15;
   --color-white: 255, 255, 255;
   --color-black: 0, 0, 0;
 }
 
-:theme-tron-orange {
-  --color-bg-primary: rgb(13, 28, 28);
-  --color-bg-secondary: rgb(26, 56, 56);
-  --opacity-bg-secondary: 0.5;
-  --color-bg-transparent: transparent;
-  --color-text-primary: rgb(255, 102, 0);
-  --color-text-secondary: rgb(226, 232, 240);
-  --color-text-transparent: transparent;
-  --color-button-primary: rgb(240, 232, 0);
-  --color-button-secondary: rgb(255, 247, 102);
-  --color-button-bg-primary: var(--color-button-primary);
-  --color-card-bg-hover: rgb(30, 41, 59);
-  --color-card-inset-shadow: rgb(102, 128, 128);
-  --color-card-shadow: var(--color-black);
-  --color-hover-radial-gradient: rgb(175, 76, 4);
-  --opacity-hover-radial-gradient: 0.15;
-  --linear-gradient-animate: linear-gradient(
-    -225deg,
-    rgb(var(--color-white)) 0%,
-    rgb(var(--color-button-secondary)) 48%,
-    rgb(var(--color-button-primary)) 100%
-  );
-  --color-white: rgb(255, 255, 255);
-  --color-black: rgb(0, 0, 0);
-}
-
 [data-color=primary-bg] {
-  color: var(--color-bg-primary) !important;
+  color: rgb(var(--color-bg-primary)) !important;
 }
 
 [data-color=primary-color] {
-  color: var(--color-text-primary) !important;
+  color: rgb(var(--color-text-primary)) !important;
 }
 
 [data-color=secondary-color] {
-  color: var(--color-text-secondary) !important;
+  color: rgb(var(--color-text-secondary)) !important;
 }
 
 [data-color=tertiary-color] {
-  color: var(--color-button-primary) !important;
+  color: rgb(var(--color-button-primary)) !important;
+}
+
+[data-color=header-color] {
+  color: rgb(var(--color-button-primary, --color-text-primary)) !important;
 }
 
 [data-color=transparent-color] {
-  color: var(--color-text-transparent) !important;
+  color: rgb(var(--color-text-transparent)) !important;
 }
 
 [data-color-bg=primary-bg] {
-  background-color: var(--color-bg-primary) !important;
+  background-color: rgb(var(--color-bg-primary)) !important;
 }
 
 [data-color-bg=primary-color] {
-  background-color: var(--color-text-primary) !important;
+  background-color: rgb(var(--color-text-primary)) !important;
 }
 
 [data-color-bg=secondary-color] {
-  background-color: var(--color-text-secondary) !important;
+  background-color: rgb(var(--color-text-secondary)) !important;
 }
 
 [data-color-bg=tertiary-color] {
-  background-color: var(--color-button-primary) !important;
+  background-color: rgb(var(--color-button-primary)) !important;
 }
 
 [data-color-bg=transparent-color] {
-  background-color: var(--color-text-transparent) !important;
+  background-color: rgb(var(--color-text-transparent)) !important;
 }/*# sourceMappingURL=variables.css.map */

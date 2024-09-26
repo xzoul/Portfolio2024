@@ -111,6 +111,18 @@
     animation: textclip 1s linear infinite;
     background-image: var(--linear-gradient-animate);
   }
+
+  &.active {
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: rgb(var(--color-text-primary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 1s linear infinite;
+    background-image: var(--linear-gradient-animate);
+  }
 }
 
 // Animations

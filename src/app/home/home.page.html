@@ -17,7 +17,7 @@
     <nav>
       <div class="menu">
         <div class="menu__icon"><i class="fa-solid fa-bars"></i></div>
-        <span class="menu__span" data-color="primary-color"
+        <span class="menu__span" data-color="header-color"
           >&#64;delacruzjimmy</span
         >
       </div>
@@ -43,6 +43,65 @@
           (click)="scrollToSection('projects')"
           >projects</span
         >
+        <div class="themes">
+          <div
+            class="themes__list"
+            (click)="toggleTheme($event)"
+            [ngClass]="{'collapsed': isThemeCollapsed}"
+          >
+            <div class="theme default" data-theme="active"></div>
+            <div
+              class="theme"
+              data-theme="britanny"
+              (click)="changeActiveTheme('britanny')"
+            ></div>
+            <div
+              class="theme"
+              data-theme="tron-orange"
+              (click)="changeActiveTheme('tron-orange')"
+            ></div>
+            <div
+              class="theme"
+              data-theme="joker"
+              (click)="changeActiveTheme('joker')"
+            ></div>
+            <div
+              class="theme"
+              data-theme="anti-hero"
+              (click)="changeActiveTheme('anti-hero')"
+            ></div>
+            <div
+              class="theme"
+              data-theme="floret"
+              (click)="changeActiveTheme('floret')"
+            ></div>
+            <div
+              class="theme"
+              data-theme="dino"
+              (click)="changeActiveTheme('dino')"
+            ></div>
+            <div
+              class="theme"
+              data-theme="rainbow-trail"
+              (click)="changeActiveTheme('rainbow-trail')"
+            ></div>
+            <div
+              class="theme"
+              data-theme="husqy"
+              (click)="changeActiveTheme('husqy')"
+            ></div>
+            <div
+              class="theme"
+              data-theme="matrix"
+              (click)="changeActiveTheme('matrix')"
+            ></div>
+            <div
+              class="theme"
+              data-theme="cyberspace"
+              (click)="changeActiveTheme('cyberspace')"
+            ></div>
+          </div>
+        </div>
         <button
           type="button"
           class="meteor__toggle"

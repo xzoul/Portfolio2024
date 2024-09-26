@@ -5,6 +5,7 @@ import {
   ViewChild,
   AfterViewInit,
   Renderer2,
+  RendererFactory2,
 } from '@angular/core';
 import {
   IonHeader,
@@ -52,8 +53,25 @@ export class HomePage implements AfterViewInit {
   private projectList: HTMLElement | null = null;
   private iframes: HTMLIFrameElement[] = [];
   private tempDivs: HTMLDivElement[] = [];
+  private renderer: Renderer2;
+  private defaultTheme: string = 'britanny';
+  private currentTheme: string | null = null;
 
-  constructor(private el: ElementRef, private renderer: Renderer2) {}
+  constructor(
+    private el: ElementRef,
+    private rendererFactory: RendererFactory2
+  ) {
+    this.renderer = rendererFactory.createRenderer(null, null);
+  }
+
+  ngOnInit() {
+    const savedTheme = localStorage.getItem('selectedTheme');
+    if (savedTheme) {
+      this.changeActiveTheme(savedTheme);
+    } else {
+      this.setDefaultTheme();
+    }
+  }
 
   ngAfterViewInit() {
     this.projectList = this.el.nativeElement.querySelector('.project__list');
@@ -88,6 +106,7 @@ export class HomePage implements AfterViewInit {
   isMeteorsActive: boolean = true;
   isSocialMediaActive: boolean = false;
   isProjectActive: boolean = false;
+  isThemeCollapsed: boolean = false;
 
   toggleMeteors(event: Event): void {
     this.isMeteorsActive = !this.isMeteorsActive;
@@ -99,5 +118,40 @@ export class HomePage implements AfterViewInit {
 
   toggleProject(event: Event): void {
     this.isProjectActive = !this.isProjectActive;
+  }
+
+  toggleTheme(event: Event): void {
+    this.isThemeCollapsed = !this.isThemeCollapsed;
+  }
+
+  setDefaultTheme() {
+    if (!this.currentTheme) {
+      this.changeActiveTheme(this.defaultTheme);
+    }
+  }
+
+  changeActiveTheme(theme: string): void {
+    // Remove active class from previous theme
+    if (this.currentTheme) {
+      this.renderer.removeClass(document.documentElement, this.currentTheme);
+      const prevActiveElement = document.querySelector(
+        `.theme[data-theme="${this.currentTheme}"]`
+      );
+      if (prevActiveElement) {
+        this.renderer.removeClass(prevActiveElement, 'active');
+      }
+    }
+
+    // Add new theme class to root and active class to clicked element
+    this.renderer.addClass(document.documentElement, theme);
+    const newActiveElement = document.querySelector(
+      `.theme[data-theme="${theme}"]`
+    );
+    if (newActiveElement) {
+      this.renderer.addClass(newActiveElement, 'active');
+    }
+
+    this.currentTheme = theme;
+    localStorage.setItem('selectedTheme', theme);
   }
 }

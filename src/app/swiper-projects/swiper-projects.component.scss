@@ -19,6 +19,14 @@
     padding-bottom: 3rem;
     box-sizing: border-box;
 
+    &:has(.project:hover) {
+      .project {
+        &:not(:hover) {
+          opacity: 0.5;
+        }
+      }
+    }
+
     .project {
       display: flex;
       flex-direction: column;
@@ -146,7 +154,7 @@
                 }
 
                 i {
-                  transform: translate(0, -0.5rem);
+                  transform: translate(0, -0.5rem) rotate(45deg);
                   color: rgb(var(--color-button-primary));
                 }
               }

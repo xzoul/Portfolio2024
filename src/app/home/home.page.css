@@ -15,14 +15,7 @@ ion-content::before {
   top: var(--y);
   width: var(--size);
   height: var(--size);
-  background: radial-gradient(
-    circle closest-side,
-    rgba(
-      var(--color-hover-radial-gradient),
-      var(--opacity-hover-radial-gradient)
-    ),
-    transparent 80%
-  );
+  background: radial-gradient(circle closest-side, rgba(var(--color-hover-radial-gradient), var(--opacity-hover-radial-gradient)), transparent 80%);
   transform: translate(-50%, -50%);
   transition: width 0.2s ease, height 0.2s ease;
   z-index: 1;
@@ -83,11 +76,14 @@ ion-content main nav .menu__span {
   transition: 0.5s;
 }
 ion-content main nav .menu__span:hover {
-  color: rgb(var(--color-button-primary)) !important;
+  color: rgb(var(--color-text-secondary)) !important;
 }
 ion-content main nav .menu__sidebar {
   flex-direction: row;
   gap: 2rem;
+}
+ion-content main nav .menu__sidebar button {
+  outline: none;
 }
 ion-content main nav .menu__sidebar button.meteor__toggle {
   background: transparent;
@@ -108,6 +104,97 @@ ion-content main nav .menu__sidebar i {
   font-size: 1.25rem;
   color: rgb(var(--color-text-primary));
   transition: 0.3s;
+}
+ion-content main nav .menu__sidebar .themes {
+  position: relative;
+  width: 1.3125rem;
+}
+ion-content main nav .menu__sidebar .themes .themes__list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  flex-direction: column;
+  gap: 1rem;
+}
+ion-content main nav .menu__sidebar .themes .themes__list:hover .theme, ion-content main nav .menu__sidebar .themes .themes__list.collapsed .theme {
+  display: flex;
+  opacity: 1;
+}
+ion-content main nav .menu__sidebar .themes .themes__list.collapsed .theme.default {
+  transform: scale(1.15);
+  background: rgb(var(--color-bg-primary));
+}
+ion-content main nav .menu__sidebar .themes .themes__list .theme {
+  display: none;
+  width: 1.3125rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px solid rgb(var(--color-text-primary));
+  cursor: pointer;
+  transition: opacity 1.5s, transform 0.5s;
+  opacity: 0;
+  background: linear-gradient(to right, rgb(var(--color-button-primary)) calc(33.3333333333% - 1px), rgb(var(--color-text-primary)) 33.3333333333% 66.6666666667%, rgb(var(--color-text-secondary)) calc(66.6666666667% - 1px));
+}
+ion-content main nav .menu__sidebar .themes .themes__list .theme:hover {
+  transform: scale(1.15);
+}
+ion-content main nav .menu__sidebar .themes .themes__list .theme.default {
+  display: flex;
+  opacity: 1;
+}
+ion-content main nav .menu__sidebar .themes .themes__list .theme.active {
+  display: none;
+  opacity: 0;
+}
+ion-content main nav .menu__sidebar .themes .themes__list .theme[data-theme=britanny] {
+  --color-text-primary: 226, 232, 240;
+  --color-text-secondary: 148, 163, 184;
+  --color-button-primary: 94, 234, 212;
+}
+ion-content main nav .menu__sidebar .themes .themes__list .theme[data-theme=tron-orange] {
+  --color-text-primary: 255, 102, 0;
+  --color-text-secondary: 226, 232, 240;
+  --color-button-primary: 240, 232, 0;
+}
+ion-content main nav .menu__sidebar .themes .themes__list .theme[data-theme=joker] {
+  --color-text-primary: 117, 84, 163;
+  --color-text-secondary: 233, 226, 245;
+  --color-button-primary: 153, 222, 30;
+}
+ion-content main nav .menu__sidebar .themes .themes__list .theme[data-theme=anti-hero] {
+  --color-text-primary: 255, 61, 139;
+  --color-text-secondary: 241, 222, 239;
+  --color-button-primary: 255, 173, 173;
+}
+ion-content main nav .menu__sidebar .themes .themes__list .theme[data-theme=floret] {
+  --color-text-primary: 119, 144, 151;
+  --color-text-secondary: 229, 229, 229;
+  --color-button-primary: 255, 221, 109;
+}
+ion-content main nav .menu__sidebar .themes .themes__list .theme[data-theme=dino] {
+  --color-text-primary: 213, 213, 213;
+  --color-text-secondary: 29, 34, 31;
+  --color-button-primary: 64, 214, 114;
+}
+ion-content main nav .menu__sidebar .themes .themes__list .theme[data-theme=rainbow-trail] {
+  --color-text-primary: 79, 79, 79;
+  --color-text-secondary: 31, 31, 31;
+  --color-button-primary: 54, 54, 54;
+}
+ion-content main nav .menu__sidebar .themes .themes__list .theme[data-theme=husqy] {
+  --color-text-primary: 151, 47, 255;
+  --color-text-secondary: 235, 215, 255;
+  --color-button-primary: 197, 138, 255;
+}
+ion-content main nav .menu__sidebar .themes .themes__list .theme[data-theme=matrix] {
+  --color-text-primary: 0, 101, 0;
+  --color-text-secondary: 209, 255, 205;
+  --color-button-primary: 21, 255, 0;
+}
+ion-content main nav .menu__sidebar .themes .themes__list .theme[data-theme=cyberspace] {
+  --color-text-primary: 149, 120, 211;
+  --color-text-secondary: 194, 251, 225;
+  --color-button-primary: 0, 206, 124;
 }
 ion-content main section {
   width: 100%;
@@ -172,75 +259,33 @@ ion-content main section#hero .item__header span span strong {
   position: relative;
   z-index: 2;
 }
-ion-content
-  main
-  section#hero
-  .item__header
-  span
-  span:has(strong.active)
-  .soc__med {
+ion-content main section#hero .item__header span span:has(strong.active) .soc__med {
   transform: translate(55%, -50%) rotate(-90deg);
   backdrop-filter: blur(1rem);
   -webkit-backdrop-filter: blur(1rem);
 }
-ion-content
-  main
-  section#hero
-  .item__header
-  span
-  span:has(strong.active)
-  .soc__med
-  .soc {
+ion-content main section#hero .item__header span span:has(strong.active) .soc__med .soc {
   opacity: 1;
   pointer-events: all;
   transition: opacity 0.4s;
   backdrop-filter: blur(50%);
   -webkit-backdrop-filter: blur(50%);
   border-radius: 50%;
-  background-color: rgba(
-    var(--color-bg-secondary),
-    var(--opacity-bg-secondary)
-  );
+  background-color: rgba(var(--color-bg-secondary), var(--opacity-bg-secondary));
   cursor: pointer;
 }
-ion-content
-  main
-  section#hero
-  .item__header
-  span
-  span:has(strong.active)
-  .soc__med
-  .soc
-  a {
+ion-content main section#hero .item__header span span:has(strong.active) .soc__med .soc a {
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
 }
-ion-content
-  main
-  section#hero
-  .item__header
-  span
-  span:has(strong.active)
-  .soc__med
-  .soc
-  a
-  i {
+ion-content main section#hero .item__header span span:has(strong.active) .soc__med .soc a i {
   transition: color 0.5s, font-size 1s;
   color: rgb(var(--color-text-primary));
   font-size: 3rem;
 }
-ion-content
-  main
-  section#hero
-  .item__header
-  span
-  span:has(strong.active)
-  .soc__med
-  .soc:hover
-  a
-  i {
+ion-content main section#hero .item__header span span:has(strong.active) .soc__med .soc:hover a i {
   color: rgb(var(--color-button-primary));
 }
 ion-content main section#hero .item__header span span .soc__med {
@@ -274,42 +319,21 @@ ion-content main section#hero .item__header span span .soc__med .soc {
   transform: rotate(-270deg);
   z-index: 1;
 }
-ion-content
-  main
-  section#hero
-  .item__header
-  span
-  span
-  .soc__med
-  .soc:first-child {
+ion-content main section#hero .item__header span span .soc__med .soc:first-child {
   left: 0%;
 }
-ion-content
-  main
-  section#hero
-  .item__header
-  span
-  span
-  .soc__med
-  .soc:nth-child(2) {
+ion-content main section#hero .item__header span span .soc__med .soc:nth-child(2) {
   left: 50%;
   bottom: -15%;
 }
-ion-content
-  main
-  section#hero
-  .item__header
-  span
-  span
-  .soc__med
-  .soc:nth-child(3) {
+ion-content main section#hero .item__header span span .soc__med .soc:nth-child(3) {
   left: 85%;
   bottom: 20%;
 }
 ion-content main section#hero .item__header span span .soc__med .soc i {
-  transition: color 0.5s, font-size 1s;
+  transition: color 0.3s, font-size 1.5s;
   color: rgb(var(--color-button-primary));
-  font-size: 0rem;
+  font-size: 1rem;
 }
 ion-content main section#hero .item__subheader {
   font-size: 1.5rem;
@@ -403,10 +427,7 @@ ion-content main section#work .work__container::-webkit-scrollbar-thumb {
 }
 ion-content main section#work .work__container span {
   --font-inter: "__inter_20b187", "__inter_Fallback_20b187";
-  font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
-    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
-    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-    "Noto Color Emoji";
+  font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 600;
 }
 ion-content main section#work .work__container .work__list {
@@ -428,25 +449,10 @@ ion-content main section#work .work__container .work__list .header .div {
   gap: 0.5rem;
   cursor: pointer;
 }
-ion-content
-  main
-  section#work
-  .work__container
-  .work__list
-  .header
-  .div:hover
-  span
-  strong {
+ion-content main section#work .work__container .work__list .header .div:hover span strong {
   color: rgb(var(--color-button-primary));
 }
-ion-content
-  main
-  section#work
-  .work__container
-  .work__list
-  .header
-  .div:hover
-  i {
+ion-content main section#work .work__container .work__list .header .div:hover i {
   transform: translate(0, -0.5rem);
   color: rgb(var(--color-button-primary));
 }
@@ -456,12 +462,7 @@ ion-content main section#work .work__container .work__list .header .div i {
   rotate: 45deg;
   transition: 0.3s;
 }
-ion-content
-  main
-  section#work
-  .work__container
-  .work__list:has(.work:hover)
-  .work:not(:hover) {
+ion-content main section#work .work__container .work__list:has(.work:hover) .work:not(:hover) {
   opacity: 0.5;
 }
 ion-content main section#work .work__container .work__list .work {
@@ -478,24 +479,14 @@ ion-content main section#work .work__container .work__list .work {
 }
 ion-content main section#work .work__container .work__list .work:hover {
   background-color: rgba(var(--color-card-bg-hover), 0.5);
-  filter: drop-shadow(0 10px 8px rgba(var(--color-card-shadow), 0.04))
-    drop-shadow(0 4px 3px rgba(var(--color-card-shadow), 0.1));
+  filter: drop-shadow(0 10px 8px rgba(var(--color-card-shadow), 0.04)) drop-shadow(0 4px 3px rgba(var(--color-card-shadow), 0.1));
   --tw-ring-offset-shadow: 0 0 rgb(var(--color-black));
   --tw-ring-shadow: 0 0 rgb(var(--color-black));
-  --tw-shadow: inset 0 1px 0 0 rgba(var(--color-card-inset-shadow), 0.1);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 rgb(var(--color-black))),
-    var(--tw-ring-shadow, 0 0 rgb(var(--color-black))), var(--tw-shadow);
+  --tw-shadow: inset 0 1px 0 0
+    rgba(var(--color-card-inset-shadow), 0.1);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 rgb(var(--color-black))), var(--tw-ring-shadow, 0 0 rgb(var(--color-black))), var(--tw-shadow);
 }
-ion-content
-  main
-  section#work
-  .work__container
-  .work__list
-  .work:not(:has(.links .link:hover)):hover
-  .body
-  .details
-  .title
-  a {
+ion-content main section#work .work__container .work__list .work:not(:has(.links .link:hover)):hover .body .details .title a {
   background-size: 200% auto;
   color: rgb(var(--color-text-primary));
   background-clip: text;
@@ -504,16 +495,7 @@ ion-content
   animation: textclip 1s linear infinite;
   background-image: var(--linear-gradient-animate);
 }
-ion-content
-  main
-  section#work
-  .work__container
-  .work__list
-  .work:not(:has(.links .link:hover)):hover
-  .body
-  .details
-  .title
-  i {
+ion-content main section#work .work__container .work__list .work:not(:has(.links .link:hover)):hover .body .details .title i {
   transform: translate(0, -0.5rem);
   color: rgb(var(--color-button-primary));
 }
@@ -534,109 +516,41 @@ ion-content main section#work .work__container .work__list .work .body {
   flex-direction: column;
   gap: 1rem;
 }
-ion-content
-  main
-  section#work
-  .work__container
-  .work__list
-  .work
-  .body
-  .details {
+ion-content main section#work .work__container .work__list .work .body .details {
   gap: 0.5rem;
 }
-ion-content
-  main
-  section#work
-  .work__container
-  .work__list
-  .work
-  .body
-  .details
-  .title {
+ion-content main section#work .work__container .work__list .work .body .details .title {
   flex-direction: row;
   align-items: center;
   gap: 0.5rem;
   font-size: 1rem;
   color: rgb(var(--color-text-primary));
 }
-ion-content
-  main
-  section#work
-  .work__container
-  .work__list
-  .work
-  .body
-  .details
-  .title
-  a {
+ion-content main section#work .work__container .work__list .work .body .details .title a {
   text-decoration: none;
 }
-ion-content
-  main
-  section#work
-  .work__container
-  .work__list
-  .work
-  .body
-  .details
-  .title
-  i {
+ion-content main section#work .work__container .work__list .work .body .details .title i {
   font-size: 0.75rem;
   margin-top: 0.25rem;
   rotate: 45deg;
   transition: 0.3s;
 }
-ion-content
-  main
-  section#work
-  .work__container
-  .work__list
-  .work
-  .body
-  .details
-  .description {
+ion-content main section#work .work__container .work__list .work .body .details .description {
   flex-direction: row;
 }
-ion-content
-  main
-  section#work
-  .work__container
-  .work__list
-  .work
-  .body
-  .details
-  .description
-  span {
+ion-content main section#work .work__container .work__list .work .body .details .description span {
   line-height: 1.5;
   font-size: 0.875rem;
   color: rgb(var(--color-text-secondary));
 }
-ion-content
-  main
-  section#work
-  .work__container
-  .work__list
-  .work
-  .body
-  .details
-  .description
-  span
-  i {
+ion-content main section#work .work__container .work__list .work .body .details .description span i {
   color: rgb(var(--color-text-secondary));
 }
 ion-content main section#work .work__container .work__list .work .body .links {
   flex-direction: row;
   gap: 1rem;
 }
-ion-content
-  main
-  section#work
-  .work__container
-  .work__list
-  .work
-  .body
-  .links
-  a.link {
+ion-content main section#work .work__container .work__list .work .body .links a.link {
   display: flex;
   flex-direction: row;
   gap: 0.375rem;
@@ -645,51 +559,15 @@ ion-content
   color: rgb(var(--color-text-primary));
   cursor: pointer;
 }
-ion-content
-  main
-  section#work
-  .work__container
-  .work__list
-  .work
-  .body
-  .links
-  a.link:hover
-  i,
-ion-content
-  main
-  section#work
-  .work__container
-  .work__list
-  .work
-  .body
-  .links
-  a.link:hover
-  span {
+ion-content main section#work .work__container .work__list .work .body .links a.link:hover i,
+ion-content main section#work .work__container .work__list .work .body .links a.link:hover span {
   color: rgb(var(--color-button-primary));
 }
-ion-content
-  main
-  section#work
-  .work__container
-  .work__list
-  .work
-  .body
-  .links
-  a.link
-  i {
+ion-content main section#work .work__container .work__list .work .body .links a.link i {
   font-size: 0.675rem;
   margin-top: 0.25rem;
 }
-ion-content
-  main
-  section#work
-  .work__container
-  .work__list
-  .work
-  .body
-  .links
-  a.link
-  span {
+ion-content main section#work .work__container .work__list .work .body .links a.link span {
   font-weight: 600;
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -700,15 +578,7 @@ ion-content main section#work .work__container .work__list .work .body .skills {
   align-items: center;
   flex-wrap: wrap;
 }
-ion-content
-  main
-  section#work
-  .work__container
-  .work__list
-  .work
-  .body
-  .skills
-  .skill {
+ion-content main section#work .work__container .work__list .work .body .skills .skill {
   font-size: 0.75rem;
   line-height: 1.25rem;
   font-weight: 500;
@@ -717,15 +587,7 @@ ion-content
   background-color: rgba(var(--color-button-primary), 0.1);
   border-radius: 0.75rem;
 }
-ion-content
-  main
-  section#work
-  .work__container
-  .work__list
-  .work.education
-  .body
-  .details
-  .description {
+ion-content main section#work .work__container .work__list .work.education .body .details .description {
   flex-direction: column;
 }
 ion-content main section#work .work__container .work__list .scroll {
@@ -751,13 +613,7 @@ ion-content main section#work .work__container .work__list .scroll .arrow {
   animation: scroll 1.5s infinite;
   -webkit-animation: scroll 1.5s infinite;
 }
-ion-content
-  main
-  section#work
-  .work__container
-  .work__list
-  .scroll
-  .arrow::after {
+ion-content main section#work .work__container .work__list .scroll .arrow::after {
   content: "";
   display: block;
   position: absolute;
@@ -898,16 +754,7 @@ ion-content main section#projects .section__body .scroll .arrow::after {
   ion-content main section#hero .item__header {
     font-size: 2rem;
   }
-  ion-content
-    main
-    section#hero
-    .item__header
-    span
-    span:has(strong.active)
-    .soc__med
-    .soc
-    a
-    i {
+  ion-content main section#hero .item__header span span:has(strong.active) .soc__med .soc a i {
     font-size: 1.5rem;
   }
   ion-content main section#hero .item__header span span .soc__med {
@@ -979,10 +826,7 @@ ion-content main section#projects .section__body .scroll .arrow::after {
   }
   ion-content main section#work .work__container span {
     --font-inter: "__inter_20b187", "__inter_Fallback_20b187";
-    font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
-      BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
-      "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-      "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-weight: 600;
   }
   ion-content main section#work .work__container .work__list {
@@ -1004,25 +848,10 @@ ion-content main section#projects .section__body .scroll .arrow::after {
     gap: 0.5rem;
     cursor: pointer;
   }
-  ion-content
-    main
-    section#work
-    .work__container
-    .work__list
-    .header
-    .div:hover
-    span
-    strong {
+  ion-content main section#work .work__container .work__list .header .div:hover span strong {
     color: rgb(var(--color-button-primary));
   }
-  ion-content
-    main
-    section#work
-    .work__container
-    .work__list
-    .header
-    .div:hover
-    i {
+  ion-content main section#work .work__container .work__list .header .div:hover i {
     transform: translate(0, -0.5rem);
     color: rgb(var(--color-button-primary));
   }
@@ -1032,12 +861,7 @@ ion-content main section#projects .section__body .scroll .arrow::after {
     rotate: 45deg;
     transition: 0.3s;
   }
-  ion-content
-    main
-    section#work
-    .work__container
-    .work__list:has(.work:hover)
-    .work:not(:hover) {
+  ion-content main section#work .work__container .work__list:has(.work:hover) .work:not(:hover) {
     opacity: 0.5;
   }
   ion-content main section#work .work__container .work__list .work {
@@ -1053,28 +877,15 @@ ion-content main section#projects .section__body .scroll .arrow::after {
     cursor: pointer;
   }
   ion-content main section#work .work__container .work__list .work:hover {
-    background-color: rgba(
-      var(--color-bg-secondary),
-      var(--opacity-bg-secondary)
-    );
+    background-color: rgba(var(--color-bg-secondary), var(--opacity-bg-secondary));
     --tw-ring-offset-shadow: 0 0 rgb(var(--color-black));
     --tw-ring-shadow: 0 0 rgb(var(--color-black));
-    --tw-shadow: inset 0 1px 0 0 rgba(var(--color-card-inset-shadow), 0.1);
-    filter: drop-shadow(0 10px 8px rgba(var(--color-black), 0.04))
-      drop-shadow(0 4px 3px rgba(var(--color-black), 0.1));
-    box-shadow: var(--tw-ring-offset-shadow, 0 0 rgb(var(--color-black))),
-      var(--tw-ring-shadow, 0 0 rgb(var(--color-black))), var(--tw-shadow);
+    --tw-shadow: inset 0 1px 0 0
+      rgba(var(--color-card-inset-shadow), 0.1);
+    filter: drop-shadow(0 10px 8px rgba(var(--color-black), 0.04)) drop-shadow(0 4px 3px rgba(var(--color-black), 0.1));
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 rgb(var(--color-black))), var(--tw-ring-shadow, 0 0 rgb(var(--color-black))), var(--tw-shadow);
   }
-  ion-content
-    main
-    section#work
-    .work__container
-    .work__list
-    .work:not(:has(.links .link:hover)):hover
-    .body
-    .details
-    .title
-    a {
+  ion-content main section#work .work__container .work__list .work:not(:has(.links .link:hover)):hover .body .details .title a {
     background-size: 200% auto;
     color: rgb(var(--color-text-primary));
     -webkit-background-clip: text;
@@ -1083,16 +894,7 @@ ion-content main section#projects .section__body .scroll .arrow::after {
     animation: textclip 1s linear infinite;
     background-image: var(--linear-gradient-animate);
   }
-  ion-content
-    main
-    section#work
-    .work__container
-    .work__list
-    .work:not(:has(.links .link:hover)):hover
-    .body
-    .details
-    .title
-    i {
+  ion-content main section#work .work__container .work__list .work:not(:has(.links .link:hover)):hover .body .details .title i {
     transform: translate(0, -0.5rem);
     color: rgb(var(--color-button-primary));
   }
@@ -1113,116 +915,41 @@ ion-content main section#projects .section__body .scroll .arrow::after {
     flex-direction: column;
     gap: 1rem;
   }
-  ion-content
-    main
-    section#work
-    .work__container
-    .work__list
-    .work
-    .body
-    .details {
+  ion-content main section#work .work__container .work__list .work .body .details {
     gap: 0.5rem;
   }
-  ion-content
-    main
-    section#work
-    .work__container
-    .work__list
-    .work
-    .body
-    .details
-    .title {
+  ion-content main section#work .work__container .work__list .work .body .details .title {
     flex-direction: row;
     align-items: center;
     gap: 0.5rem;
     font-size: 1rem;
     color: rgb(var(--color-text-primary));
   }
-  ion-content
-    main
-    section#work
-    .work__container
-    .work__list
-    .work
-    .body
-    .details
-    .title
-    a {
+  ion-content main section#work .work__container .work__list .work .body .details .title a {
     text-decoration: none;
   }
-  ion-content
-    main
-    section#work
-    .work__container
-    .work__list
-    .work
-    .body
-    .details
-    .title
-    i {
+  ion-content main section#work .work__container .work__list .work .body .details .title i {
     font-size: 0.75rem;
     margin-top: 0.25rem;
     rotate: 45deg;
     transition: 0.3s;
   }
-  ion-content
-    main
-    section#work
-    .work__container
-    .work__list
-    .work
-    .body
-    .details
-    .description {
+  ion-content main section#work .work__container .work__list .work .body .details .description {
     flex-direction: row;
   }
-  ion-content
-    main
-    section#work
-    .work__container
-    .work__list
-    .work
-    .body
-    .details
-    .description
-    span {
+  ion-content main section#work .work__container .work__list .work .body .details .description span {
     line-height: 1.5;
     font-size: 0.875rem;
     color: rgb(var(--color-text-secondary));
   }
-  ion-content
-    main
-    section#work
-    .work__container
-    .work__list
-    .work
-    .body
-    .details
-    .description
-    span
-    i {
+  ion-content main section#work .work__container .work__list .work .body .details .description span i {
     color: rgb(var(--color-text-secondary));
   }
-  ion-content
-    main
-    section#work
-    .work__container
-    .work__list
-    .work
-    .body
-    .links {
+  ion-content main section#work .work__container .work__list .work .body .links {
     flex-direction: row;
     gap: 1rem;
   }
-  ion-content
-    main
-    section#work
-    .work__container
-    .work__list
-    .work
-    .body
-    .links
-    a.link {
+  ion-content main section#work .work__container .work__list .work .body .links a.link {
     display: flex;
     flex-direction: row;
     gap: 0.375rem;
@@ -1231,77 +958,26 @@ ion-content main section#projects .section__body .scroll .arrow::after {
     color: rgb(var(--color-text-primary));
     cursor: pointer;
   }
-  ion-content
-    main
-    section#work
-    .work__container
-    .work__list
-    .work
-    .body
-    .links
-    a.link:hover
-    i,
-  ion-content
-    main
-    section#work
-    .work__container
-    .work__list
-    .work
-    .body
-    .links
-    a.link:hover
-    span {
+  ion-content main section#work .work__container .work__list .work .body .links a.link:hover i,
+  ion-content main section#work .work__container .work__list .work .body .links a.link:hover span {
     color: rgb(var(--color-button-primary));
   }
-  ion-content
-    main
-    section#work
-    .work__container
-    .work__list
-    .work
-    .body
-    .links
-    a.link
-    i {
+  ion-content main section#work .work__container .work__list .work .body .links a.link i {
     font-size: 0.675rem;
     margin-top: 0.25rem;
   }
-  ion-content
-    main
-    section#work
-    .work__container
-    .work__list
-    .work
-    .body
-    .links
-    a.link
-    span {
+  ion-content main section#work .work__container .work__list .work .body .links a.link span {
     font-weight: 600;
     font-size: 0.875rem;
     line-height: 1.25rem;
   }
-  ion-content
-    main
-    section#work
-    .work__container
-    .work__list
-    .work
-    .body
-    .skills {
+  ion-content main section#work .work__container .work__list .work .body .skills {
     flex-direction: row;
     gap: 1rem;
     align-items: center;
     flex-wrap: wrap;
   }
-  ion-content
-    main
-    section#work
-    .work__container
-    .work__list
-    .work
-    .body
-    .skills
-    .skill {
+  ion-content main section#work .work__container .work__list .work .body .skills .skill {
     font-size: 0.75rem;
     line-height: 1.25rem;
     font-weight: 500;
@@ -1310,15 +986,7 @@ ion-content main section#projects .section__body .scroll .arrow::after {
     background-color: rgba(var(--color-button-bg-primary), 0.1);
     border-radius: 0.75rem;
   }
-  ion-content
-    main
-    section#work
-    .work__container
-    .work__list
-    .work.education
-    .body
-    .details
-    .description {
+  ion-content main section#work .work__container .work__list .work.education .body .details .description {
     flex-direction: column;
   }
   ion-content main section#work .work__container .work__list .scroll {
@@ -1344,13 +1012,7 @@ ion-content main section#projects .section__body .scroll .arrow::after {
     animation: scroll 1.5s infinite;
     -webkit-animation: scroll 1.5s infinite;
   }
-  ion-content
-    main
-    section#work
-    .work__container
-    .work__list
-    .scroll
-    .arrow::after {
+  ion-content main section#work .work__container .work__list .scroll .arrow::after {
     content: "";
     display: block;
     position: absolute;
@@ -1453,4 +1115,4 @@ ion-content main section#projects .section__body .scroll .arrow::after {
       width: 4.5rem;
     }
   }
-} /*# sourceMappingURL=home.page.css.map */
+}/*# sourceMappingURL=home.page.css.map */

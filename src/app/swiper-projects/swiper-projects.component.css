@@ -18,6 +18,9 @@
   padding-bottom: 3rem;
   box-sizing: border-box;
 }
+.swiper .swiper-wrapper:has(.project:hover) .project:not(:hover) {
+  opacity: 0.5;
+}
 .swiper .swiper-wrapper .project {
   display: flex;
   flex-direction: column;
@@ -102,7 +105,7 @@
   background-image: var(--linear-gradient-animate);
 }
 .swiper .swiper-wrapper .project:not(:has(.skills .skill:hover)):hover .body .details .title i {
-  transform: translate(0, -0.5rem);
+  transform: translate(0, -0.5rem) rotate(45deg);
   color: rgb(var(--color-button-primary));
 }
 .swiper .swiper-wrapper .project .preview {
