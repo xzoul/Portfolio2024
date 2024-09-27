@@ -32,6 +32,37 @@
         &:not(:hover) {
           opacity: 0.5;
         }
+
+        &:hover {
+          .preview {
+            &:has(iframe.active) {
+              img {
+                display: none;
+              }
+
+              video {
+                display: none;
+              }
+            }
+
+            &:has(video.active) {
+              img {
+                display: none;
+              }
+
+              iframe {
+                display: none;
+              }
+            }
+
+            iframe,
+            video {
+              &.active {
+                display: flex;
+              }
+            }
+          }
+        }
       }
     }
 
@@ -172,8 +203,9 @@
       }
 
       .preview {
-        min-height: 15rem;
-        aspect-ratio: 2 / 1;
+        min-height: 12.5rem;
+        // aspect-ratio: 2 / 1;
+        aspect-ratio: 16 / 9;
         position: relative;
 
         img,
@@ -184,30 +216,30 @@
           opacity: 1;
         }
 
-        &:has(iframe.active) {
-          img {
-            display: none;
-          }
+        // &:has(iframe.active) {
+        //   img {
+        //     display: none;
+        //   }
 
-          video {
-            display: none;
-          }
-        }
+        //   video {
+        //     display: none;
+        //   }
+        // }
 
-        &:has(video.active) {
-          img {
-            display: none;
-          }
+        // &:has(video.active) {
+        //   img {
+        //     display: none;
+        //   }
 
-          iframe {
-            display: none;
-          }
-        }
+        //   iframe {
+        //     display: none;
+        //   }
+        // }
 
         img {
           display: flex;
           object-fit: cover;
-          object-position: center;
+          object-position: top;
 
           &.fill {
             object-fit: fill;
@@ -222,9 +254,13 @@
             zoom: 0.25;
           }
 
-          &.active {
-            display: flex;
+          &.docs {
+            object-fit: fill;
           }
+
+          // &.active {
+          //   display: flex;
+          // }
         }
 
         &:has(iframe:not(.active)),
@@ -305,7 +341,7 @@
             flex-direction: row;
 
             span {
-              min-height: 4lh;
+              min-height: 5lh;
               line-height: 1.5;
               font-size: 0.875rem;
               color: rgb(var(--color-text-secondary));
@@ -381,6 +417,22 @@
         //   width: auto;
         // }
       }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .swiper {
+    .swiper-wrapper {
+      grid-template-columns: repeat(5, 100%);
+
+      .project {
+      }
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      display: none;
     }
   }
 }

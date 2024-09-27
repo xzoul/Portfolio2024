@@ -47,9 +47,35 @@ export class SwiperProjectsComponent implements OnInit {
         el: '.swiper-pagination',
         clickable: true,
       },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+
+      breakpoints: {
+        // When window width is >= 320px
+        320: {
+          centeredSlides: false,
+          slidesPerView: 'auto',
+          // slidesPerView: 1,
+          // spaceBetween: 40,
+        },
+        // // When window width is >= 480px
+        // 480: {
+        //   slidesPerView: 2,
+        //   spaceBetween: 20,
+        // },
+        // // When window width is >= 640px
+        // 640: {
+        //   slidesPerView: 3,
+        //   spaceBetween: 30,
+        // },
+        // When window width is >= 1024px
+        768: {
+          centeredSlides: false,
+          slidesPerView: 3,
+          spaceBetween: 50,
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        },
       },
     });
   }

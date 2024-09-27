@@ -24,6 +24,22 @@
 .swiper .swiper-wrapper:has(.project:hover) .project:not(:hover) {
   opacity: 0.5;
 }
+.swiper .swiper-wrapper:has(.project:hover) .project:hover .preview:has(iframe.active) img {
+  display: none;
+}
+.swiper .swiper-wrapper:has(.project:hover) .project:hover .preview:has(iframe.active) video {
+  display: none;
+}
+.swiper .swiper-wrapper:has(.project:hover) .project:hover .preview:has(video.active) img {
+  display: none;
+}
+.swiper .swiper-wrapper:has(.project:hover) .project:hover .preview:has(video.active) iframe {
+  display: none;
+}
+.swiper .swiper-wrapper:has(.project:hover) .project:hover .preview iframe.active,
+.swiper .swiper-wrapper:has(.project:hover) .project:hover .preview video.active {
+  display: flex;
+}
 .swiper .swiper-wrapper .project {
   display: flex;
   flex-direction: column;
@@ -112,8 +128,8 @@
   color: rgb(var(--color-button-primary));
 }
 .swiper .swiper-wrapper .project .preview {
-  min-height: 15rem;
-  aspect-ratio: 2/1;
+  min-height: 12.5rem;
+  aspect-ratio: 16/9;
   position: relative;
 }
 .swiper .swiper-wrapper .project .preview img,
@@ -123,24 +139,12 @@
   height: 100%;
   opacity: 1;
 }
-.swiper .swiper-wrapper .project .preview:has(iframe.active) img {
-  display: none;
-}
-.swiper .swiper-wrapper .project .preview:has(iframe.active) video {
-  display: none;
-}
-.swiper .swiper-wrapper .project .preview:has(video.active) img {
-  display: none;
-}
-.swiper .swiper-wrapper .project .preview:has(video.active) iframe {
-  display: none;
-}
 .swiper .swiper-wrapper .project .preview img {
   display: flex;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  -o-object-position: top;
+     object-position: top;
 }
 .swiper .swiper-wrapper .project .preview img.fill {
   -o-object-fit: fill;
@@ -154,9 +158,10 @@
 .swiper .swiper-wrapper .project .preview video:not(.docs) {
   zoom: 0.25;
 }
-.swiper .swiper-wrapper .project .preview iframe.active,
-.swiper .swiper-wrapper .project .preview video.active {
-  display: flex;
+.swiper .swiper-wrapper .project .preview iframe.docs,
+.swiper .swiper-wrapper .project .preview video.docs {
+  -o-object-fit: fill;
+     object-fit: fill;
 }
 .swiper .swiper-wrapper .project .preview:has(iframe:not(.active)):hover .preview__toggle, .swiper .swiper-wrapper .project .preview:has(video:not(.active)):hover .preview__toggle {
   display: flex;
@@ -216,7 +221,7 @@
   flex-direction: row;
 }
 .swiper .swiper-wrapper .project .body .details .description span {
-  min-height: 4lh;
+  min-height: 5lh;
   line-height: 1.5;
   font-size: 0.875rem;
   color: rgb(var(--color-text-secondary));
@@ -268,4 +273,14 @@
   align-items: center;
   justify-content: flex-end;
   font-size: 0.75rem;
+}
+
+@media screen and (max-width: 768px) {
+  .swiper .swiper-wrapper {
+    grid-template-columns: repeat(5, 100%);
+  }
+  .swiper .swiper-button-prev,
+  .swiper .swiper-button-next {
+    display: none;
+  }
 }/*# sourceMappingURL=swiper-projects.component.css.map */

@@ -9,9 +9,10 @@
     <div class="project swiper-slide">
       <div class="preview">
         <div class="preview__toggle">
-          <span (click)="toggleProject(0)"><strong>Preview</strong></span>
+          <!-- <span (click)="toggleProject(0)" -->
+          <span><strong>No Preview Available</strong></span>
         </div>
-        <img src="" alt="" />
+        <img src="/assets/projects/TrackMinder.webp" alt="" />
         <iframe
           src=""
           frameborder="0"
@@ -21,7 +22,12 @@
       <div class="body">
         <div class="details">
           <div class="title">
-            <a href="" target="_blank" class="">
+            <a
+              href="https://github.com/Zenith-Creations/TrackMinder"
+              target="_blank"
+              class=""
+              rel="noopener"
+            >
               <strong>TrackMinder &nbsp; · &nbsp; Mobile App</strong>
             </a>
             <i class="fa-solid fa-arrow-up"></i>
@@ -30,7 +36,8 @@
             <span
               >Trackminder is an all-in-one reminder, planner, scheduler, and
               tracker app designed to help users organize their tasks,
-              appointments, health, and goals efficiently.</span
+              appointments, health, and goals efficiently. To be Beta Released
+              on October.</span
             >
           </div>
         </div>
@@ -156,71 +163,6 @@
     <div class="project swiper-slide">
       <div class="preview">
         <div class="preview__toggle">
-          <span (click)="toggleProject(3)"><strong>Preview</strong></span>
-        </div>
-        <img
-          src="/assets/projects/case study 2 preview.jpg"
-          alt=""
-          class="fill"
-        />
-        <video
-          loop
-          muted
-          autoplay
-          playbackrate="0.5"
-          preload="metadata"
-          class="docs"
-          [ngClass]="{ active: isProjectActive[3] }"
-        >
-          <source src="/assets/projects/case study 2.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <!-- <iframe
-          class="docs"
-          [ngClass]="{ active: isProjectActive[3] }"
-          src="/assets/projects/case study 2.mp4"
-          frameborder="0"
-        ></iframe> -->
-      </div>
-      <div class="body">
-        <div class="details">
-          <div class="title">
-            <a
-              href="/assets/docs/casestudy2.pdf"
-              target="_blank"
-              class=""
-              download=""
-            >
-              <strong>Data Analysis &nbsp; · &nbsp; Tableau</strong>
-            </a>
-            <i class="fa-solid fa-arrow-up"></i>
-          </div>
-          <div class="description">
-            <span
-              >An Analysis of Pre-Disaster Preparedness in Albay, Bicol
-              Region.</span
-            >
-          </div>
-        </div>
-        <div class="links">
-          <div class="link">
-            <i class="fa-solid fa-flask"></i>
-            <strong>
-              <span data-flip="Case Study"> Data Analytics</span>
-            </strong>
-          </div>
-        </div>
-        <div class="skills">
-          <div class="skill">Tableau</div>
-          <div class="skill">Microsoft Excel</div>
-          <div class="skill">Data Visualization</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="project swiper-slide">
-      <div class="preview">
-        <div class="preview__toggle">
           <span (click)="toggleProject(4)"><strong>Preview</strong></span>
         </div>
         <img
@@ -232,8 +174,7 @@
           loop
           muted
           autoplay
-          playbackrate="0.5"
-          preload="metadata"
+          [playbackRate]="0.75"
           class="docs"
           [ngClass]="{ active: isProjectActive[4] }"
         >
@@ -279,6 +220,69 @@
         <div class="skills">
           <div class="skill">R-Studio</div>
           <div class="skill">R</div>
+          <div class="skill">Data Visualization</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="project swiper-slide">
+      <div class="preview">
+        <div class="preview__toggle">
+          <span (click)="toggleProject(3)"><strong>Preview</strong></span>
+        </div>
+        <img
+          src="/assets/projects/case study 2 preview.jpg"
+          alt=""
+          class="fill"
+        />
+        <video
+          loop
+          muted
+          autoplay
+          class="docs"
+          [ngClass]="{ active: isProjectActive[3] }"
+        >
+          <source src="/assets/projects/case study 2.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <!-- <iframe
+          class="docs"
+          [ngClass]="{ active: isProjectActive[3] }"
+          src="/assets/projects/case study 2.mp4"
+          frameborder="0"
+        ></iframe> -->
+      </div>
+      <div class="body">
+        <div class="details">
+          <div class="title">
+            <a
+              href="/assets/docs/casestudy2.pdf"
+              target="_blank"
+              class=""
+              download=""
+            >
+              <strong>Data Analysis &nbsp; · &nbsp; Tableau</strong>
+            </a>
+            <i class="fa-solid fa-arrow-up"></i>
+          </div>
+          <div class="description">
+            <span
+              >An Analysis of Pre-Disaster Preparedness in Albay, Bicol
+              Region.</span
+            >
+          </div>
+        </div>
+        <div class="links">
+          <div class="link">
+            <i class="fa-solid fa-flask"></i>
+            <strong>
+              <span data-flip="Case Study"> Data Analytics</span>
+            </strong>
+          </div>
+        </div>
+        <div class="skills">
+          <div class="skill">Tableau</div>
+          <div class="skill">Microsoft Excel</div>
           <div class="skill">Data Visualization</div>
         </div>
       </div>
