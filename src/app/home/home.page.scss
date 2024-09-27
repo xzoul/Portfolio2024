@@ -153,7 +153,7 @@ ion-content {
               flex-direction: column;
               gap: 1rem;
 
-              &:hover,
+              // &:hover,
               &.collapsed {
                 .theme {
                   display: flex;
@@ -308,6 +308,7 @@ ion-content {
           border-radius: 0.5rem;
           position: relative;
           cursor: pointer;
+          text-decoration: none;
 
           &:hover {
             background-color: rgba(
@@ -365,6 +366,7 @@ ion-content {
                         var(--opacity-bg-secondary)
                       );
                       cursor: pointer;
+                      transform: rotate(-270deg);
 
                       a {
                         display: flex;
@@ -437,7 +439,7 @@ ion-content {
                     aspect-ratio: 1;
                     width: 4.25rem;
                     padding: 0.25rem;
-                    transition: opacity 0.75s;
+                    transition: opacity 0.5s;
                     align-items: center;
                     justify-content: center;
                     bottom: 0;

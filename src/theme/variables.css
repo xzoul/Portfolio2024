@@ -12,7 +12,7 @@
   --opacity-bg-secondary: 0.5;
   --color-bg-transparent: transparent;
   --color-card-bg-hover: var(--color-bg-secondary);
-  --color-card-inset-shadow: rg(148, 163, 184);
+  --color-card-inset-shadow: 148, 163, 184;
   --color-card-shadow: var(--color-black);
   --color-text-primary: 226, 232, 240;
   --color-text-secondary: 148, 163, 184;
@@ -58,7 +58,7 @@
   --color-card-bg-hover: var(--color-bg-secondary);
   --color-card-inset-shadow: 148, 163, 184;
   --color-card-shadow: var(--color-black);
-  --color-hover-radial-gradient: 234, 64, 0;
+  --color-hover-radial-gradient: 255, 94, 0;
   --opacity-hover-radial-gradient: 0.15;
   --color-white: 255, 255, 255;
   --color-black: 0, 0, 0;
@@ -77,7 +77,7 @@
   --color-card-bg-hover: var(--color-bg-secondary);
   --color-card-inset-shadow: 148, 163, 184;
   --color-card-shadow: var(--color-black);
-  -color-hover-radial-gradient: 255, 15, 0;
+  --color-hover-radial-gradient: 173, 255, 173;
   --opacity-hover-radial-gradient: 0.15;
   --color-white: 255, 255, 255;
   --color-black: 0, 0, 0;
@@ -96,7 +96,7 @@
   --color-card-bg-hover: var(--color-bg-secondary);
   --color-card-inset-shadow: 148, 163, 184;
   --color-card-shadow: var(--color-black);
-  --color-hover-radial-gradient: 255, 63, 0;
+  --color-hover-radial-gradient: 109, 140, 255;
   --opacity-hover-radial-gradient: 0.15;
   --color-white: 255, 255, 255;
   --color-black: 0, 0, 0;
@@ -115,7 +115,7 @@
   --color-card-bg-hover: var(--color-bg-secondary);
   --color-card-inset-shadow: 148, 163, 184;
   --color-card-shadow: var(--color-black);
-  --color-hover-radial-gradient: 145, 56, 0;
+  --color-hover-radial-gradient: 0, 177, 106;
   --opacity-hover-radial-gradient: 0.15;
   --color-white: 255, 255, 255;
   --color-black: 0, 0, 0;
@@ -134,7 +134,7 @@
   --color-card-bg-hover: var(--color-bg-secondary);
   --color-card-inset-shadow: 148, 163, 184;
   --color-card-shadow: var(--color-black);
-  --color-hover-radial-gradient: 135, 0, 0;
+  --color-hover-radial-gradient: 0, 128, 255;
   --opacity-hover-radial-gradient: 0.15;
   --color-white: 255, 255, 255;
   --color-black: 0, 0, 0;
@@ -153,7 +153,7 @@
   --color-card-bg-hover: var(--color-bg-secondary);
   --color-card-inset-shadow: 148, 163, 184;
   --color-card-shadow: var(--color-black);
-  --color-hover-radial-gradient: 255, 0, 47;
+  --color-hover-radial-gradient: 255, 138, 197;
   --opacity-hover-radial-gradient: 0.15;
   --color-white: 255, 255, 255;
   --color-black: 0, 0, 0;
@@ -172,7 +172,7 @@
   --color-card-bg-hover: var(--color-bg-secondary);
   --color-card-inset-shadow: 148, 163, 184;
   --color-card-shadow: var(--color-black);
-  --color-hover-radial-gradient: 102, 97, 0;
+  --color-hover-radial-gradient: 255, 21, 255;
   --opacity-hover-radial-gradient: 0.15;
   --color-white: 255, 255, 255;
   --color-black: 0, 0, 0;
@@ -191,7 +191,7 @@
   --color-card-bg-hover: var(--color-bg-secondary);
   --color-card-inset-shadow: 148, 163, 184;
   --color-card-shadow: var(--color-black);
-  --color-hover-radial-gradient: 81, 48, 0;
+  --color-hover-radial-gradient: 206, 0, 124;
   --opacity-hover-radial-gradient: 0.15;
   --color-white: 255, 255, 255;
   --color-black: 0, 0, 0;

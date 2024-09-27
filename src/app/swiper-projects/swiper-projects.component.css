@@ -9,6 +9,9 @@
   width: 100%;
   height: 100%;
 }
+.swiper:has(.swiper-button-prev:hover, .swiper-button-next:hover) .project:not(:hover) {
+  opacity: 0.5;
+}
 .swiper .swiper-wrapper {
   display: grid;
   grid-template-columns: repeat(5, minmax(24rem, 1fr));
@@ -114,7 +117,8 @@
   position: relative;
 }
 .swiper .swiper-wrapper .project .preview img,
-.swiper .swiper-wrapper .project .preview iframe {
+.swiper .swiper-wrapper .project .preview iframe,
+.swiper .swiper-wrapper .project .preview video {
   width: 100%;
   height: 100%;
   opacity: 1;
@@ -122,17 +126,39 @@
 .swiper .swiper-wrapper .project .preview:has(iframe.active) img {
   display: none;
 }
+.swiper .swiper-wrapper .project .preview:has(iframe.active) video {
+  display: none;
+}
+.swiper .swiper-wrapper .project .preview:has(video.active) img {
+  display: none;
+}
+.swiper .swiper-wrapper .project .preview:has(video.active) iframe {
+  display: none;
+}
 .swiper .swiper-wrapper .project .preview img {
   display: flex;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
-.swiper .swiper-wrapper .project .preview iframe {
+.swiper .swiper-wrapper .project .preview img.fill {
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+.swiper .swiper-wrapper .project .preview iframe,
+.swiper .swiper-wrapper .project .preview video {
   display: none;
+}
+.swiper .swiper-wrapper .project .preview iframe:not(.docs),
+.swiper .swiper-wrapper .project .preview video:not(.docs) {
   zoom: 0.25;
 }
-.swiper .swiper-wrapper .project .preview iframe.active {
+.swiper .swiper-wrapper .project .preview iframe.active,
+.swiper .swiper-wrapper .project .preview video.active {
   display: flex;
 }
-.swiper .swiper-wrapper .project .preview:has(iframe:not(.active)):hover .preview__toggle {
+.swiper .swiper-wrapper .project .preview:has(iframe:not(.active)):hover .preview__toggle, .swiper .swiper-wrapper .project .preview:has(video:not(.active)):hover .preview__toggle {
   display: flex;
 }
 .swiper .swiper-wrapper .project .preview .preview__toggle {
