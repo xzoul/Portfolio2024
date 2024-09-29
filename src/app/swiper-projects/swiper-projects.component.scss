@@ -23,7 +23,7 @@
     grid-template-columns: repeat(5, minmax(24rem, 1fr));
     align-items: center;
     justify-items: center;
-    gap: 3rem;
+    gap: 2rem;
     padding-bottom: 3rem;
     box-sizing: border-box;
 
@@ -425,9 +425,7 @@
   .swiper {
     .swiper-wrapper {
       grid-template-columns: repeat(5, 100%);
-
-      .project {
-      }
+      gap: 0;
     }
 
     .swiper-button-prev,

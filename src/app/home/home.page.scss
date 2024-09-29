@@ -328,6 +328,10 @@ ion-content {
         position: relative;
         scroll-snap-align: center;
 
+        .soc__med.mobile{
+          display: none;
+        }
+
         .item {
           flex-direction: column;
           width: 60%;
@@ -432,6 +436,8 @@ ion-content {
                   pointer-events: none;
 
                   -webkit-box-shadow: inset 0 0 6px
+                    rgba(var(--color-black), 0.6);
+                  box-shadow: inset 0 0 6px
                     rgba(var(--color-black), 0.6);
 
                   .soc {
@@ -1071,6 +1077,13 @@ ion-content {
 
 @media screen and (max-width: 768px) {
   ion-content {
+    &:hover {
+      &::before {
+        --size: 0rem;
+        pointer-events: none;
+      }
+    }
+
     main {
       scrollbar-width: auto; /* Firefox */
       min-height: 100vh;
@@ -1078,11 +1091,11 @@ ion-content {
 
       nav {
         padding: 1rem;
+        align-items: flex-start;
 
         .menu {
           &__icon {
-            display: flex;
-            // visibility: visible;
+            // display: flex;
             cursor: pointer;
 
             i {
@@ -1092,10 +1105,10 @@ ion-content {
             }
           }
 
-          &__span {
-            display: none;
-            // visibility: hidden;
-          }
+          // &__span {
+          //   display: none;
+          //   // visibility: hidden;
+          // }
 
           &__sidebar {
             button {
@@ -1103,6 +1116,10 @@ ion-content {
                 // visibility: hidden;
                 display: none;
               }
+            }
+
+            .menu__span {
+              display: none;
             }
           }
         }
@@ -1121,6 +1138,24 @@ ion-content {
         }
 
         &#hero {
+          .soc__med.mobile{
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+
+            .soc {
+              a {
+                i {
+                  font-size: clamp(
+                    1rem,
+                    -0.0714rem + 5.3571vw,
+                    2.5rem
+                  );
+                }
+              }
+            }
+          }
+
           .item {
             padding-inline: 2rem;
             width: auto;
@@ -1277,8 +1312,8 @@ ion-content {
                 flex-direction: row;
                 width: auto;
                 padding-inline: 0;
-                position: sticky;
-                top: 0;
+                position: relative;
+                top: auto;
                 z-index: 2;
                 backdrop-filter: blur(1px);
                 -webkit-backdrop-filter: blur(1px);
@@ -1593,7 +1628,7 @@ ion-content {
           flex-direction: column;
           width: 100%;
           height: 100%;
-          padding-block: 4.25rem 2rem;
+          padding-block: 4.25rem 4rem;
           // padding-inline: 5rem 3rem;
           justify-content: flex-start;
           align-items: center;

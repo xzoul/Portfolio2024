@@ -16,11 +16,14 @@ import {
   IonPopover,
   IonButton,
   IonIcon,
+  IonMenu,
   IonToggle,
 } from '@ionic/angular/standalone';
 import { CommonModule } from '@angular/common';
 import { AvatarComponent } from 'src/app/components/avatar/avatar.component';
 import { SwiperProjectsComponent } from '../swiper-projects/swiper-projects.component';
+import { IonicModule } from '@ionic/angular';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -30,6 +33,7 @@ import { SwiperProjectsComponent } from '../swiper-projects/swiper-projects.comp
   imports: [
     IonToggle,
     IonIcon,
+    IonMenu,
     IonButton,
     IonPopover,
     IonRippleEffect,
@@ -40,6 +44,7 @@ import { SwiperProjectsComponent } from '../swiper-projects/swiper-projects.comp
     AvatarComponent,
     CommonModule,
     SwiperProjectsComponent,
+    IonicModule
   ],
 })
 export class HomePage implements AfterViewInit {

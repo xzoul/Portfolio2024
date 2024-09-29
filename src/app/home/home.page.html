@@ -16,15 +16,17 @@
   <main>
     <nav>
       <div class="menu">
-        <div class="menu__icon"><i class="fa-solid fa-bars"></i></div>
+        <!-- <div class="menu__icon" (click)="toggleMenu()"><i class="fa-solid fa-bars"></i></div> -->
+        <ion-buttons slot="start">
+          <div class="menu__icon">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+        </ion-buttons>
         <span class="menu__span" data-color="header-color"
           >&#64;delacruzjimmy</span
         >
       </div>
       <div class="menu__sidebar">
-        <!-- <button type="button" class="meteor__toggle">
-          <i class="fa-solid fa-meteor"></i>
-        </button> -->
         <span
           class="menu__span"
           data-color="primary-color"
@@ -102,7 +104,7 @@
             ></div>
           </div>
         </div>
-        <button
+        <!-- <button
           type="button"
           class="meteor__toggle"
           (click)="toggleMeteors($event)"
@@ -111,12 +113,7 @@
           aria-label="meteor"
         >
           <i class="fa-solid fa-meteor"></i>
-        </button>
-        <!-- <ion-popover trigger="meteor" triggerAction="hover">
-          <ng-template>
-            <ion-content class="ion-padding">Hello World!</ion-content>
-          </ng-template>
-        </ion-popover> -->
+        </button> -->
       </div>
     </nav>
     <section id="hero" style="display: flex">
@@ -172,10 +169,36 @@
             from <span data-color="primary-color">Makati, Philippines</span>.
           </span>
         </div>
+        <div class="soc__med mobile">
+          <div class="soc">
+            <a
+              href="https://www.linkedin.com/in/jollyhakdog/"
+              target="_blank"
+              rel="noopener"
+              ><i class="fa-brands fa-linkedin"></i
+            ></a>
+          </div>
+          <div class="soc">
+            <a
+              href="https://www.github.com/xzoul/"
+              target="_blank"
+              rel="noopener"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+          </div>
+          <div class="soc">
+            <a
+              href="https://www.instagram.com/ji_clc/"
+              target="_blank"
+              rel="noopener"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+          </div>
+        </div>
       </div>
-      <div class="avatar">
+      <!-- <div class="avatar"> -->
         <!-- <app-avatar></app-avatar> -->
-      </div>
+      <!-- </div> -->
 
       <div class="section__scroll">
         <span class="text-highlight">Scroll Down</span>

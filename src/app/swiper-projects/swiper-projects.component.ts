@@ -18,35 +18,47 @@ export class SwiperProjectsComponent implements OnInit {
     this.initSwiper();
   }
 
-  initSwiper() {
-    // this.swiper = new Swiper('.swiper', {
-    //   modules: [Pagination, Navigation],
-    //   pagination: {
-    //     el: '.swiper-pagination',
-    //     clickable: true,
-    //   },
-    //   navigation: {
-    //     nextEl: '.swiper-button-next',
-    //     prevEl: '.swiper-button-prev',
-    //   },
-    //   slidesPerView: 4,
-    //   spaceBetween: 30,
-    //   centeredSlides: true,
-    // });
+  swiperConfig = {
+    modules: [Grid, Pagination, Navigation],
+    grid: {
+      rows: 1,
+      fill: 'row',
+    },
+    slidesPerView: 1,
 
+    breakpoints: {
+
+      320: {
+        centeredSlides: false,
+        slidesPerView: 'auto',
+
+      },
+      768: {
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        spaceBetween: 32,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      },
+    },
+  };
+
+  initSwiper() {
     this.swiper = new Swiper('.swiper', {
       modules: [Grid, Pagination, Navigation],
       grid: {
         rows: 1,
         fill: 'row',
       },
-      centeredSlides: true,
-      slidesPerView: 3,
-      spaceBetween: 50,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
+      slidesPerView: 1,
+      // centeredSlides: true,
+      // slidesPerView: 3,
+      // pagination: {
+      //   el: '.swiper-pagination',
+      //   clickable: true,
+      // },
 
       breakpoints: {
         // When window width is >= 320px
@@ -68,9 +80,10 @@ export class SwiperProjectsComponent implements OnInit {
         // },
         // When window width is >= 1024px
         768: {
-          centeredSlides: false,
-          slidesPerView: 3,
-          spaceBetween: 50,
+          centeredSlides: true,
+          // slidesPerView: 3,
+          slidesPerView: 'auto',
+          spaceBetween: 32,
           navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
