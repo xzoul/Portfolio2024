@@ -1675,21 +1675,17 @@ ion-content {
               display: flex;
               flex-direction: row;
               align-items: center;
-              // width: 11rem;
-              // height: 8rem;
-              // justify-content: space-between;
               position: absolute;
-              // left: 50%;
-              left: 3rem;
-              // right: 4rem;
-              bottom: 0.5rem;
-              gap: 2rem;
+              left: 1rem;
+              bottom: 0.25rem;
+              gap: .25rem;
 
               span {
-                color: rgb(var(--color-text-primary));
-                // transform: rotate(90deg);
-                text-transform: uppercase;
-                font-size: 0.75rem;
+                font-size: 0.5rem;
+              }
+
+              img{
+                height: .75rem;
               }
 
               .arrow {

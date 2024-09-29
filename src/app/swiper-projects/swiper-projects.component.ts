@@ -65,6 +65,10 @@ export class SwiperProjectsComponent implements OnInit {
         320: {
           centeredSlides: false,
           slidesPerView: 'auto',
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
           // slidesPerView: 1,
           // spaceBetween: 40,
         },
@@ -87,6 +91,10 @@ export class SwiperProjectsComponent implements OnInit {
           navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
+          },
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
           },
         },
       },
