@@ -426,6 +426,28 @@
     .swiper-wrapper {
       grid-template-columns: repeat(5, 100%);
       gap: 0;
+
+      .project{
+        .preview{
+          min-height: auto;
+          overflow: auto;
+
+          img{
+            object-position: center;
+          }
+        }
+
+        .body{
+          .details{
+
+            .description{
+              span{
+                min-height: 2lh;
+              }
+            }
+          }
+        }
+      }
     }
 
     .swiper-button-prev,
