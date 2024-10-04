@@ -98,6 +98,10 @@ ion-content {
 
           &:hover {
             color: rgb(var(--color-text-secondary)) !important;
+
+            i{
+              color: rgb(var(--color-text-secondary)) !important;
+            }
           }
         }
 
