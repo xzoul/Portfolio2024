@@ -59,7 +59,7 @@ export class HomePage implements AfterViewInit {
   private iframes: HTMLIFrameElement[] = [];
   private tempDivs: HTMLDivElement[] = [];
   private renderer: Renderer2;
-  private defaultTheme: string = 'britanny';
+  private defaultTheme: string = 'joker';
   private currentTheme: string | null = null;
 
   constructor(
@@ -160,3 +160,8 @@ export class HomePage implements AfterViewInit {
     localStorage.setItem('selectedTheme', theme);
   }
 }
+
+
+// To deploy to github pages
+// Command Prompt: ionic build --prod
+// Then Git Push
